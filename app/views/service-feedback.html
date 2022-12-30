@@ -1,0 +1,107 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Give feedback on Register a high-rise building</h1>
+
+      <h2 class="govuk-heading-l">Satisfaction survey</h2>
+
+      <form class="form" action="/url/of/next/page" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {{ govukRadios({
+          name: "where-do-you-live",
+          fieldset: {
+            legend: {
+              text: "Overall, how did you feel about the service you received today?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          items: [
+            {
+              value: "england",
+              text: "Very satisfied"
+            },
+            {
+              value: "scotland",
+              text: "Satisfied"
+            },
+            {
+              value: "wales",
+              text: "Neither satisfied or dissatisfied"
+            },
+            {
+              value: "northern-ireland",
+              text: "Dissatisfied"
+            },
+            {
+              value: "wales",
+              text: "Very dissatisfied"
+            }
+          ]
+        }) }}
+
+        {% from "govuk/components/character-count/macro.njk" import govukCharacterCount %}
+        {{ govukCharacterCount({
+          name: "more-detail",
+          id: "more-detail",
+          maxlength: 500,
+          label: {
+            text: "How could we improve this service?",
+            classes: "govuk-label--s",
+            isPageHeading: false
+          },
+          hint: {
+            text: "Do not include personal or financial information, like your National Insurance number or credit card details."
+          }
+        }) }}
+
+        {{ govukRadios({
+          name: "where-do-you-live",
+          fieldset: {
+            legend: {
+              text: "How did you find out that you needed to use this service?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          items: [
+            {
+              value: "england",
+              text: "Sally"
+            },
+            {
+              value: "scotland",
+              text: "to give"
+            },
+            {
+              value: "wales",
+              text: "the list"
+            },
+            {
+              value: "northern-ireland",
+              text: "of options"
+            }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Send feedback</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

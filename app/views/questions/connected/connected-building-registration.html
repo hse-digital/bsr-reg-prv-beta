@@ -1,0 +1,66 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">Connected buildings</span>
+
+      <h1 class="govuk-heading-xl">Does the connected building also need to be registered?</h1>
+
+      <form class="form" action="/questions/roof/roof-type" method="post">
+
+        <p>The connected building should be registered if:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>it is 18 metres in height or more</li>
+          <li>it has 7 floors or more</li>
+        </ul>
+
+        <p>and</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>there are 2 or more residential units</li>
+          <li>people are (or could) live in the building</li>
+          <li>the building has a completion certificate</li>
+        </ul>
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {{ govukRadios({
+          name: "where-do-you-live",
+          fieldset: {
+            legend: {
+              text: "Does the connected building need to be registered?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "england",
+              text: "Yes, the building needs to be registered"
+            },
+            {
+              value: "scotland",
+              text: "No, the building doesn't need to be registered"
+            }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

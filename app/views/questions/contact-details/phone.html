@@ -1,0 +1,46 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">Your contact details</span>
+
+      <h1 class="govuk-heading-xl">Your telephone number</h1>
+
+      <form class="form" action="/questions/contact-details/acting-on-behalf-of-pap" method="post">
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {{ govukInput({
+          label: {
+            text: "Telephone number",
+            classes: "govuk-label--s",
+            isPageHeading: false
+          },
+          id: "phone",
+          name: "phone",
+          value: data['phone'],
+          hint: {
+            text: "We will only use this if we need to contact you about your application."
+          }
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+      <p><a href="#">Save and exit this application</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}

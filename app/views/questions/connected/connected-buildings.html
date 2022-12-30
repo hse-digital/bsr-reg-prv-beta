@@ -1,0 +1,77 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">Connected buildings</span>
+
+      <form class="form" action="/questions/connected/connected-building-registration" method="post">
+
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+        {{ govukCheckboxes({
+          name: "countries",
+          fieldset: {
+            legend: {
+              text: "How is the building connected with another building?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          hint: {
+            text: "Select all that apply"
+          },
+          items: [
+            {
+              value: "france",
+              text: "Internal connecting doors"
+            },
+            {
+              value: "portugal",
+              text: "Underground connection",
+              hint: {
+                text: "like a pedestrian tunnel or shared car park"
+              }
+            },
+            {
+              value: "spain",
+              text: "Ground level connection",
+              hint: {
+                text: "like a shared entrance hall"
+              }
+            },
+            {
+              value: "spain",
+              text: "Above ground connection",
+              hint: {
+                text: "like a bridge between two towers"
+              }
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "none",
+              text: "Not connected to another building or structure",
+              behaviour: "exclusive"
+            }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

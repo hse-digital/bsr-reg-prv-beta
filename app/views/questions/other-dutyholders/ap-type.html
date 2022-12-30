@@ -1,0 +1,96 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">Other dutyholders</span>
+
+      <h1 class="govuk-heading-xl">Add another accountable person</h1>
+
+      <p>You'll be able to add more accountable persons later.</p>
+
+      <form class="form" action="/questions/other-dutyholders/ap-name-address" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {% set otherHtml %}
+        {{ govukInput({
+          id: "contact-by-email",
+          name: "contact-by-email",
+          type: "text",
+          spellcheck: false,
+          label: {
+            text: "What type of accountable person are you adding?"
+          }
+        }) }}
+        {% endset -%}
+
+        {{ govukRadios({
+          name: "where-do-you-live",
+          fieldset: {
+            legend: {
+              text: "This accountable person is a:",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          items: [
+            {
+              value: "building-owner-individual",
+              text: "Building owner (individual)"
+            },
+            {
+              value: "commonhold-association",
+              text: "Commonhold association"
+            },
+            {
+              value: "housing-association",
+              text: "Housing association or other company operating under section 27 of the Housing Act 1985"
+            },
+            {
+              value: "local-authority",
+              text: "Local authority"
+            },
+            {
+              value: "management-company",
+              text: "Management company"
+            },
+            {
+              value: "rmc",
+              text: "Resident management company (RMC) or orgnaisation"
+            },
+            {
+              value: "rtm",
+              text: "Right to manage (RTM) company or orgnaisation"
+            },
+            {
+              value: "other",
+              text: "Other",
+              conditional: {
+                html: otherHtml
+              }
+            }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+      <p><a href="#">Save and exit this application</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}

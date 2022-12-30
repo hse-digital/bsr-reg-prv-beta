@@ -1,0 +1,112 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <span class="govuk-caption-xl">The building</span>
+
+      <h1 class="govuk-heading-xl">Check your answers</h1>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Building name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['building-name'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/building/name">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Is the building made up of more than 1 block?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['more-than-one-block'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/building/block-boolean">
+              Change
+              <span class="govuk-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Best known address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            2 Acme Street
+            <br>London
+            <br>SW32 9KL
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/building/best-known-address">
+              Change
+              <span class="govuk-visually-hidden"> contact information</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Alternative name, address or postcode?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['other-name-address-postcode-boolean'] }}
+            <br>{{ data['other-building-name'] }}
+            <br>{{ data['other-address-line-1'] }}
+            <br>{{ data['other-address-line-2'] }}
+            <br>{{ data['other-postcode-manual'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/building/other-name-address-postcode-boolean">
+              Change
+              <span class="govuk-visually-hidden"> contact details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Year of completion
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['completion-year'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/building/completion-year">
+              Change
+              <span class="govuk-visually-hidden"> contact details</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <form action="/questions/pap/pap-type" method="post" novalidate>
+
+        <input type="hidden" name="answers-checked" value="true">
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button>
+
+      </form>
+
+      <p><a href="#">Save and exit this application</a></p>
+
+    </div>
+  </div>
+{% endblock %}

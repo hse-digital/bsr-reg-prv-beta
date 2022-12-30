@@ -1,0 +1,217 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">Declare and pay</span>
+
+      <h1 class="govuk-heading-xl">Pay</h1>
+
+      <p>You can use Visa, Visa Electron or Mastercard debit and credit cards.</p>
+
+      {% from "govuk/components/table/macro.njk" import govukTable %}
+      {{ govukTable({
+        caption: "Order summary",
+        captionClasses: "govuk-table__caption--m",
+        firstCellIsHeader: true,
+        rows:
+        [
+        [
+          {
+            text: "Building name/s"
+          },
+          {
+            text: "Building A name, address"
+          }
+        ],
+          [
+            {
+              text: "Total amount to pay"
+            },
+            {
+              text: "£XXX.XX"
+            }
+          ]
+        ]
+      }) }}
+
+      <form class="form" action="/registration-confirm" method="post">
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
+        {% call govukFieldset({
+          legend: {
+          }
+        }) %}
+          {{ govukInput({
+            label: {
+              text: 'Name on card',
+              classes: "govuk-label--s"
+            },
+            id: "address-line-1",
+            name: "address-line-1",
+            hint: {
+              text: "Your name as it appears on the front of your card"
+            }
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: 'Card number',
+              classes: "govuk-label--s"
+            },
+            classes: "govuk-input--width-20",
+            id: "address-line-2",
+            name: "address-line-2",
+            hint: {
+              text: "The long card number on the front of your card"
+            }
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Expiry month",
+              classes: "govuk-label--s"
+            },
+            classes: "govuk-input--width-2",
+            id: "address-town",
+            name: "address-town"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Expiry year",
+              classes: "govuk-label--s"
+            },
+            classes: "govuk-input--width-4",
+            id: "address-town",
+            name: "address-town"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Security code",
+              classes: "govuk-label--s"
+            },
+            classes: "govuk-input--width-3",
+            id: "address-town",
+            name: "address-town",
+            hint: {
+              text: "The 3 digit number on the back of your card"
+            }
+          }) }}
+
+          <h2 class="govuk-heading-m">Billing address</h2>
+
+          {{ govukInput({
+            label: {
+              text: "Postcode",
+              classes: "govuk-label--s"
+            },
+            classes: "govuk-input--width-10",
+            id: "postcode",
+            name: "postcode"
+          }) }}
+  
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+          {{ govukButton({
+            text: "Find address",
+            href: "#",
+            classes: "govuk-button--secondary"
+          }) }}
+  
+          {% from "govuk/components/radios/macro.njk" import govukRadios %}
+          {{ govukRadios({
+            name: "where-do-you-live",
+            fieldset: {
+              legend: {
+                text: "Which is the correct address?",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            items: [
+              {
+                value: "england",
+                text: "1 Acme Street, London, SW32 9KL"
+              },
+              {
+                value: "scotland",
+                text: "2 Acme Street, London, SW32 9KL"
+              },
+              {
+                value: "wales",
+                text: "3 Acme Street, London, SW32 9KL"
+              },
+              {
+                value: "northern-ireland",
+                text: "4 Acme Street, London, SW32 9KL"
+              }
+            ]
+          }) }}
+  
+          <p><a href="#">Find a postcode on Royal Mail's postcode finder</a></p>
+  
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Enter address manually
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+  
+              {{ govukInput({
+                label: {
+                  text: "Address line 1",
+                  classes: "govuk-label--s"
+                },
+                id: "postcode",
+                name: "postcode"
+              }) }}
+  
+              {{ govukInput({
+                label: {
+                  text: "Address line 2",
+                  classes: "govuk-label--s"
+                },
+                id: "postcode",
+                name: "postcode"
+              }) }}
+  
+              {{ govukInput({
+                label: {
+                  text: "Postcode",
+                  classes: "govuk-label--s"
+                },
+                classes: "govuk-input--width-10",
+                id: "postcode",
+                name: "postcode"
+              }) }}
+  
+            </div>
+          </details>
+          
+        {% endcall %}
+
+        <button class="govuk-button" data-module="govuk-button">Pay and submit</button>
+
+      </form>
+
+      <p>Card information is transferred in accordance with our security statement and is held in accordance with our privacy statement. See our <a href="#">terms and conditions</a> for further information.</p>
+
+      <p><a href="#">Save and exit this application</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}

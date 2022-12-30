@@ -1,0 +1,59 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">Connected buildings</span>
+
+      <h1 class="govuk-heading-xl">Is the buildings connected to any other buildings?</h1>
+
+      <p>A building may be connected to another by:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>an underground connection, such as a shared car park</li>
+        <li>a shared entrance hall</li>
+        <li>a bridge between two towers</li>
+      </ul>
+
+      <form class="form" action="/questions/connected/connected-buildings" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {{ govukRadios({
+          name: "primary-use",
+          fieldset: {
+            legend: {
+              text: "Is the building connected to any other buildings?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            }, 
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

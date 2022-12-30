@@ -1,0 +1,121 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">The building</span>
+
+      <h1 class="govuk-heading-xl">What is the buiildings best known address?</h1>
+
+      <p>The address must be in England.</p>
+
+      <form class="form" action="/questions/building/other-name-address-postcode-boolean" method="post">
+
+        {{ govukInput({
+          label: {
+            text: "Postcode",
+            classes: "govuk-label--s"
+          },
+          classes: "govuk-input--width-10",
+          id: "postcode",
+          name: "postcode"
+        }) }}
+
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+        {{ govukButton({
+          text: "Find address",
+          href: "#",
+          classes: "govuk-button--secondary"
+        }) }}
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {{ govukRadios({
+          name: "where-do-you-live",
+          fieldset: {
+            legend: {
+              text: "Which is the correct address?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          items: [
+            {
+              value: "england",
+              text: "1 Acme Street, London, SW32 9KL"
+            },
+            {
+              value: "scotland",
+              text: "2 Acme Street, London, SW32 9KL"
+            },
+            {
+              value: "wales",
+              text: "3 Acme Street, London, SW32 9KL"
+            },
+            {
+              value: "northern-ireland",
+              text: "4 Acme Street, London, SW32 9KL"
+            }
+          ]
+        }) }}
+
+        <p><a href="#">Find a postcode on Royal Mail's postcode finder</a></p>
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Enter address manually
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+
+            {{ govukInput({
+              label: {
+                text: "Address line 1",
+                classes: "govuk-label--s"
+              },
+              id: "postcode",
+              name: "postcode"
+            }) }}
+
+            {{ govukInput({
+              label: {
+                text: "Address line 2",
+                classes: "govuk-label--s"
+              },
+              id: "postcode",
+              name: "postcode"
+            }) }}
+
+            {{ govukInput({
+              label: {
+                text: "Postcode",
+                classes: "govuk-label--s"
+              },
+              classes: "govuk-input--width-10",
+              id: "postcode",
+              name: "postcode"
+            }) }}
+
+          </div>
+        </details>
+
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+      <p><a href="#">Save and exit this application</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}

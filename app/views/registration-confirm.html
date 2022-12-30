@@ -1,0 +1,80 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Confirmation page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">Registration application submitted for Acme House.</h1>
+        <div class="govuk-panel__body">
+          Your reference number<br><strong>HDJ2123F</strong>
+        </div>
+        <div class="govuk-panel__body">
+          Your payment reference is<br><strong>202205467</strong>
+        </div>
+      </div>
+
+      <p>
+        We've emailed your payment reference to <b>joe.bloggs@account.co.uk</b>. If you cannot find the email, check your junk or spam folders.
+      </p>
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Launch emails",
+        href: "/registration-submitted-email",
+        classes: "govuk-button--secondary"
+      }) }}
+
+      <p>If you did not get the email, <a href="#">contact us</a>.</p>
+
+      {% from "govuk/components/details/macro.njk" import govukDetails %}
+      {{ govukDetails({
+        summaryText: "What happens to my registration request?",
+        text: "We'll reach out to you if we have any queries regarding your registration application."
+      }) }}
+
+      {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+      {{ govukWarningText({
+        text: "You must give us structural and safety information for Acme House by 15th September 2023.",
+        iconFallbackText: "Warning"
+      }) }}
+
+      <form class="form" action="/kbi-task-list" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {{ govukRadios({
+          name: "where-do-you-live",
+          fieldset: {
+            legend: {
+              text: "Would you like to complete structural and safety information now?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "england",
+              text: "Yes"
+            },
+            {
+              value: "scotland",
+              text: "No"
+            }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+      <p>Alternatively, you can <a href="#">pay for any outstanding buildings</a> or <a href="#">register another building</a>.</p>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends "govuk-prototype-kit/layouts/unbranded.html" %}
+
+{% block pageTitle %}
+  Unbranded page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-!-padding-bottom-5"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Microsoft_Office_Outlook_%282018–present%29.svg/826px-Microsoft_Office_Outlook_%282018–present%29.svg.png" width="40px"></div>
+
+<p><strong>From:</strong> enquiries@hse.gov.uk
+  <br><strong>To:</strong> joebloggs@account.co.uk
+  <br><strong>Subject:</strong> Acme House registration
+</p>
+
+{% from "govuk/components/header/macro.njk" import govukHeader %}
+{{ govukHeader({
+  homepageUrl: "#"
+}) }}
+
+<div class="govuk-!-padding-bottom-5"></div>
+
+<h1 class="govuk-heading-xl">Your building registration application</h1>
+
+<p>We have recieved your application to register:</p>
+
+<p><strong>Acme House</strong>
+<br>Acme Road, London, SW32 9KL</p>
+
+<h2 class="govuk-heading-l">Application number</h2>
+
+<p><strong>BSR-00001</strong></p>
+
+<p>Keep this safe. You may need it if you contact us about your application.</p>
+
+<h2 class="govuk-heading-l">What happens next</h2>
+
+<p>We’ll look at your application and contact you when we have made a decision.</p>
+
+<p>We may also contact you if we need further information.</p>
+
+<p>We’re registering all the high-rise buildings in England. This is likely to take several months. So you might not hear from us for a while.</p>
+
+<p>Do not worry. We have your application.</p>
+
+<h2 class="govuk-heading-l">Why you got this email</h2>
+
+<p>You completed an application to register a high-rise building with the Building Safety Regulator.</p>
+
+<p>From Health and Safety Executive</p>
+
+<p>You can <a href="#">register another high-rise building</a> at any time.</p>
+
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+  {{ govukButton({
+    text: "Return to service",
+    href: "/confirm",
+    classes: "govuk-button--secondary"
+  }) }}
+
+{% endblock %}

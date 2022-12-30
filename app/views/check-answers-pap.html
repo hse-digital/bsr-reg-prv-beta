@@ -1,0 +1,147 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <span class="govuk-caption-xl">The principal accountable person</span>
+
+      <h1 class="govuk-heading-xl">Check your answers</h1>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Type
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['pap-type'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/pap/pap-type">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name and address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['pap-name'] }}
+            <br>{{ data['pap-address-line-1'] }}
+            <br>{{ data['pap-address-line-2'] }}
+            <br>{{ data['pap-postcode'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/pap/pap-name-address">
+              Change
+              <span class="govuk-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Named contact name and address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['pap-named-contact-name'] }}
+            <br>{{ data['pap-named-contact-email'] }}
+            <br>{{ data['pap-named-contact-phone'] }}
+            <br>{{ data['pap-named-contact-role'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/pap/pap-named-contact">
+              Change
+              <span class="govuk-visually-hidden"> contact information</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Areas of accountability
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Internal common parts
+            <br>External common parts
+            <br>Surrounding landscape
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/pap/pap-common-parts">
+              Change
+              <span class="govuk-visually-hidden"> contact details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Does anyone have written authorisation to act for the principal accountable person?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Yes
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/pap/pap-authorisation">
+              Change
+              <span class="govuk-visually-hidden"> contact details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name and address of those that can act for the principal acountable person
+          </dt>
+          <dd class="govuk-summary-list__value">
+            ABC Ltd,
+            <br>2 Smith Road
+            <br>Southampton
+            <br>SO40 2LP
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/pap/pap-name-address-offshore">
+              Change
+              <span class="govuk-visually-hidden"> contact details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Contact details of those that can act for the principal accountable person
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Barry Jones
+            <br>barry.jones@jones.co.uk
+            <br>01234 567890
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/pap/pap-named-contact-offshore">
+              Change
+              <span class="govuk-visually-hidden"> contact details</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <form action="/questions/other-dutyholders/ap-type" method="post" novalidate>
+
+        <input type="hidden" name="answers-checked" value="true">
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button>
+
+      </form>
+
+      <p><a href="#">Save and exit this application</a></p>
+
+    </div>
+  </div>
+{% endblock %}

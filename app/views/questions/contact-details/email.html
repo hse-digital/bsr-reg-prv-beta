@@ -1,0 +1,49 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">Your contact details</span>
+
+      <h1 class="govuk-heading-xl">Verify your email address</h1>
+
+      <p>We need to email your application number to you. That number will help you when you need to return to your saved application.</p>
+
+      <p>We will also use this email to verify your account.</p>
+
+      <p>Keep the email safe. It will help you return to your saved application.</p>
+
+      <p>If you do not have an email address, contact us to apply for building registration.</p>
+
+      <form class="form" action="/questions/contact-details/email-code" method="post">
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {{ govukInput({
+          label: {
+            text: "Email address",
+            classes: "govuk-label--s",
+            isPageHeading: false
+          },
+          id: "email",
+          name: "email",
+          value: data['email']
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Send verification email</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,106 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl">Check your answers before continuing</h1>
+
+      <h2 class="govuk-heading-m">Changes since completion</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Change of use
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Yes
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/use-previous/previous-primary-use-boolean.html">
+              Change
+              <span class="govuk-visually-hidden"> contact information</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Year of change of use
+          </dt>
+          <dd class="govuk-summary-list__value">
+            1984
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/use-previous/previous-primary-use-year.html">
+              Change
+              <span class="govuk-visually-hidden"> contact details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Previous primary use
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Office
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/use-previous/previous-use.html">
+              Change
+              <span class="govuk-visually-hidden"> contact details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Material changes
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Asbestos removal
+            <br>Changes to windows
+            <br>Installation, replacement or removal of gas supply to building
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/mat-changes/material-changes">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Year of most recent material change
+          </dt>
+          <dd class="govuk-summary-list__value">
+            1992
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/mat-changes/material-changes-year">
+              Change
+              <span class="govuk-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <form action="/kbi-task-list-end" method="post" novalidate>
+
+        <input type="hidden" name="answers-checked" value="true">
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

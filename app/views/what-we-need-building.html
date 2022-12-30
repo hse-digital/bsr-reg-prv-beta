@@ -1,0 +1,45 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">The building</span>
+
+      <h1 class="govuk-heading-xl">
+        What we need to know about the building
+      </h1>
+
+      <p>In this section of your application, we need some information about the building you're registering.</p>
+
+      <p>You may find it easier to gather this before your start.</p>
+
+      <h2 class="govuk-heading-s">We will ask you about:</h2>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>the best known address for the building, you'll need the postcode or you may be able to find the building on a map</li>
+        <li>any other names, addresses or postcodes for the building</li>
+        <li>the year the building was completed</li>
+      </ul>
+
+      <a href="/questions/building/name" role="button" draggable="false" class="govuk-button data-module="govuk-button">
+        Continue
+      </a>
+
+    </div>
+
+  </div>
+{% endblock %}

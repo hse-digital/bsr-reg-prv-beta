@@ -1,0 +1,56 @@
+{% extends "govuk-prototype-kit/layouts/unbranded.html" %}
+
+{% block pageTitle %}
+  Unbranded page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-!-padding-bottom-5"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Microsoft_Office_Outlook_%282018–present%29.svg/826px-Microsoft_Office_Outlook_%282018–present%29.svg.png" width="40px"></div>
+
+<p><strong>From:</strong> enquiries@hse.gov.uk
+  <br><strong>To:</strong> joebloggs@account.co.uk
+  <br><strong>Subject:</strong> Acme House registration submitted
+</p>
+
+{% from "govuk/components/header/macro.njk" import govukHeader %}
+{{ govukHeader({
+  homepageUrl: "#"
+}) }}
+
+<div class="govuk-!-padding-bottom-5"></div>
+
+  <h1 class="govuk-heading-xl">Your building registration application</h1>
+
+  <p>We have recieved your application to register:</p>
+
+  <p><strong>Acme House</strong>
+  <br>Acme Road, London, SW32 9KL</p>
+
+  <h2 class="govuk-heading-l">We need more information about the building</h2>
+
+  <p>You can return to your application to give us more information about this building.</p>
+
+  <h2 class="govuk-heading-l">Application number</h2>
+
+  <p><strong>BSR-00001</strong></p>
+
+  <p>Keep this safe. You will need it again when you return to your application.</p>
+
+  <p>You may also need it if you contact us.</p>
+
+  <p><a href="/kbi-task-list">Return to your application</a></p>
+
+  <h2 class="govuk-heading-l">Your registration fee</h2>
+
+  <p>We have paid your registration fee of £X. The payment reference is <strong>HDJ2123F</strong>.</p>
+
+  <h2 class="govuk-heading-l">Why you got this email</h2>
+
+  <p>You started an application to register a high-rise building with the Building Safety Regulator.</p>
+
+  <p>From Health and Safety Executive</p>
+
+  <p>You can <a href="#">register another high-rise building</a> at any time.</p>
+
+{% endblock %}

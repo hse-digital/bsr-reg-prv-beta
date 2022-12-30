@@ -1,0 +1,74 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">Other dutyholders</span>
+
+      <form class="form" action="/questions/other-dutyholders/add-another-ap-boolean" method="post">
+
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+        {{ govukCheckboxes({
+          name: "waste",
+          fieldset: {
+            legend: {
+              text: "Which common parts of the building is 'apName' accountable for?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          hint: {
+            text: "Select all that apply."
+          },
+          items: [
+            {
+              value: "carcasses",
+              text: "Internal common parts",
+              hint: {
+                text: "This includes all internal communal areas like stairs, lobbies, corridors, shared amenity areas, internal walls and floors."
+              }
+            },
+            {
+              value: "mines",
+              text: "Maintenance of plant and equipment",
+              hint: {
+                text: "This includes all utlities (like gas, electricity and water), fire alarm, sprinklers, and other fire precautions."
+              }
+            },
+            {
+              value: "farm",
+              text: "External common parts",
+              hint: {
+                text: "This includes the external walls, roof, roof coverings and any loft space."
+              }
+            },
+            {
+              value: "farm",
+              text: "Surrounding landscape",
+              hint: {
+                text: "This includes parking, fire engine access, waste disposal and other stroage areas."
+              }
+            }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+      <p><a href="#">Save and exit this application</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}

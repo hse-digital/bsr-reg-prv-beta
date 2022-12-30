@@ -1,0 +1,137 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Task list template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Provide structural and safety information for Acme House
+      </h1>
+
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Application incomplete</h2>
+      <p class="govuk-body govuk-!-margin-bottom-7">You have completed 0 of 11 sections.</p>
+
+<!-- Andy's groupings -->
+
+      <ol class="app-task-list">
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">1. </span> Check before you start
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="/check-before-start" aria-describedby="uses-at-ground-level-and-above-status">
+                  Check you have the information you need
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag app-task-list__tag" id="walls-information-status">Completed</strong>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">2. </span>Provide structural and safety information about the building
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="/questions/fire/evacuation-policy" aria-describedby="material-changes-status">
+                  Fire and smoke controls
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag app-task-list__tag" id="walls-information-status">Completed</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="/questions/energy-supply-and-storage" aria-describedby="material-changes-status">
+                  Energy supply and storage
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag app-task-list__tag" id="walls-information-status">Completed</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="/questions/ext-features/structural-type" aria-describedby="material-changes-status">
+                  Structural type and materials
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag app-task-list__tag" id="walls-information-status">Completed</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="/questions/connected/connected-buildings-boolean" aria-describedby="material-changes-status">
+                  Connected buildings
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag app-task-list__tag" id="walls-information-status">Completed</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="/questions/roof/roof-type" aria-describedby="material-changes-status">
+                  Roof
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag app-task-list__tag" id="walls-information-status">Completed</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="/questions/stairs/staircases-above-ground" aria-describedby="material-changes-status">
+                  Staircases
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag app-task-list__tag" id="walls-information-status">Completed</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="/questions/walls/external-wall-type" aria-describedby="material-changes-status">
+                  External walls and features
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag app-task-list__tag" id="walls-information-status">Completed</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="/questions/uses-above/primary-use" aria-describedby="material-changes-status">
+                  What the building is used for
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag app-task-list__tag" id="walls-information-status">Completed</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="/questions/mat-changes/material-changes" aria-describedby="material-changes-status">
+                  Changes since completion
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag app-task-list__tag" id="walls-information-status">Completed</strong>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">3. </span> Submit
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="/declaration" aria-describedby="material-changes-status">
+                  Submit
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="fire-and-smoke-provisions-status">Not started yet</strong>
+            </li>
+          </ul>
+        </li>
+
+      </ol>
+    </div>
+  </div>
+
+{% endblock %}

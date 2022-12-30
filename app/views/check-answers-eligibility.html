@@ -1,0 +1,92 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <span class="govuk-caption-xl">Check you need to register</span>
+
+      <h1 class="govuk-heading-xl">Check your answers</h1>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Number of floors
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['number-of-floors'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/eligibility/floors-above">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Building height
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['height'] }} metres
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/eligibility/height">
+              Change
+              <span class="govuk-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Number of residential units
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['number-of-residential-units'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/eligibility/residential-units">
+              Change
+              <span class="govuk-visually-hidden"> contact information</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Are people living in the building?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['are-people-living-in-the-building'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/eligibility/are-people-living-in-the-building">
+              Change
+              <span class="govuk-visually-hidden"> contact details</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <form action="/eligibility-answer" method="post" novalidate>
+
+        <input type="hidden" name="answers-checked" value="true">
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button>
+
+      </form>
+
+      <p><a href="#">Save and exit this application</a></p>
+
+    </div>
+  </div>
+{% endblock %}
