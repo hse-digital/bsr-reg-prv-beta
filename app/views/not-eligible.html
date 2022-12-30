@@ -11,7 +11,7 @@
 {% block content %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-full-width">
 
 <span class="govuk-caption-xl">Check you need to register</span>
 
@@ -21,10 +21,68 @@
         Based on your answers, that building is not eligible to be registered.
       </p>
 
+      <p>In scope buildings must:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>be 18 metres in height or more</li>
+      </ul>
+
+      <p>or:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>have 7 floors or more</li>
+      </ul>
+
+      <p>and:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>have 2 or more residential units that are lived in or will be lived in</li>
+      </ul>
+
+      <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m">Your building</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Measure</th>
+            <th scope="col" class="govuk-table__header">Requirement</th>
+            <th scope="col" class="govuk-table__header">Your building</th>
+            <th scope="col" class="govuk-table__header">Status</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Height</th>
+            <td class="govuk-table__cell">18 metres or more</td>
+            <td class="govuk-table__cell">{{ data['height'] }} metres</td>
+            <td class="govuk-table__cell">Met</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Number of floors</th>
+            <td class="govuk-table__cell">7 or more</td>
+            <td class="govuk-table__cell">{{ data['number-of-floors'] }}</td>
+            <td class="govuk-table__cell">Met</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Residential units</th>
+            <td class="govuk-table__cell">2 or more</td>
+            <td class="govuk-table__cell">{{ data['number-of-residential-units'] }}</td>
+            <td class="govuk-table__cell">Not met</td>
+          </tr>
+        </tbody>
+      </table>
+
       {% from "govuk/components/button/macro.njk" import govukButton %}
       {{ govukButton({
         text: "Check a new building",
-        href: "/start",
+        href: "/questions/eligibility/floors-above"
+      }) }}
+
+      <p>If you still want this to register your application then you can continue, but you may not need to and you will be required to pay the registration fee.</p>
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Continue application",
+        href: "/questions/contact-details/email",
         classes: "govuk-button--secondary"
       }) }}
 

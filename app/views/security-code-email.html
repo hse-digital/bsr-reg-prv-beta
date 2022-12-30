@@ -9,8 +9,8 @@
 <div class="govuk-!-padding-bottom-5"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Microsoft_Office_Outlook_%282018–present%29.svg/826px-Microsoft_Office_Outlook_%282018–present%29.svg.png" width="40px"></div>
 
 <p><strong>From:</strong> enquiries@hse.gov.uk
-  <br><strong>To:</strong> joebloggs@account.co.uk
-  <br><strong>Subject:</strong> Register a high-rise building application number
+  <br><strong>To:</strong> {{ data['email'] }}
+  <br><strong>Subject:</strong> Register a high-rise building security code
 </p>
 
 {% from "govuk/components/header/macro.njk" import govukHeader %}
@@ -20,29 +20,21 @@
 
 <div class="govuk-!-padding-bottom-5"></div>
 
-<h1 class="govuk-heading-xl">Continue your building registration application</h1>
+<h1 class="govuk-heading-xl">Verify your email address</h1>
 
-<p>You can now return to your saved application to register a high-rise building. Your progress will be saved automatically each time you continue on to the next question in your application.</p>
+<p>Your security code is <strong>BSR-00001</strong>.</p>
 
-<h2 class="govuk-heading-l">Keep this email safe</h2>
+<p>Use this security code to verify your email address.</p>
 
-<p>You may need it again when returning to your application.</p>
+<p>You can also use this security code to return to your application for this building at a later date.</p>
 
-<p>The application your started was for a building with:</p>
+<p>This security code is for an application you started for a building with:</p>
 
 <ul class="govuk-list govuk-list--bullet">
-  <li>7 floors</li>
-  <li>18 metres in height</li>
-  <li>2 residential units</li>
+  <li>{{ data['number-of-floors'] }} floors</li>
+  <li>{{ data['height'] }} metres in height</li>
+  <li>{{ data['number-of-residential-units'] }} residential units</li>
 </ul>
-
-<p>Your application number is:</p>
-
-<div class="govuk-inset-text">
-  <p><strong>BSR-00001</strong></p>
-</div>
-
-<p>You will need this number each time you return to your application.</p>
 
 {% from "govuk/components/button/macro.njk" import govukButton %}
 {{ govukButton({

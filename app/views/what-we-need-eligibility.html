@@ -1,0 +1,99 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">Check you need to register</span>
+
+      <h1 class="govuk-heading-xl">
+        What we need to know
+      </h1>
+
+      <p>In this section of your application, we need some information about the building you're registering.</p>
+
+      <p>This will determine if your building is in scope. This information will also be stored with your application so it is important that the information you provide is accurate.</p>
+
+      <p>You may find it easier to gather this before your start.</p>
+
+      <h2 class="govuk-heading-s">We will ask you about:</h2>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>the number of floors from ground level up</li>
+        <li>the height of the building</li>
+        <li>the number of residential units</li>
+        <li>if these residential units are occupied</li>
+      </ul>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Help with the floors to count
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>You'll need to count all floors from ground level to the top of the building. Include:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>the floor at ground level</li>
+            <li>mezzanine floors that are at least half the largest floor area you have counted in the rest of the building</li>
+            <li>the roof - unless it is only used for machinery or as a plant area</li>
+          </ul>
+          <p>Do not count floors that are:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>below ground level</li>
+            <li>only used for machinery or plant rooms</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Help with ground level
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>Ground level is the level of land immediately next to the building. If that land is uneven, it is the lowest part of the land immediately next to the building.</p>
+          <p>Any ceiling below that level is below ground level.</p>
+        </div>
+      </details>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Help with the number of residential units
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>A residential unit is any place where someone could live, including:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>a flat</li>
+            <li>a house</li>
+            <li>a maisonette</li>
+            <li>a student bedroom</li>
+            <li>a room or flat in a house of multiple occupation</li>
+          </ul>
+        </div>
+      </details>
+
+      <a href="/questions/eligibility/floors-above" role="button" draggable="false" class="govuk-button data-module="govuk-button">
+        Continue
+      </a>
+
+    </div>
+
+  </div>
+{% endblock %}

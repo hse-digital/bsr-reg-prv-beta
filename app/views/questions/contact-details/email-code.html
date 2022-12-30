@@ -17,29 +17,31 @@
 
       <h1 class="govuk-heading-xl">Verify your email address</h1>
 
-      <p>We have sent your application number to the email address you gave us, <strong>joe.bloggs@account.co.uk</strong>.</p>
+      <p>We have sent a security code to the email address you gave us, <strong>{{ data['email'] }}</strong>.</p>
 
-      <p>If you cannot find the email, please check your junk or spam folders. If that email address if no longer available, <a href="#">contact us</a>. We will need to reissue your application number.</p>
+      <p>If you cannot find the email, please check your junk or spam folders.</p>
 
-      <p>If you did not get an email, you can <a href="/questions/contact-details/email">resend the email or enter a different email address</a>.</p>
+      <p>If you did not get an email, or wish to use a different email address, you can <a href="/questions/contact-details/email">resend the email or enter a different email address</a>.</p>
+
+      <p> If that email address if no longer available, <a href="#">contact us</a>. We will need to reissue your application number.</p>
 
       <form class="form" action="/questions/contact-details/name" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
-            text: "Application number",
+            text: "Security code",
             classes: "govuk-label--s",
             isPageHeading: false
           },
-          id: "application-number",
-          name: "application-number"
+          id: "security-code",
+          name: "security-code"
         }) }}
 
         {% from "govuk/components/button/macro.njk" import govukButton %}
         {{ govukButton({
           text: "Launch emails",
-          href: "/application-number-email",
+          href: "/security-code-email",
           classes: "govuk-button--secondary"
         }) }}
 

@@ -9,8 +9,8 @@
 <div class="govuk-!-padding-bottom-5"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Microsoft_Office_Outlook_%282018–present%29.svg/826px-Microsoft_Office_Outlook_%282018–present%29.svg.png" width="40px"></div>
 
 <p><strong>From:</strong> enquiries@hse.gov.uk
-  <br><strong>To:</strong> joebloggs@account.co.uk
-  <br><strong>Subject:</strong> Acme House registration submitted
+  <br><strong>To:</strong> {{ data['email'] }}
+  <br><strong>Subject:</strong> Acme House building registration submitted
 </p>
 
 {% from "govuk/components/header/macro.njk" import govukHeader %}
@@ -29,21 +29,19 @@
 
   <h2 class="govuk-heading-l">We need more information about the building</h2>
 
-  <p>You can return to your application to give us more information about this building.</p>
+  <p>We require more information about the structure and fire safety of this building.</p>
 
-  <h2 class="govuk-heading-l">Application number</h2>
+  <p>The security code for this buildings registration application is <strong>BSR-00001</strong>.</p>
 
-  <p><strong>BSR-00001</strong></p>
-
-  <p>Keep this safe. You will need it again when you return to your application.</p>
-
-  <p>You may also need it if you contact us.</p>
+  <p>Keep this safe. You will need it to return to your application and provide us with more information. You must do this by 10th September 2023.</p>
 
   <p><a href="/kbi-task-list">Return to your application</a></p>
 
+  <p>You may also need it if you contact us.</p>
+
   <h2 class="govuk-heading-l">Your registration fee</h2>
 
-  <p>We have paid your registration fee of £X. The payment reference is <strong>HDJ2123F</strong>.</p>
+  <p>You have paid your registration fee of £X. The payment reference is <strong>HDJ2123F</strong>.</p>
 
   <h2 class="govuk-heading-l">Why you got this email</h2>
 

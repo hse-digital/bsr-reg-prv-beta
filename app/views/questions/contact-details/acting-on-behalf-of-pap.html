@@ -15,29 +15,40 @@
 
       <span class="govuk-caption-xl">Your contact details</span>
 
+      <h1 class="govuk-heading-xl">Are you the principal accountable person?</h1>
+
       <form class="form" action="/check-answers-contact-details" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
         {{ govukRadios({
-          name: "acting-on-behalf-of-pap",
-          value: data['acting-on-behalf-of-pap'],
+          name: "are-you-the-pap",
+          value: data['are-you-the-pap'],
           fieldset: {
             legend: {
-              text: "Are you acting on behalf of the principal accountable person?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--xl"
             }
           },
           items: [
             {
               value: "Yes",
-              text: "Yes"
+              text: "Yes, I am the principal accountable person"
             },
             {
               value: "No",
-              text: "No"
+              text: "No, I am an agent acting on behalf of the principal accountable person"
             }
           ]
+        }) }}
+
+        {% from "govuk/components/details/macro.njk" import govukDetails %}
+        {{ govukDetails({
+          summaryText: "Help with principal accountable person",
+          text: "The principal accountable person is the sole person responsible for the building."
+        }) }}
+
+        {% from "govuk/components/details/macro.njk" import govukDetails %}
+        {{ govukDetails({
+          summaryText: "Help with agent",
+          text: "An agent is someone who has written permission to act on behalf of the principal accountable person."
         }) }}
 
         <button class="govuk-button" data-module="govuk-button">Save and continue</button>

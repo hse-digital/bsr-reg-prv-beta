@@ -13,17 +13,23 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+      {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+      {% set html %}
+        <p class="govuk-notification-banner__heading">
+          Based on your answers, your building is in scope and therefore we need more information to register that building.
+        </p>
+      {% endset %}
+      {{ govukNotificationBanner({
+        html: html
+      }) }}
+
       <span class="govuk-caption-xl">Your contact details</span>
 
       <h1 class="govuk-heading-xl">Verify your email address</h1>
 
-      <p>We need to email your application number to you. That number will help you when you need to return to your saved application.</p>
+      <p>To secure your application and allow you to return to it at a later date, we need to verify your email address. To do this, we will send you a security code.</p>
 
-      <p>We will also use this email to verify your account.</p>
-
-      <p>Keep the email safe. It will help you return to your saved application.</p>
-
-      <p>If you do not have an email address, contact us to apply for building registration.</p>
+      <p>If you do not have an email address, <a href="#">contact us</a> to apply for building registration.</p>
 
       <form class="form" action="/questions/contact-details/email-code" method="post">
 

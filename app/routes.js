@@ -42,6 +42,23 @@ router.post('/returning-code-answer', function (req, res) {
   
   })
 
+// Run this code when a form is submitted to number-of-residential-units-answer
+router.post('/residential-units-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'returning-code'
+  var residentialUnits = req.session.data['number-of-residential-units']
+
+  // Check whether the variable matches a condition
+  if (Number(residentialUnits) < 2){
+    // Send user to next page
+    res.redirect('/check-answers-eligibility')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/questions/eligibility/are-people-living-in-the-building')
+  }
+
+})
+
 // Run this code when a form is submitted to returning-code-answer
 router.post('/eligibility-answer', function (req, res) {
 
@@ -53,7 +70,7 @@ router.post('/eligibility-answer', function (req, res) {
   
     if ((Number(numberOfFloors) >= 7 || Number(buildingHeight) >= 18) && Number(residentialUnits) >= 2 && occupied !== "No and people will not be moving in"){
       // Send user to eligible page
-      res.redirect('/register-task-list-confirm')
+      res.redirect('/questions/contact-details/email')
     } else {
         // Send user to not eligible page
         res.redirect('/not-eligible')

@@ -20,7 +20,7 @@
       </div>
 
       <p>
-        We've emailed your payment reference to <b>joe.bloggs@account.co.uk</b>. If you cannot find the email, check your junk or spam folders.
+        We've emailed your payment reference to <b>{{ data['email'] }}</b>. If you cannot find the email, check your junk or spam folders.
       </p>
 
       {% from "govuk/components/button/macro.njk" import govukButton %}

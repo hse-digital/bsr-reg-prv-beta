@@ -15,16 +15,16 @@
 
       <h1 class="govuk-heading-xl">Returning to a saved application</h1>
 
-      <p>When this registration was started an email was sent to the registrant which contained a reference ID. If that email or reference ID is no longer available to you, call the building safety regulation team on XXXXX XXXXXX and they can reissue it to you.</p>
+      <p>When you began your application we sent you an email with a security code. Use that code here to return to your application.</p>
 
-      <p>The same reference ID emailed can be used for either returning to an incomplete registration or incomplete further building information.</p>
+      <p>If that email or security code is no longer available to you, contact us <a href="#">via our online form</a> or call the building safety regulation team on XXXXX XXXXXX and they can reissue it to you.</p>
 
       <form class="form" action="/returning-code-answer" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
-            text: "Return code",
+            text: "Security code",
             classes: "govuk-label--s",
             isPageHeading: false
           },
