@@ -15,7 +15,7 @@
 
       <span class="govuk-caption-xl">Check you can register</span>
 
-      <h1 class="govuk-heading-xl">What is your responsibility for the building?</h1>
+      <h1 class="govuk-heading-xl">Who are you?</h1>
 
       <form class="form" action="/questions/block-pap/blocks" method="post">
 
@@ -32,7 +32,7 @@
               value: "I am the principal accountable person",
               text: "I am the principal accountable person",
               hint: {
-                text: "The principal accountable person is the sole person responsible for the building as a whole."
+                text: "This includes being part of the organisation who owns or has responsibility for the building"
               }
             },
             {
@@ -45,9 +45,18 @@
             {
               value: "I am a staff member of BSR, registering on behalf of someone on the phone",
               text: "I am a staff member of BSR, registering on behalf of someone on the phone"
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "I am none of the above",
+              text: "I am none of the above"
             }
           ]
         }) }}
+
+        <p>If a building has more than one AP, the AP responsible for the structure and exterior of the building will be the principal accountable person.</p>
 
         <button class="govuk-button" data-module="govuk-button">Save and continue</button>
 
