@@ -1,0 +1,59 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">Check you can register</span>
+
+      <h1 class="govuk-heading-xl">What is your responsibility for the building?</h1>
+
+      <form class="form" action="/questions/block-pap/blocks" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {{ govukRadios({
+          name: "are-you-the-pap",
+          value: data['are-you-the-pap'],
+          fieldset: {
+            legend: {
+            }
+          },
+          items: [
+            {
+              value: "I am the principal accountable person",
+              text: "I am the principal accountable person",
+              hint: {
+                text: "The principal accountable person is the sole person responsible for the building as a whole."
+              }
+            },
+            {
+              value: "I am an agent acting on behalf of the principal accountable person",
+              text: "I am an agent acting on behalf of the principal accountable person",
+              hint: {
+                text: "Agents must have written permission from the principal accountable person to register a building on their behalf"
+              }
+            },
+            {
+              value: "I am a staff member of BSR, registering on behalf of someone on the phone",
+              text: "I am a staff member of BSR, registering on behalf of someone on the phone"
+            }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

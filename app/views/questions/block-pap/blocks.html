@@ -19,17 +19,16 @@
         </span>
       </div>
 
-      <span class="govuk-caption-xl">The building</span>
+      <span class="govuk-caption-xl">Check you can register</span>
 
-      <h1 class="govuk-heading-xl">How many blocks are in the building?</h1>
+      <h1 class="govuk-heading-xl">Check if your structure is a building with multiple blocks</h1>
 
-      <form class="form" action="/questions/building/best-known-address" method="post">
+      <form class="form" action="/check-answers-block-pap" method="post">
 
         {{ govukInput({
           label: {
-          },
-          hint: {
-            text: "A block is a..."
+            text: "How many blocks are in the building?",
+            classes: "govuk-label--m"
           },
           classes: "govuk-input--width-3",
           id: "number-of-blocks",
@@ -40,8 +39,6 @@
         <button class="govuk-button" data-module="govuk-button">Save and continue</button>
 
       </form>
-
-      <p><a href="#">Save and exit this application</a></p>
 
     </div>
   </div>
