@@ -1,0 +1,37 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Tell us about your building
+      </h1>
+
+      <p>You will now be asked a set of questions about how many blocks are in the high-rise building you wish to register.</p>
+
+      <p>If this building has more than one block, you must tell us how these blocks are connected.</p>
+
+      <p>You must also tell us if and how your building is connected to other buildings, even those that you are not accountable for. </p>
+
+      <a href="/questions/block-pap/blocks" role="button" draggable="false" class="govuk-button data-module="govuk-button">
+        Continue
+      </a>
+
+    </div>
+
+  </div>
+{% endblock %}

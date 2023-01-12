@@ -24,32 +24,22 @@
 
 <p>Your security code is <strong>BSR-00001</strong>.</p>
 
-<p>Use this security code to verify your email address.</p>
-
-<p>You can also use this security code to return to your application for this building at a later date.</p>
-
-<p>This security code is for an application you started for a building with:</p>
-
-<ul class="govuk-list govuk-list--bullet">
-  <li>{{ data['number-of-floors'] }} floors</li>
-  <li>{{ data['height'] }} metres in height</li>
-  <li>{{ data['number-of-residential-units'] }} residential units</li>
-</ul>
+<p>Use this security code to verify your email address, or click the button below.</p>
 
 {% from "govuk/components/button/macro.njk" import govukButton %}
 {{ govukButton({
-  text: "Return to your application",
-  href: "/questions/contact-details/email-code",
+  text: "Verify email address",
+  href: "/questions/contact-details/name",
   classes: "govuk-button"
 }) }}
 
-<h2 class="govuk-heading-l">Why you got this email</h2>
+<h2 class="govuk-heading-l">Why you recieved this email</h2>
 
 <p>You started an application to register a high-rise building with the Building Safety Regulator.</p>
 
-<p>From Health and Safety Executive</p>
-
 <p>You can <a href="#">register another high-rise building</a> at any time.</p>
+
+<p>From the Health and Safety Executive</p>
 
   {% from "govuk/components/button/macro.njk" import govukButton %}
   {{ govukButton({

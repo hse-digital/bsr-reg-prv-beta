@@ -13,21 +13,26 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <div class="govuk-!-padding-bottom-5">
-        <span class="govuk-caption-m">
-          <strong>{{ data['building-name'] }}</strong>
-        </span>
-      </div>
+      <h1 class="govuk-heading-xl">Count the connected blocks in the building</h1>
 
-      <h1 class="govuk-heading-xl">How many connected blocks are in the building and connected buildings?</h1>
+      <p>This is will help us understand where a fire could spread to.</p>
 
-      <p>A block is...</p>
+      <p>Blocks could be connected by a walkway, lobby, basement, party wall or party floor.</p>
 
-      <p>Blocks could be connected by... but don't include these connections in your count.</p>
+      <p><b>Include:</b></p>
 
-      <p>Include any blocks or connected buildings, even if you're not responsible for them, and the blocks attached to them, and so on.</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>any blocks in the building you are accountable for</li>
+        <li>any blocks connected to these blocks, even if you're not accountable for them</li>
+        <li>all subsequently connected blocks</li>
+      </ul>
 
-      <p> This is will help us understand where a fire could spread to.</p>
+      <p><b>Don't include:</b></p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>blocks that aren't connected</li>
+        <li>the connections</li>
+      </ul>
 
       <form class="form" action="/check-answers-block-pap" method="post">
 
