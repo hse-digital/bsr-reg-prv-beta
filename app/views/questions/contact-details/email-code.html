@@ -13,17 +13,13 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-xl">Your contact details</span>
-
       <h1 class="govuk-heading-xl">Verify your email address</h1>
 
-      <p>We have sent a security code to the email address you gave us, <strong>{{ data['email'] }}</strong>.</p>
+      <p>We have sent a security code to: <strong>{{ data['email'] }}</strong>.</p>
 
       <p>If you cannot find the email, please check your junk or spam folders.</p>
 
       <p>If you did not get an email, or wish to use a different email address, you can <a href="/questions/contact-details/email">resend the email or enter a different email address</a>.</p>
-
-      <p> If that email address if no longer available, <a href="/contact">contact us</a>. We will need to reissue your application number.</p>
 
       <form class="form" action="/questions/contact-details/name" method="post">
 

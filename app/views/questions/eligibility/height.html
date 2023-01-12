@@ -13,17 +13,17 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-xl">Check you need to register</span>
+      <span class="govuk-caption-xl">Tell us about {block name}</span>
 
-      <h1 class="govuk-heading-xl">Building height</h1>
+      <h1 class="govuk-heading-xl">Block height</h1>
 
-      <p>Measure the building in metres from ground level to the top floor.</p>
+      <p>Measure the block in metres from ground level to the top floor.</p>
 
       <p>Do not measure:</p>
 
       <ul class="govuk-list govuk-list--bullet">
         <li>the roof</li>
-        <li>any floor that is only used for machinery or plant rooms</li>
+        <li>any floor that is used only for machinery or plant rooms</li>
       </ul>
 
       <details class="govuk-details" data-module="govuk-details">
@@ -33,7 +33,7 @@
           </span>
         </summary>
         <div class="govuk-details__text">
-          <p>Ground level is the level of land immediately next to the building. If that land is uneven, it is the lowest part of the land immediately next to the building.</p>
+          <p>Ground level is the level of land immediately next to the block. If the block is on uneven land, count from the lowest part of the land immediately next to the building.</p>
         </div>
       </details>
 
@@ -41,7 +41,7 @@
 
         {{ govukInput({
           label: {
-            text: "Height in metres",
+            text: "Enter the building height in metres",
             classes: "govuk-label--s"
           },
           classes: "govuk-input--width-4",

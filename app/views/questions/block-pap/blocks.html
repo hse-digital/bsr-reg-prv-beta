@@ -19,15 +19,21 @@
         </span>
       </div>
 
-      <span class="govuk-caption-xl">Check you can register</span>
+      <h1 class="govuk-heading-xl">How many connected blocks are in the building and connected buildings?</h1>
 
-      <h1 class="govuk-heading-xl">Check if your structure is a building with multiple blocks</h1>
+      <p>A block is...</p>
+
+      <p>Blocks could be connected by... but don't include these connections in your count.</p>
+
+      <p>Include any blocks or connected buildings, even if you're not responsible for them, and the blocks attached to them, and so on.</p>
+
+      <p> This is will help us understand where a fire could spread to.</p>
 
       <form class="form" action="/check-answers-block-pap" method="post">
 
         {{ govukInput({
           label: {
-            text: "How many blocks are in the building?",
+            text: "Number of blocks",
             classes: "govuk-label--m"
           },
           classes: "govuk-input--width-3",

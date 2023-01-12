@@ -13,8 +13,6 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-xl">Your contact details</span>
-
       <h1 class="govuk-heading-xl">Verify your email address</h1>
 
       <p>To secure your application and allow you to return to it at a later date, we need to verify your email address. To do this, we will send you a security code.</p>
@@ -26,7 +24,7 @@
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
-            text: "Email address",
+            text: "Enter your email address",
             classes: "govuk-label--s",
             isPageHeading: false
           },

@@ -13,7 +13,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-xl">Check you need to register</span>
+      <span class="govuk-caption-xl">Tell us about {block name}</span>
 
       <form class="form" action="/check-answers-eligibility" method="post">
 
@@ -23,7 +23,7 @@
           value: data['are-people-living-in-the-building'],
           fieldset: {
             legend: {
-              text: "Are people living in the building?",
+              text: "Are people living in the block?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--xl"
             }
@@ -34,10 +34,10 @@
               text: "Yes"
             },
             {
-              value: "No, but the building is ready for people to move in",
-              text: "No, but the building is ready for people to move in",
+              value: "No, but the block is ready for people to move in",
+              text: "No, but the block is ready for people to move in",
               hint: {
-                text: "This could be if the building has been refurbished or is new."
+                text: "This could be if the block has been refurbished or is new."
               }
             },
             {

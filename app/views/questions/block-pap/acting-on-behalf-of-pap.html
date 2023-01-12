@@ -17,6 +17,18 @@
 
       <h1 class="govuk-heading-xl">Who are you?</h1>
 
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Help with principal accountable person
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>The principal accountable person is the person or organisation who owns or has responsibility for the building.</p>
+          <p>If the building has more than one accountable person, then the accountable person responsible for the structure and exterior of the building will be the principal accountable person.</p>
+        </div>
+      </details>
+
       <form class="form" action="/questions/block-pap/blocks" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
@@ -55,8 +67,6 @@
             }
           ]
         }) }}
-
-        <p>If a building has more than one AP, the AP responsible for the structure and exterior of the building will be the principal accountable person.</p>
 
         <button class="govuk-button" data-module="govuk-button">Save and continue</button>
 
