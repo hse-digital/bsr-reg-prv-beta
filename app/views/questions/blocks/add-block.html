@@ -13,17 +13,14 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-xl">Tell us about {block name}</span>
-
-      <form class="form" action="/check-answers-eligibility" method="post">
+      <form class="form" action="/check-answers-blocks" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
         {{ govukRadios({
-          name: "are-people-living-in-the-building",
-          value: data['are-people-living-in-the-building'],
+          name: "add-block",
           fieldset: {
             legend: {
-              text: "Are people living in the block?",
+              text: "Are there more blocks in the building?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--xl"
             }
@@ -34,18 +31,8 @@
               text: "Yes"
             },
             {
-              value: "No, but the block is ready for people to move in",
-              text: "No, but the block is ready for people to move in",
-              hint: {
-                text: "This could be if the block has been refurbished or is new."
-              }
-            },
-            {
-              value: "No and people will not be moving in",
-              text: "No and people will not be moving in",
-              hint: {
-                text: "This would be because everyone has moved out while it is being refurbished or because it is going to be demolished."
-              }
+              value: "No",
+              text: "No"
             }
           ]
         }) }}

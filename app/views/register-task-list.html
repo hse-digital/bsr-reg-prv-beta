@@ -7,63 +7,40 @@
 {% block content %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-full">
+
       <h1 class="govuk-heading-xl">
-        Register a high-rise building
+        Register {{ data['building-name'] }}
       </h1>
 
       <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Application incomplete</h2>
-      <p class="govuk-body govuk-!-margin-bottom-7">You have completed 0 of 7 sections.</p>
+      <p class="govuk-body govuk-!-margin-bottom-7">You have completed 0 of 4 sections.</p>
+
+      <p class="govuk-body govuk-!-margin-bottom-7">You can return to this application at any time using the return code we have sent to {{ data['email'] }}.</p>
 
       <ol class="app-task-list">
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">1. </span> Check your eligibility
+            <span class="app-task-list__section-number">1. </span> Prepare application
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="/questions/block-pap/acting-on-behalf-of-pap" aria-describedby="eligibility-status">
-                  Check you can register
+                <a href="/what-we-need-blocks" aria-describedby="eligibility-status">
+                  Provide basic information about the blocks
                 </a>
               </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started yet</strong>
             </li>
-          </ul>
-        </li>
-
-        <li>
-          <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">2. </span> Prepare application
-          </h2>
-          <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                  Provide building size
+                  Tell us about the principal accountable person
               </span>
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Cannot start yet</strong>
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                  Provide your contact details
-              </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Cannot start yet</strong>
-            </li>
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                  Provide building location
-              </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Cannot start yet</strong>
-            </li>
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                  Provide principle accountable person details
-              </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Cannot start yet</strong>
-            </li>
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                Provide details of other dutyholders
+                  Tell us about any other accountable persons
               </span>
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Cannot start yet</strong>
             </li>
@@ -72,7 +49,7 @@
 
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">3. </span> Submit
+            <span class="app-task-list__section-number">2. </span> Submit
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">

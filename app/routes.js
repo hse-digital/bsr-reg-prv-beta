@@ -20,7 +20,7 @@ router.post('/returning-boolean-answer', function (req, res) {
       res.redirect('/returning-code')
     } else {
       // Send user to ineligible page
-      res.redirect('/register-task-list')
+      res.redirect('/questions/building-name')
     }
   
   })
@@ -54,7 +54,7 @@ router.post('/residential-units-answer', function (req, res) {
     res.redirect('/check-answers-eligibility')
   } else {
     // Send user to ineligible page
-    res.redirect('/questions/eligibility/are-people-living-in-the-building')
+    res.redirect('/questions/blocks/are-people-living-in-the-building')
   }
 
 })
