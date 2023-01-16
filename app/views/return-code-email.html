@@ -10,7 +10,7 @@
 
 <p><strong>From:</strong> enquiries@hse.gov.uk
   <br><strong>To:</strong> {{ data['email'] }}
-  <br><strong>Subject:</strong> Register a high-rise building security code
+  <br><strong>Subject:</strong> Register {{ data['building-name'] }} return code
 </p>
 
 {% from "govuk/components/header/macro.njk" import govukHeader %}
@@ -20,18 +20,11 @@
 
 <div class="govuk-!-padding-bottom-5"></div>
 
-<h1 class="govuk-heading-xl">Verify your email address</h1>
+<h1 class="govuk-heading-xl">Your application to register {{ data['building-name'] }}</h1>
 
-<p>Your security code is <strong>648092</strong></p>
+<p>Your return code is <strong>BSR019388477</strong></p>
 
-<p>To verify your email address enter this security code into your application or click the button below.</p>
-
-{% from "govuk/components/button/macro.njk" import govukButton %}
-{{ govukButton({
-  text: "Verify email address",
-  href: "/questions/contact-details/name",
-  classes: "govuk-button"
-}) }}
+<p>To return to your application go to <a href="#">www.hse.gov.uk/register-a-high-rise-building/return</a> and enter this code.</p>
 
 <h2 class="govuk-heading-l">Why you recieved this email</h2>
 
