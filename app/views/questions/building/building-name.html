@@ -13,7 +13,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">Provide a name for the buidling you're registering</h1>
+      <h1 class="govuk-heading-xl">Provide a name for the building</h1>
 
       <p>This will help you to keep track of your application.</p>
 
@@ -24,7 +24,7 @@
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
-            text: "Building name",
+            text: "Enter building name",
             classes: "govuk-label--s",
             isPageHeading: false
           },
@@ -32,15 +32,13 @@
           name: "building-name",
           value: data['building-name'],
           hint: {
-            text: "For example 'The Gherkin', 'The Gherkin at 30 Mary Axe, or '30 Mary Axe'. Or tell us your internal reference number."
+            text: "For example 'The Gherkin', 'The Gherkin at 30 Mary Axe', or '30 Mary Axe'. Or tell us your internal reference number."
           }
         }) }}
 
         <button class="govuk-button" data-module="govuk-button">Save and continue</button>
 
       </form>
-
-      <p><a href="#">Save and exit this application</a></p>
 
     </div>
   </div>

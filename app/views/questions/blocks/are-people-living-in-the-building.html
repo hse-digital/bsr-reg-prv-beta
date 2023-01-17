@@ -15,7 +15,7 @@
 
       <span class="govuk-caption-xl">Provide basic information about the first block</span>
 
-      <form class="form" action="/questions/blocks/add-block" method="post">
+      <form class="form" action="/eligibility-answer" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
         {{ govukRadios({
@@ -51,6 +51,8 @@
         }) }}
 
         <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+        <p><a href="#">Save and exit this application</a></p>
 
       </form>
 

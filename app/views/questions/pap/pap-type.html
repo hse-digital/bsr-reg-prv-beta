@@ -13,11 +13,23 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-xl">The principal accountable person</span>
+      <span class="govuk-caption-xl">Tell us about the principal accountable person</span>
 
-      <h1 class="govuk-heading-xl">Add the principal accountable person</h1>
+      <h1 class="govuk-heading-xl">Who is the principal accountable person?</h1>
 
-      <p>You'll be able to add accountable persons later.</p>
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Help with principal accountable person
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>The principal accountable person is the person or organisation who owns or has responsibility for the building.</p>
+          <p>If the building has more than one accountable person, then the accountable person for the external common parts of the building will be the principal accountable person.</p>
+        </div>
+      </details>
+
+      <p>You'll be able to add other accountable persons later.</p>
 
       <form class="form" action="/questions/pap/pap-name-address" method="post">
 
@@ -26,23 +38,24 @@
 
         {% set otherHtml %}
         {{ govukInput({
-          id: "other-pap-type",
-          name: "other-pap-type",
+          id: "other-pap-type-org",
+          name: "other-pap-type-org",
           type: "text",
           spellcheck: false,
           label: {
-            text: "What type of accountable person are you adding?"
+            text: "What type of organisation is the principle accountable person?"
           }
         }) }}
         {% endset -%}
 
+        {% set orgHtml %}
         {{ govukRadios({
-          name: "pap-type",
-          value: data['pap-type'],
+          name: "pap-type-org",
+          value: data['pap-type-org'],
           fieldset: {
             legend: {
               text: "The principle accountable person is a:",
-              isPageHeading: true,
+              isPageHeading: false,
               classes: "govuk-fieldset__legend--s"
             }
           },
@@ -81,6 +94,32 @@
               conditional: {
                 html: otherHtml
               }
+            }
+          ]
+        }) }}
+        {% endset -%}
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {{ govukRadios({
+          name: "papa-type",
+          fieldset: {
+            legend: {
+              text: "The principle accountable person is",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "organisation",
+              text: "An organisation",
+              conditional: {
+                html: orgHtml
+              }
+            },
+            {
+              value: "organisation",
+              text: "An individual"
             }
           ]
         }) }}

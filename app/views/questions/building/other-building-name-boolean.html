@@ -13,19 +13,23 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-xl">Provide basic information about the blocks</span>
+      <h1 class="govuk-heading-xl">Is the building known by any other names?</h1>
 
-      <form class="form" action="/add-block-boolean-answer" method="post">
+      <p>As well as the buildings best known name, it could have other names.</p>
+
+      {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+      {{ govukInsetText({
+        text: "For example, the London Eye is also known as the Millenium Wheel."
+      }) }}
+
+      <form class="form" action="/other-building-name-boolean-answer" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
         {{ govukRadios({
-          name: "add-block-boolean",
-          id: "add-block-boolean",
+          name: "other-building-name-boolean",
+          value: data['other-building-name-boolean'],
           fieldset: {
             legend: {
-              text: "Are there more blocks in the building?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--xl"
             }
           },
           items: [

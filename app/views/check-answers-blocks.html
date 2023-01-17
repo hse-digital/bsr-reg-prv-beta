@@ -12,11 +12,11 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
-      <span class="govuk-caption-xl">Check you need to register</span>
+      <span class="govuk-caption-xl">Provide basic information about the blocks</span>
 
       <h1 class="govuk-heading-xl">Check your answers</h1>
 
-      <h2 class="govuk-heading-l">{Block name}</h2>
+      <h2 class="govuk-heading-l">First block</h2>
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
@@ -27,7 +27,7 @@
             {{ data['number-of-floors'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/questions/eligibility/floors-above">
+            <a href="/questions/blocks/floors-above">
               Change
               <span class="govuk-visually-hidden"> name</span>
             </a>
@@ -41,7 +41,7 @@
             {{ data['height'] }} metres
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/questions/eligibility/height">
+            <a href="/questions/blocks/height">
               Change
               <span class="govuk-visually-hidden"> date of birth</span>
             </a>
@@ -55,7 +55,7 @@
             {{ data['number-of-residential-units'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/questions/eligibility/residential-units">
+            <a href="/questions/blocks/residential-units">
               Change
               <span class="govuk-visually-hidden"> contact information</span>
             </a>
@@ -69,7 +69,65 @@
             {{ data['are-people-living-in-the-building'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/questions/eligibility/are-people-living-in-the-building">
+            <a href="/questions/blocks/are-people-living-in-the-building">
+              Change
+              <span class="govuk-visually-hidden"> contact details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Year of completion
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['completion-year'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/blocks/completion-year">
+              Change
+              <span class="govuk-visually-hidden"> contact details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Completion certificate issuer
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['completion-certificate-issuer'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/blocks/completion-certificate-issuer">
+              Change
+              <span class="govuk-visually-hidden"> contact details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Completion certificate reference
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['completion-certificate-reference-number'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/blocks/completion-certificate-reference-number">
+              Change
+              <span class="govuk-visually-hidden"> contact details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['building-address-line-1'] }}
+            <br>{{ data['building-address-line-2'] }}
+            <br>{{ data['building-postcode'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/blocks/best-known-address">
               Change
               <span class="govuk-visually-hidden"> contact details</span>
             </a>
@@ -77,7 +135,7 @@
         </div>
       </dl>
 
-      <form action="/eligibility-answer" method="post" novalidate>
+      <form action="/name-blocks" method="post" novalidate>
 
         <input type="hidden" name="answers-checked" value="true">
 

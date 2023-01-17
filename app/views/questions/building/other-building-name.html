@@ -13,24 +13,18 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-xl">Your contact details</span>
+      <form class="form" action="/questions/building/other-building-name-boolean" method="post">
 
-      <h1 class="govuk-heading-xl">Your telephone number</h1>
-
-      <p>We will only use this if we need to contact you about your application.</p>
-
-      <form class="form" action="/questions/contact-details/email" method="post">
-
-        {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
-            text: "Enter your telephone number",
-            classes: "govuk-label--s",
-            isPageHeading: false
+            text: "Enter other building name",
+            classes: "govuk-label--xl",
+            isPageHeading: true
           },
-          id: "phone",
-          name: "phone",
-          value: data['phone']
+          classes: "govuk-input",
+          id: "other-building-name",
+          name: "other-building-name",
+          value: data['other-building-name']
         }) }}
 
         <button class="govuk-button" data-module="govuk-button">Save and continue</button>

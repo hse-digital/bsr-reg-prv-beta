@@ -15,7 +15,9 @@
 
       <span class="govuk-caption-xl">Your contact details</span>
 
-      <h1 class="govuk-heading-xl">Your name</h1>
+      <h1 class="govuk-heading-xl">Your full name</h1>
+
+      <p>We will only use this if we need to contact you about your application.</p>
 
       <form class="form" action="/questions/contact-details/phone" method="post">
 
@@ -28,10 +30,7 @@
           },
           id: "name",
           name: "name",
-          value: data['name'],
-          hint: {
-            text: "We will only use this if we need to contact you about your application."
-          }
+          value: data['name']
         }) }}
 
         <button class="govuk-button" data-module="govuk-button">Save and continue</button>

@@ -13,19 +13,16 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <div class="govuk-!-padding-bottom-5">
-        <span class="govuk-caption-m">
-          <strong>{{ data['building-name'] }}</strong>, {{ data['address-line-1'] }}, {{ data['address-line-2'] }}, {{ data['postcode'] }}
-        </span>
-      </div>
+      <span class="govuk-caption-xl">Provide basic information about the first block</span>
 
-      <span class="govuk-caption-xl">The building</span>
+      <h1 class="govuk-heading-xl">Does the block have another address or postcode?</h1>
 
-      <h1 class="govuk-heading-xl">Does the building have another name, address or postcode?</h1>
+      <p>As well as the block's best known address, it could have other addresses or postcodes.</p>
 
-      <p>As well as the building's best known address, it could have other names, addresses or postcodes. For example, the London Eye is also known as the Millenium Wheel.</p>
-
-      <p>Only tell us about other names, addresses or postcodes for this building. Do not tell us about other buildings that are connected to this one.</p>
+      {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+      {{ govukInsetText({
+        text: "For example, some units in the block might be served by a different main entrance to others, and therefore may have a different street address and postcode."
+      }) }}
 
       <form class="form" action="/other-name-address-postcode-boolean-answer" method="post">
 
