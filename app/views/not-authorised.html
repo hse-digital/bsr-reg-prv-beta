@@ -1,0 +1,33 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Confirmation page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">You are not authorised to provide us with this information</h1>
+
+      <p>
+        Only the principal accountable person, members of the principal accountable person organisation or someone they have given written permission to can provide this information.
+      </p>
+
+      <p>Please get in touch with the principal accountable person to make them aware that they must apply to register the building.</p>
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Check a new building",
+        href: "/questions/building/buidling-name"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

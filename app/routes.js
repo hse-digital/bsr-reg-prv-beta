@@ -145,3 +145,20 @@ router.post('/add-block-boolean-answer', function (req, res) {
   }
 
 })
+
+// Run this code when a form is submitted to pap-type-answer
+router.post('/pap-type-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'returning-boolean'
+  var papType = req.session.data['pap-type']
+
+  // Check whether the variable matches a condition
+  if (papType == "Organisation"){
+    // Send user to next page
+    res.redirect('/questions/pap/pap-org-name')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/questions/pap/who-are-you-individual')
+  }
+
+})

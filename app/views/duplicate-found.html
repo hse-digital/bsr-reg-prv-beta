@@ -1,0 +1,68 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Confirmation page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">It looks like someone has already registered this building</h1>
+
+      <p>The address you have told us about for one of your blocks matches that of a building that has already been registered.</p>
+
+      <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Building name</th>
+            <td class="govuk-table__cell">10 BP
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Block address</th>
+            <td class="govuk-table__cell">10 Bressenden Place
+              <br>London
+              <br>SW1E 5DN
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Block details</th>
+            <td class="govuk-table__cell">15 floors
+              <br>32 metres
+              <br>50 residential units
+              <br>People will be living in the block
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>To check if it was you that has provided BSR with this information, check your emails for a completion email from <strong>enquiries@hse.gov.uk</strong>.</p>
+
+      <p>If you don't believe anyone else is authorised to provide the information for this building then <a href="/contact">contact us</a>.</p>
+
+      <h2 class="govuk-heading-m">If you believe that you still need to provide information for this building</h2>
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Continue application anyway",
+        href: "/blocks-in-scope"
+      }) }}
+
+      <h2 class="govuk-heading-m">If you know that you have already provided information for this building</h2>
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Check a new building",
+        href: "/start"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

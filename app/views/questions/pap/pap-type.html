@@ -24,14 +24,14 @@
           </span>
         </summary>
         <div class="govuk-details__text">
-          <p>The principal accountable person is the person or organisation who owns or has responsibility for the building.</p>
+          <p>The principal accountable person is the person or organisation who owns or has accountability for the building.</p>
           <p>If the building has more than one accountable person, then the accountable person for the external common parts of the building will be the principal accountable person.</p>
         </div>
       </details>
 
       <p>You'll be able to add other accountable persons later.</p>
 
-      <form class="form" action="/questions/pap/pap-name-address" method="post">
+      <form class="form" action="/pap-type-answer" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
         {% from "govuk/components/input/macro.njk" import govukInput %}
@@ -101,7 +101,7 @@
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
         {{ govukRadios({
-          name: "papa-type",
+          name: "pap-type",
           fieldset: {
             legend: {
               text: "The principle accountable person is",
@@ -111,14 +111,14 @@
           },
           items: [
             {
-              value: "organisation",
+              value: "Organisation",
               text: "An organisation",
               conditional: {
                 html: orgHtml
               }
             },
             {
-              value: "organisation",
+              value: "Individual",
               text: "An individual"
             }
           ]

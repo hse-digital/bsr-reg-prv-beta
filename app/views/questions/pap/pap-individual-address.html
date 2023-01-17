@@ -13,21 +13,13 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-xl">The principal accountable person</span>
+      <span class="govuk-caption-xl">Tell us about the principal accountable person</span>
 
-      <h1 class="govuk-heading-xl">{{ data['pap-type'] }} name and address</h1>
+      <h1 class="govuk-heading-xl">Principal accountable person address</h1>
 
       <p>The address must be in England or Wales.</p>
 
-      <form class="form" action="/questions/pap/pap-named-contact" method="post">
-
-        <div class="govuk-form-group">
-          <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s" for="event-name">
-              {{ data['pap-type'] }} name
-            </label>
-          </h1>
-          <input class="govuk-input" id="pap-name" name="pap-name" type="text" value="{{ data['pap-name'] }}">
-        </div>
+      <form class="form" action="/pap-individual-address-answer" method="post">
 
         {{ govukInput({
           label: {

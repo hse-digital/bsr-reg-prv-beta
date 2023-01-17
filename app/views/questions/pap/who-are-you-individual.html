@@ -13,21 +13,9 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-xl">Check you can register</span>
+      <span class="govuk-caption-xl">Tell us about the principal accountable person</span>
 
       <h1 class="govuk-heading-xl">Who are you?</h1>
-
-      <details class="govuk-details" data-module="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            Help with principal accountable person
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          <p>The principal accountable person is the person or organisation who owns or has responsibility for the building.</p>
-          <p>If the building has more than one accountable person, then the accountable person responsible for the structure and exterior of the building will be the principal accountable person.</p>
-        </div>
-      </details>
 
       <form class="form" action="/questions/block-pap/blocks" method="post">
 
@@ -42,17 +30,11 @@
           items: [
             {
               value: "I am the principal accountable person",
-              text: "I am the principal accountable person",
-              hint: {
-                text: "This includes being part of the organisation who owns or has responsibility for the building"
-              }
+              text: "I am the principal accountable person"
             },
             {
-              value: "I am an agent acting on behalf of the principal accountable person",
-              text: "I am an agent acting on behalf of the principal accountable person",
-              hint: {
-                text: "Agents must have written permission from the principal accountable person to register a building on their behalf"
-              }
+              value: "I have written authorisation from the principal accountable person to register this building on their behalf",
+              text: "I have written authorisation from the principal accountable person to register this building on their behalf"
             },
             {
               value: "I am a staff member of BSR, registering on behalf of someone on the phone",

@@ -17,19 +17,20 @@
 
       <form class="form" action="/questions/pap/pap-type" method="post">
 
-        <h2 class="govuk-heading-l">In scope blocks</h2>
-
-        <p>We need more information about these blocks because they are in scope. Please provide a name for each of them.</p>
+        <p>Please provide a name for each of your in-scope blocks so you can identify which block we are asking you about later.</p>
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
-            text: "Name the first block",
+            text: "Enter a name for the first block",
             classes: "govuk-label--s",
             isPageHeading: true
           },
           hint: {
-            text: "10 floors, 22 metres, 30 residential units, people are living in the block."
+            text: "6 floors, 
+            22 metres high, 
+            30 residential units, 
+            people are living in the block"
           },
           id: "event-name",
           name: "event-name"
@@ -38,40 +39,19 @@
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
-            text: "Name the second block",
+            text: "Enter a name for the second block",
             classes: "govuk-label--s",
             isPageHeading: true
           },
           hint: {
-            text: "10 floors, 22 metres, 30 residential units, people will be living in the block."
+            text: "15 floors, 
+            32 metres high, 
+            50 residential units, 
+            people will be living in the block"
           },
           id: "event-name",
           name: "event-name"
         }) }}
-
-        <h2 class="govuk-heading-l">Out of scope blocks</h2>
-
-        <p>We don't need any more information on these blocks because they are not in scope:</p>
-
-        <table class="govuk-table">
-          <tbody class="govuk-table__body">
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Third block</th>
-              <td class="govuk-table__cell">6 floors
-                <br>22 metres
-                <br>0 residential units
-              </td>
-            </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Forth block</th>
-              <td class="govuk-table__cell">15 floors
-                <br>32 metres
-                <br>50 resdiential units
-                <br>People will not be living in the block
-              </td>
-            </tr>
-          </tbody>
-        </table>
 
         <button class="govuk-button" data-module="govuk-button">Save and continue</button>
 
