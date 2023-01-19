@@ -12,22 +12,24 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
-      <span class="govuk-caption-xl">Provide basic information about the blocks</span>
+      <span class="govuk-caption-xl">Tell us about other accountable persons</span>
 
       <h1 class="govuk-heading-xl">Check your answers</h1>
 
-      <h2 class="govuk-heading-l">First block</h2>
+      <p>These are in addition to the principal accountable person <strong>{{ data['pap-org-name'] }}</strong></p>
+
+      <h2 class="govuk-heading-m">First accountable person</h2>
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Number of floors
+            Type
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['number-of-floors'] }}
+            Individual
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/questions/blocks/floors-above">
+            <a href="/questions/aps/ap-type">
               Change
               <span class="govuk-visually-hidden"> name</span>
             </a>
@@ -35,83 +37,15 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Height
+            Contact details
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['height'] }} metres
+            name
+            <br>email
+            <br>phone
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/questions/blocks/height">
-              Change
-              <span class="govuk-visually-hidden"> date of birth</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Number of residential units
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['number-of-residential-units'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="/questions/blocks/residential-units">
-              Change
-              <span class="govuk-visually-hidden"> contact information</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Are people living in the block?
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['are-people-living-in-the-building'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="/questions/blocks/are-people-living-in-the-building">
-              Change
-              <span class="govuk-visually-hidden"> contact details</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Year of completion
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['completion-year'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="/questions/blocks/completion-year">
-              Change
-              <span class="govuk-visually-hidden"> contact details</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Completion certificate issuer
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['completion-certificate-issuer'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="/questions/blocks/completion-certificate-issuer">
-              Change
-              <span class="govuk-visually-hidden"> contact details</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Completion certificate reference
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['completion-certificate-reference-number'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="/questions/blocks/completion-certificate-reference-number">
+            <a href="/questions/aps/ap-individual-details">
               Change
               <span class="govuk-visually-hidden"> contact details</span>
             </a>
@@ -122,12 +56,112 @@
             Address
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['building-address-line-1'] }}
-            <br>{{ data['building-address-line-2'] }}
-            <br>{{ data['building-postcode'] }}
+            {{ data['ap-address-line-1'] }}
+            <br>{{ data['ap-address-line-2'] }}
+            <br>{{ data['ap-postcode'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/questions/blocks/best-known-address">
+            <a href="/questions/aps/ap-individual-address">
+              Change
+              <span class="govuk-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Areas of accountability
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <strong>Block A</strong>
+            <br>Surrounding areas
+            <p>            <br><strong>Block C</strong>
+              <br>Internal common parts
+              <br>Surrounding areas
+            </p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/aps/ap-areas">
+              Change
+              <span class="govuk-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">Second accountable person</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Type
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Organisation
+            <br>{{ data['ap-org-type'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/pap/pap-type">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['ap-org-name'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/aps/ap-org-name">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['ap-address-line-1'] }}
+            <br>{{ data['ap-address-line-2'] }}
+            <br>{{ data['ap-postcode'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/aps/ap-org-address">
+              Change
+              <span class="govuk-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Areas of accountability
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <strong>Block A</strong>
+            <br>Internal common parts
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/aps/ap-areas">
+              Change
+              <span class="govuk-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Named contact details
+          </dt>
+          <dd class="govuk-summary-list__value">
+            name
+            <br>email
+            <br>phone
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/aps/ap-org-named-contact-details">
               Change
               <span class="govuk-visually-hidden"> contact details</span>
             </a>
@@ -135,7 +169,7 @@
         </div>
       </dl>
 
-      <form action="/blocks-in-scope-some" method="post" novalidate>
+      <form action="/registration-declaration" method="post" novalidate>
 
         <input type="hidden" name="answers-checked" value="true">
 

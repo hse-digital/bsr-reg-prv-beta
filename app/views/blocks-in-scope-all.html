@@ -1,0 +1,66 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">All of your blocks are in scope</h1>
+
+      <form class="form" action="/name-blocks" method="post">
+
+        <p>We need more information about these blocks because they are in scope.</p>
+
+        <table class="govuk-table">
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">First block</th>
+              <td class="govuk-table__cell">6 floors
+                <br>22 metres high
+                <br>30 residential units
+                <br>People are living in the block
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Second block</th>
+              <td class="govuk-table__cell">15 floors
+                <br>32 metres high
+                <br>50 residential units
+                <br>People will be living in the block
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Third block</th>
+              <td class="govuk-table__cell">6 floors
+                <br>22 metres high
+                <br>10 residential units
+                <br>People are living in the block
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Forth block</th>
+              <td class="govuk-table__cell">15 floors
+                <br>32 metres high
+                <br>50 resdiential units
+                <br>People will be living in the block
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">Tell us about the principal accountable person</span>
+
+      <h1 class="govuk-heading-xl">Have you given written authorisation to someone else for them to act on your behalf?</h1>
+
+      <p>They will recieve official correspondence instead of you.</p>
+
+      <form class="form" action="/pap-act-on-behalf-boolean-answer" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {{ govukRadios({
+          name: "where-do-you-live",
+          fieldset: {
+            legend: {
+            }
+          },
+          items: [
+            {
+              value: "Yes",
+              text: "Yes"
+            },
+            {
+              value: "No",
+              text: "No"
+            }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+      <p><a href="#">Save and exit this application</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}

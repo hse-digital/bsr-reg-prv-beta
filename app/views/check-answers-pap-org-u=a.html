@@ -12,7 +12,7 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
-      <span class="govuk-caption-xl">The principal accountable person</span>
+      <span class="govuk-caption-xl">Tell us about the principal accountable person</span>
 
       <h1 class="govuk-heading-xl">Check your answers</h1>
 
@@ -22,7 +22,8 @@
             Type
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['pap-type'] }}
+            Organisation
+            <br>{{ data['pap-org-type'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="/questions/pap/pap-type">
@@ -33,11 +34,24 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Name and address
+            Organisation name
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['pap-name'] }}
-            <br>{{ data['pap-address-line-1'] }}
+            {{ data['pap-org-name'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/pap/pap-type">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Organisation address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['pap-address-line-1'] }}
             <br>{{ data['pap-address-line-2'] }}
             <br>{{ data['pap-postcode'] }}
           </dd>
@@ -50,7 +64,21 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Named contact name and address
+            Who are you?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['who-are-you-individual'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/pap/pap-type">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Lead contact details
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['pap-named-contact-name'] }}
@@ -67,41 +95,10 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Areas of accountability
+            Your address
           </dt>
           <dd class="govuk-summary-list__value">
-            Internal common parts
-            <br>External common parts
-            <br>Surrounding landscape
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="/questions/pap/pap-common-parts">
-              Change
-              <span class="govuk-visually-hidden"> contact details</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Does anyone have written authorisation to act for the principal accountable person?
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Yes
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="/questions/pap/pap-authorisation">
-              Change
-              <span class="govuk-visually-hidden"> contact details</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Name and address of those that can act for the principal acountable person
-          </dt>
-          <dd class="govuk-summary-list__value">
-            ABC Ltd,
-            <br>2 Smith Road
+            2 Smith Road
             <br>Southampton
             <br>SO40 2LP
           </dd>
@@ -112,25 +109,9 @@
             </a>
           </dd>
         </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Contact details of those that can act for the principal accountable person
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Barry Jones
-            <br>barry.jones@jones.co.uk
-            <br>01234 567890
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="/questions/pap/pap-named-contact-offshore">
-              Change
-              <span class="govuk-visually-hidden"> contact details</span>
-            </a>
-          </dd>
-        </div>
       </dl>
 
-      <form action="/questions/other-dutyholders/ap-type" method="post" novalidate>
+      <form action="/questions/aps/add-ap" method="post" novalidate>
 
         <input type="hidden" name="answers-checked" value="true">
 

@@ -13,18 +13,22 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-xl">Other dutyholders</span>
+      <span class="govuk-caption-xl">Tell us about other accountable persons</span>
 
-      <form class="form" action="/check-answers-other-dutyholders" method="post">
+      <h1 class="govuk-heading-xl">Add another accountable person</h1>
+
+      <p>If anyone other than {{ data['pap-name'] }} is accountable for any of the internal common parts, surrounding parts or plant machinery of any of the blocks then you should tell us about them here.</p>
+
+      <form class="form" action="/add-ap-answers" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
         {{ govukRadios({
           name: "add-another-ap",
           fieldset: {
             legend: {
-              text: "Do you need to add another accountable person?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--xl"
+              text: "Add another accountable person?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
             }
           },
           items: [

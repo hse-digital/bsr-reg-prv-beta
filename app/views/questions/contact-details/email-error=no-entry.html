@@ -13,6 +13,17 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+      {% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+          {
+            text: "Enter an email address in the correct format, like name@example.com",
+            href: "#email"
+          }
+        ]
+      }) }}
+
       <span class="govuk-caption-xl">Your contact details</span>
 
       <h1 class="govuk-heading-xl">Your email address</h1>
@@ -33,9 +44,12 @@
           hint: {
             text: "We will use this to confirm when your application has been submitted and contact you in the future about your applicaton"
           },
+          errorMessage: {
+            text: "Enter an email address in the correct format, like name@example.com"
+          },
           id: "email",
           name: "email",
-          value: data['email']
+          value: "example.hse.uk"
         }) }}
 
         <button class="govuk-button" data-module="govuk-button">Send verification email</button>

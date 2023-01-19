@@ -98,15 +98,28 @@ router.post('/eligibility-answer', function (req, res) {
   // Run this code when a form is submitted to number-of-residential-units-answer
 router.post('/completion-year-answer', function (req, res) {
 
-  // Make a variable and give it the value from 'returning-code'
   var completionYear = req.session.data['completion-year-radio']
 
-  // Check whether the variable matches a condition
   if (completionYear == "The block has not yet been completed") {
-    // Send user to next page
+
     res.redirect('/questions/blocks/add-block')
+
   } else {
-    // Send user to ineligible page
+
+    res.redirect('/completion-year-unknown-answer')
+  }
+
+})
+
+router.post('/completion-year-unknown-answer', function (req, res) {
+
+  var completionYearUnknown = req.session.data['completion-year-radio']
+
+  if (completionYear == "I don't know the exact year") {
+    res.redirect('/questions/blocks/completion-year-band')
+
+  } else {
+
     res.redirect('/questions/blocks/completion-certificate-issuer')
   }
 

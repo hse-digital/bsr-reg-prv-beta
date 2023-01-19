@@ -13,46 +13,13 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-xl">Other dutyholders</span>
+      <span class="govuk-caption-xl">Tell us about other accountable persons</span>
 
-      <h1 class="govuk-heading-xl">Accountable person name and contact details</h1>
+      <h1 class="govuk-heading-xl">Accountable person organisation address</h1>
 
       <p>The address must be in England or Wales.</p>
 
-      <form class="form" action="/questions/other-dutyholders/ap-common-parts" method="post">
-
-        {{ govukInput({
-          label: {
-            text: "Full name",
-            classes: "govuk-label--s"
-          },
-          classes: "govuk-input",
-          id: "name",
-          name: "name"
-        }) }}
-
-        {{ govukInput({
-          label: {
-            text: "Email address",
-            classes: "govuk-label--s"
-          },
-          classes: "govuk-input",
-          id: "name",
-          name: "name",
-          hint: {
-            text: "This accountable person will be notified on submission"
-          }
-        }) }}
-
-        {{ govukInput({
-          label: {
-            text: "Telephone",
-            classes: "govuk-label--s"
-          },
-          classes: "govuk-input",
-          id: "postcode",
-          name: "postcode"
-        }) }}
+      <form class="form" action="/questions/aps/ap-areas" method="post">
 
         {{ govukInput({
           label: {
@@ -60,8 +27,8 @@
             classes: "govuk-label--s"
           },
           classes: "govuk-input",
-          id: "postcode",
-          name: "postcode"
+          id: "search-pap-address",
+          name: "search-pap-address"
         }) }}
 
         {% from "govuk/components/button/macro.njk" import govukButton %}
@@ -122,8 +89,8 @@
                 text: "Address line 1",
                 classes: "govuk-label--s"
               },
-              id: "postcode",
-              name: "postcode"
+              id: "pap-address-line-1",
+              name: "pap-address-line-1"
             }) }}
 
             {{ govukInput({
@@ -131,8 +98,8 @@
                 text: "Address line 2",
                 classes: "govuk-label--s"
               },
-              id: "postcode",
-              name: "postcode"
+              id: "pap-address-line-2",
+              name: "pap-address-line-2"
             }) }}
 
             {{ govukInput({
@@ -141,8 +108,8 @@
                 classes: "govuk-label--s"
               },
               classes: "govuk-input--width-10",
-              id: "postcode",
-              name: "postcode"
+              id: "pap-postcode",
+              name: "pap-postcode"
             }) }}
 
           </div>

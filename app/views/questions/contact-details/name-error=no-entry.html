@@ -13,24 +13,37 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+      {% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+          {
+            text: "Enter your full name",
+            href: "#name"
+          }
+        ]
+      }) }}
+
       <span class="govuk-caption-xl">Your contact details</span>
 
-      <h1 class="govuk-heading-xl">Your telephone number</h1>
+      <h1 class="govuk-heading-xl">Your full name</h1>
 
       <p>We will only use this if we need to contact you about your application.</p>
 
-      <form class="form" action="/questions/contact-details/email" method="post">
+      <form class="form" action="/questions/contact-details/phone" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
-            text: "Enter a UK telephone number",
+            text: "Enter your full name",
             classes: "govuk-label--s",
             isPageHeading: false
           },
-          id: "phone",
-          name: "phone",
-          value: data['phone']
+          id: "name",
+          name: "name",
+          errorMessage: {
+            text: "Enter your full name"
+          }
         }) }}
 
         <button class="govuk-button" data-module="govuk-button">Save and continue</button>

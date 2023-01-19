@@ -1,0 +1,67 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+          {
+            text: "Enter your 6 digit security code",
+            href: "#security-code"
+          }
+        ]
+      }) }}
+
+      <span class="govuk-caption-xl">Your contact details</span>
+
+      <h1 class="govuk-heading-xl">Verify your email address</h1>
+
+      <p>We have sent a 6 digit security code to: <strong>{{ data['email'] }}</strong>.</p>
+
+      <p>If you cannot find the email, please check your junk or spam folders.</p>
+
+      <p>If you did not get an email, or wish to use a different email address, you can <a href="/questions/contact-details/email">resend the email or enter a different email address</a>.</p>
+
+      <form class="form" action="/register-task-list" method="post">
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {{ govukInput({
+          label: {
+            text: "Enter your 6 digit security code",
+            classes: "govuk-label--s",
+            isPageHeading: false
+          },
+          errorMessage: {
+            text: "Enter your 6 digit security code"
+          },
+          id: "security-code",
+          name: "security-code"
+        }) }}
+
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+        {{ govukButton({
+          text: "Launch emails",
+          href: "/security-code-email",
+          classes: "govuk-button--secondary"
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

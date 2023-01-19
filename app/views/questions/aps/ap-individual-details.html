@@ -1,0 +1,58 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">Tell us about other accountable persons</span>
+
+      <h1 class="govuk-heading-xl">Provide contact details for this accountable person</h1>
+
+      <form class="form" action="/questions/ap/ap-individual-address" method="post">
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {{ govukInput({
+          label: {
+            text: "Enter their full name"
+          },
+          id: "pap-individual-name",
+          name: "pap-individual-name"
+        }) }}
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {{ govukInput({
+          label: {
+            text: "Enter their phone number"
+          },
+          id: "pap-individual-phone",
+          name: "pap-individual-phone"
+        }) }}
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {{ govukInput({
+          label: {
+            text: "Enter their email address"
+          },
+          id: "pap-individual-email",
+          name: "pap-individual-email"
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+      <p><a href="#">Save and exit this application</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}

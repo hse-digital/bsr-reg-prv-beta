@@ -13,41 +13,43 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-xl">Other dutyholders</span>
+      <span class="govuk-caption-xl">Tell us about other accountable persons</span>
 
-      <h1 class="govuk-heading-xl">Add another accountable person</h1>
+      <h1 class="govuk-heading-xl">What is this accountable person?</h1>
 
-      <p>You'll be able to add more accountable persons later.</p>
+      <p>Tell us about one of the accountable persons. You'll be able to add more accountable persons later.</p>
 
-      <form class="form" action="/questions/other-dutyholders/ap-name-address" method="post">
+      <form class="form" action="/ap-type-answer" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
         {% from "govuk/components/input/macro.njk" import govukInput %}
 
         {% set otherHtml %}
         {{ govukInput({
-          id: "contact-by-email",
-          name: "contact-by-email",
+          id: "other-ap-type-org",
+          name: "other-ap-type-org",
           type: "text",
           spellcheck: false,
           label: {
-            text: "What type of accountable person are you adding?"
+            text: "What type of organisation is this accountable person?"
           }
         }) }}
         {% endset -%}
 
+        {% set orgHtml %}
         {{ govukRadios({
-          name: "where-do-you-live",
+          name: "ap-type-org",
+          value: data['ap-type-org'],
           fieldset: {
             legend: {
               text: "This accountable person is a:",
-              isPageHeading: true,
+              isPageHeading: false,
               classes: "govuk-fieldset__legend--s"
             }
           },
           items: [
             {
-              value: "building-owner-individual",
+              value: "Building owner (individual)",
               text: "Building owner (individual)"
             },
             {
@@ -80,6 +82,32 @@
               conditional: {
                 html: otherHtml
               }
+            }
+          ]
+        }) }}
+        {% endset -%}
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {{ govukRadios({
+          name: "pap-type",
+          fieldset: {
+            legend: {
+              text: "This accountable person is",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "Organisation",
+              text: "An organisation",
+              conditional: {
+                html: orgHtml
+              }
+            },
+            {
+              value: "Individual",
+              text: "An individual"
             }
           ]
         }) }}

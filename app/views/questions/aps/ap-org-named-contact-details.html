@@ -1,0 +1,64 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">Tell us about other accountable persons</span>
+
+      <h1 class="govuk-heading-xl">Provide details for the named contact at {{ data['ap-org-name'] }}</h1>
+
+      <form class="form" action="/pap-org-lead-contact-details-answer" method="post">
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {{ govukInput({
+          label: {
+            text: "Enter their full name",
+            classes: "govuk-label--s"
+          },
+          id: "ap-org-lead-contact-name",
+          name: "ap-org-lead-contact-name",
+          value: data['ap-org-lead-contact-name']
+        }) }}
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {{ govukInput({
+          label: {
+            text: "Enter their phone number",
+            classes: "govuk-label--s"
+          },
+          id: "ap-org-lead-contact-phone",
+          name: "ap-org-lead-contact-phone",
+          value: data['ap-org-lead-contact-phone']
+        }) }}
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {{ govukInput({
+          label: {
+            text: "Enter their email address",
+            classes: "govuk-label--s"
+          },
+          id: "ap-org-lead-contact-email",
+          name: "ap-org-lead-contact-email",
+          value: data['ap-org-lead-contact-email']
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+      <p><a href="#">Save and exit this application</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}

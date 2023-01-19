@@ -12,22 +12,20 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
-      <span class="govuk-caption-xl">Provide basic information about the blocks</span>
+      <span class="govuk-caption-xl">Tell us about the principal accountable person</span>
 
       <h1 class="govuk-heading-xl">Check your answers</h1>
-
-      <h2 class="govuk-heading-l">First block</h2>
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Number of floors
+            Type
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['number-of-floors'] }}
+            {{ data['pap-type'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/questions/blocks/floors-above">
+            <a href="/questions/pap/pap-type">
               Change
               <span class="govuk-visually-hidden"> name</span>
             </a>
@@ -35,13 +33,29 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Height
+            Who are you?
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['height'] }} metres
+            {{ data['who-are-you-individual'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/questions/blocks/height">
+            <a href="/questions/pap/pap-type">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Your address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['pap-address-line-1'] }}
+            <br>{{ data['pap-address-line-2'] }}
+            <br>{{ data['pap-postcode'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/pap/pap-name-address">
               Change
               <span class="govuk-visually-hidden"> date of birth</span>
             </a>
@@ -49,27 +63,13 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Number of residential units
+            Can someone act on your behalf?
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['number-of-residential-units'] }}
+            Yes
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/questions/blocks/residential-units">
-              Change
-              <span class="govuk-visually-hidden"> contact information</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Are people living in the block?
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['are-people-living-in-the-building'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="/questions/blocks/are-people-living-in-the-building">
+            <a href="/questions/pap/pap-common-parts">
               Change
               <span class="govuk-visually-hidden"> contact details</span>
             </a>
@@ -77,13 +77,15 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Year of completion
+            Authorised person contact details
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['completion-year'] }}
+            name
+            <br>email
+            <br>phone
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/questions/blocks/completion-year">
+            <a href="/questions/pap/pap-authorisation">
               Change
               <span class="govuk-visually-hidden"> contact details</span>
             </a>
@@ -91,43 +93,15 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Completion certificate issuer
+            Authorised person address
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['completion-certificate-issuer'] }}
+            2 Smith Road
+            <br>Southampton
+            <br>SO40 2LP
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/questions/blocks/completion-certificate-issuer">
-              Change
-              <span class="govuk-visually-hidden"> contact details</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Completion certificate reference
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['completion-certificate-reference-number'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="/questions/blocks/completion-certificate-reference-number">
-              Change
-              <span class="govuk-visually-hidden"> contact details</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Address
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['building-address-line-1'] }}
-            <br>{{ data['building-address-line-2'] }}
-            <br>{{ data['building-postcode'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="/questions/blocks/best-known-address">
+            <a href="/questions/pap/pap-name-address-offshore">
               Change
               <span class="govuk-visually-hidden"> contact details</span>
             </a>
@@ -135,7 +109,7 @@
         </div>
       </dl>
 
-      <form action="/blocks-in-scope-some" method="post" novalidate>
+      <form action="/questions/aps/add-ap" method="post" novalidate>
 
         <input type="hidden" name="answers-checked" value="true">
 
