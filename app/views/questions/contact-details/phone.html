@@ -15,18 +15,17 @@
 
       <span class="govuk-caption-xl">Your contact details</span>
 
-      <h1 class="govuk-heading-xl">Your telephone number</h1>
-
-      <p>We will only use this if we need to contact you about your application.</p>
-
       <form class="form" action="/questions/contact-details/email" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
-            text: "Enter a UK telephone number",
-            classes: "govuk-label--s",
-            isPageHeading: false
+            text: "Your telephone number",
+            classes: "govuk-label--xl",
+            isPageHeading: true
+          },
+          hint: {
+            text: "You must enter a UK telephone number. We will only use this if we need to contact you about your application."
           },
           id: "phone",
           name: "phone",

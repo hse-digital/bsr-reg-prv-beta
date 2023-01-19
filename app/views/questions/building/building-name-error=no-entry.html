@@ -18,7 +18,7 @@
         titleText: "There is a problem",
         errorList: [
           {
-            text: "Provide a name for the building",
+            text: "You must enter a name for the building",
             href: "#building-name"
           }
         ]
@@ -35,12 +35,12 @@
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
-            text: "Enter building name",
+            text: "Your building name",
             classes: "govuk-label--s",
             isPageHeading: false
           },
           errorMessage: {
-            text: "Provide a name for the building"
+            text: "Enter a name for the building"
           },
           id: "building-name",
           name: "building-name",

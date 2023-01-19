@@ -18,7 +18,7 @@
         titleText: "There is a problem",
         errorList: [
           {
-            text: "Enter your full name",
+            text: "You must enter your full name",
             href: "#name"
           }
         ]
@@ -26,18 +26,17 @@
 
       <span class="govuk-caption-xl">Your contact details</span>
 
-      <h1 class="govuk-heading-xl">Your full name</h1>
-
-      <p>We will only use this if we need to contact you about your application.</p>
-
       <form class="form" action="/questions/contact-details/phone" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
             text: "Enter your full name",
-            classes: "govuk-label--s",
-            isPageHeading: false
+            classes: "govuk-label--xl",
+            isPageHeading: true
+          },
+          hint: {
+            text: "We will use this if we need to contact you about your application."
           },
           id: "name",
           name: "name",

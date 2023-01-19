@@ -18,7 +18,7 @@
         titleText: "There is a problem",
         errorList: [
           {
-            text: "Enter your 6 digit security code",
+            text: "You must enter your 6 digit security code",
             href: "#security-code"
           }
         ]
@@ -39,7 +39,7 @@
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
-            text: "Enter your 6 digit security code",
+            text: "Your 6 digit security code",
             classes: "govuk-label--s",
             isPageHeading: false
           },

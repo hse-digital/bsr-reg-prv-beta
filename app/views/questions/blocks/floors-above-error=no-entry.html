@@ -13,6 +13,17 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+      {% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+          {
+            text: "You must enter the number of floors above ground level for this block",
+            href: "#number-of-floors"
+          }
+        ]
+      }) }}
+
       <span class="govuk-caption-xl">Provide basic information about the first block</span>
 
       <h1 class="govuk-heading-xl">Number of floors above ground level</h1>
@@ -54,7 +65,9 @@
           classes: "govuk-input--width-3",
           id: "number-of-floors",
           name: "number-of-floors",
-          value: data['number-of-floors']
+          errorMessage: {
+            text: "Enter the number of floors above ground level for this block"
+          }
         }) }}
 
         <button class="govuk-button" data-module="govuk-button">Save and continue</button>

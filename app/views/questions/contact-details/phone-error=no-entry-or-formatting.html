@@ -18,7 +18,7 @@
         titleText: "There is a problem",
         errorList: [
           {
-            text: "Enter a UK telephone number, like 01632 960 001, 07700 900 982 or +44 808 157 0192",
+            text: "You must enter a UK telephone number. For example, 01632 960 001, 07700 900 982 or +44 808 157 0192",
             href: "#phone"
           }
         ]
@@ -26,25 +26,24 @@
 
       <span class="govuk-caption-xl">Your contact details</span>
 
-      <h1 class="govuk-heading-xl">Your telephone number</h1>
-
-      <p>We will only use this if we need to contact you about your application.</p>
-
       <form class="form" action="/questions/contact-details/email" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
-            text: "Enter a UK telephone number",
-            classes: "govuk-label--s",
-            isPageHeading: false
+            text: "Your telephone number",
+            classes: "govuk-label--xl",
+            isPageHeading: true
+          },
+          hint: {
+            text: "You must enter a UK telephone number. We will only use this if we need to contact you about your application."
           },
           id: "phone",
           name: "phone",
+          value: "011922033",
           errorMessage: {
-            text: "Enter a UK telephone number, like 01632 960 001, 07700 900 982 or +44 808 157 0192"
-          },
-          value: "011922033"
+            text: "Enter a UK telephone number"
+          }
         }) }}
 
         <button class="govuk-button" data-module="govuk-button">Save and continue</button>
