@@ -13,15 +13,15 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-xl">Provide basic information about the first block</span>
+      <span class="govuk-caption-xl">First block in the building</span>
 
       <h1 class="govuk-heading-xl">Does the block have another address or postcode?</h1>
 
-      <p>As well as the block's best known address, it could have other addresses or postcodes.</p>
+      <p>Blocks may have more than one address and postcode.</p>
 
       {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
       {{ govukInsetText({
-        text: "For example, some units in the block might be served by a different main entrance to others, and therefore may have a different street address and postcode."
+        text: "For example, where some units in the block have a different main entrance to others."
       }) }}
 
       <form class="form" action="/other-name-address-postcode-boolean-answer" method="post">

@@ -13,16 +13,16 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">Name your blocks</h1>
+      <h1 class="govuk-heading-xl">Tell us the name of your blocks</h1>
 
       <form class="form" action="/questions/pap/pap-type" method="post">
 
-        <p>Please provide a name for each of your in-scope blocks so you can identify which block we are asking you about later.</p>
+        <p>This will allow you to identify which block we are asking you about later.</p>
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
-            text: "Enter a name for the first block",
+            text: "Name of the first block",
             classes: "govuk-label--s",
             isPageHeading: true
           },
@@ -39,7 +39,7 @@
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
-            text: "Enter a name for the second block",
+            text: "Name of the second block",
             classes: "govuk-label--s",
             isPageHeading: true
           },

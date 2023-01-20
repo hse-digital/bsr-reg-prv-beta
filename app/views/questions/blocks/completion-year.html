@@ -13,19 +13,21 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-xl">Provide basic information about the first block</span>
+      <span class="govuk-caption-xl">First block in the building</span>
+
+      <h1 class="govuk-heading-xl">What year was the block completed?</h1>
 
       <form class="form" action="/completion-year-answer" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
-            text: "What year was the block completed?",
-            classes: "govuk-label--xl",
+            text: "Enter exact year",
+            classes: "govuk-label--s",
             isPageHeading: true
           },
           hint: {
-            text: "Enter an exact year. For example '1983'."
+            text: "For example '1983'."
           },
           id: "completion-year",
           name: "completion-year",

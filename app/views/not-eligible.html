@@ -13,29 +13,34 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">The blocks you have told us about are not in scope</h1>
+      <h1 class="govuk-heading-xl">Based on your answers, you do not need to register this building</h1>
 
       <p>
-        Based on your answers, the building is not in scope and therefore doesn't need to be registered.
+        To be registered, buildings must have 7 floors or more or be 18 metres or more in height.
       </p>
 
-      <p>In scope buildings must have 7 floors or more (or be 18 metres or more in height) and have 2 or more residential units that people are or will be living in.</p>
+      <p>
+        They must also have 2 or more residential units that people are living in, or will be living in. 
+      </p>
+
+      <p>
+        If you have questions about why your building cannot be registered based on the information you have given us, <a href="/contact">contact us</a>.
+      </p>
 
       <table class="govuk-table">
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">First block</th>
-            <td class="govuk-table__cell">6 floors
-              <br>22 metres
-              <br>0 residential units
+            <td class="govuk-table__cell">5 floors
+              <br>12 metres
+              <br>42 residential units
             </td>
           </tr>
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Second block</th>
             <td class="govuk-table__cell">15 floors
               <br>32 metres
-              <br>50 residential units
-              <br>People will not be living in the block
+              <br>0 residential units
             </td>
           </tr>
         </tbody>
@@ -43,19 +48,17 @@
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
       {{ govukButton({
-        text: "Check a new building",
+        text: "Register another building",
         href: "/questions/building/building-name"
       }) }}
 
-      <h2 class="govuk-heading-m">If you still want to continue</h2>
+      <h2 class="govuk-heading-m">Continue with this application</h2>
 
-      <p>If you have questions about why your building isn't eligible, then <a href="/contact">contact us</a>.</p>
-
-      <p>If you still want this to register your application then you can continue, but you may not need to and you will be required to pay the registration fee of £XX.</p>
+      <p>You can continue with this application if you wish. But you may not need to, and you will have to pay the registration fee of £XX.</p>
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
       {{ govukButton({
-        text: "Continue application anyway",
+        text: "Continue application",
         href: "/questions/contact-details/email",
         classes: "govuk-button--secondary"
       }) }}

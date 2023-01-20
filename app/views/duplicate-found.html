@@ -13,9 +13,9 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">It looks like someone has already registered this building</h1>
+      <h1 class="govuk-heading-xl">It looks like this building has been registered</h1>
 
-      <p>The address you have told us about for one of your blocks matches that of a building that has already been registered.</p>
+      <p>The address you have given us for one of your blocks matches a building that has been registered.</p>
 
       <table class="govuk-table">
         <tbody class="govuk-table__body">
@@ -42,23 +42,23 @@
         </tbody>
       </table>
 
-      <p>To check if it was you that has provided BSR with this information, check your emails for a completion email from <strong>enquiries@hse.gov.uk</strong>.</p>
+      <p>If you have registered this building, <strong>enquiries@hse.gov.uk</strong> will have sent you a completion email.</p>
 
-      <p>If you don't believe anyone else is authorised to provide the information for this building then <a href="/contact">contact us</a>.</p>
-
-      <h2 class="govuk-heading-m">If you believe that you still need to provide information for this building</h2>
+      <h2 class="govuk-heading-m">If you believe that you still need to register this building</h2>
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
       {{ govukButton({
-        text: "Continue application anyway",
+        text: "Continue application",
         href: "/blocks-in-scope"
       }) }}
+
+      <p>If you believe someone has registered this building who is not authorised to do so, <a href="/contact">contact us</a>.</p>
 
       <h2 class="govuk-heading-m">If you know that you have already provided information for this building</h2>
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
       {{ govukButton({
-        text: "Check a new building",
+        text: "Register another building",
         href: "/start"
       }) }}
 

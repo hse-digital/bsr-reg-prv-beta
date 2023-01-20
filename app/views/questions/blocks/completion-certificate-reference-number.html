@@ -13,14 +13,14 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-xl">Provide basic information about the first block</span>
+      <span class="govuk-caption-xl">First block in the building</span>
 
       <form class="form" action="/questions/blocks/best-known-address" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
-            text: "Completion certificate reference number",
+            text: "What is the completion certificate number for this block?",
             classes: "govuk-label--xl",
             isPageHeading: true
           },
