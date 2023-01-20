@@ -4,12 +4,14 @@
   Start page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
-{% block header %}
-  <!-- Blank header with no service name for the start page -->
-  {{ govukHeader() }}
-{% endblock %}
-
 {% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service in development - do not take anything you see here as guidance.'
+}) }}
   <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
 {% endblock %}
 
@@ -18,12 +20,10 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-xl">
-        Blocks in this building
+        Tell us about the blocks in this building
       </h1>
 
       <p>We will ask you for information one block at a time. If this building has more than one block, you can tell us about the other blocks later.</p>
-
-      <p>You will now be asked a set of questions about the first block in the high-rise building you wish to register.</p>
 
       <a href="/questions/blocks/floors-above" role="button" draggable="false" class="govuk-button data-module="govuk-button">
         Continue
