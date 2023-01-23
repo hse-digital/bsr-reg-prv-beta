@@ -10,14 +10,14 @@
     <div class="govuk-grid-column-two-thirds">
 
       <div class="govuk-panel govuk-panel--confirmation">
-        <h1 class="govuk-panel__title">Key building information submitted for Acme House.</h1>
+        <h1 class="govuk-panel__title">Key building information submitted for {{ data['building-name'] }}</h1>
         <div class="govuk-panel__body">
           Your reference number<br><strong>HDJ2123F</strong>
         </div>
       </div>
 
       <p>
-        We have sent a confirmation email to <b>joe.bloggs@account.co.uk</b>. If you cannot find the email, check your junk or spam folders.
+        We have sent a confirmation email to <b>{{ data['email'] }}</b>. If you cannot find the email, check your junk or spam folders.
       </p>
 
       {% from "govuk/components/button/macro.njk" import govukButton %}

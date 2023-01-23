@@ -20,44 +20,46 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-xl">Other accountable persons</span>
+      <span class="govuk-caption-xl">Principal accountable person</span>
 
-      <h1 class="govuk-heading-xl">Provide details for the named contact at {{ data['ap-org-name'] }}</h1>
+      <h1 class="govuk-heading-xl">Principal accountable person address</h1>
 
-      <form class="form" action="/questions/aps/add-ap" method="post">
+      <p>The address must be in England or Wales.</p>
 
-        {% from "govuk/components/input/macro.njk" import govukInput %}
+      <form class="form" action="/pap-address-answer" method="post">
+
         {{ govukInput({
           label: {
-            text: "Enter their full name",
+            text: "Address line 1",
             classes: "govuk-label--s"
           },
-          id: "ap-org-named-contact-name",
-          name: "ap-org-named-contact-name",
-          value: data['ap-org-named-contact-name']
+          id: "pap-address-line-1",
+          name: "pap-address-line-1",
+          value: data['pap-address-line-1']
         }) }}
 
-        {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
-            text: "Enter their phone number",
+            text: "Address line 2",
             classes: "govuk-label--s"
           },
-          id: "ap-org-named-contact-phone",
-          name: "ap-org-named-contact-phone",
-          value: data['ap-org-named-contact-phone']
+          id: "pap-address-line-2",
+          name: "pap-address-line-2",
+          value: data['pap-address-line-2']
         }) }}
 
-        {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
-            text: "Enter their email address",
+            text: "Postcode",
             classes: "govuk-label--s"
           },
-          id: "ap-org-named-contact-email",
-          name: "ap-org-named-contact-email",
-          value: data['ap-org-named-contact-email']
+          classes: "govuk-input--width-10",
+          id: "pap-postcode",
+          name: "pap-postcode",
+          value: data['pap-postcode']
         }) }}
+
+        <p><a href="#">Find a postcode on Royal Mail's postcode finder</a></p>
 
         <button class="govuk-button" data-module="govuk-button">Save and continue</button>
 

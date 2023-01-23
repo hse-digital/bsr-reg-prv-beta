@@ -22,31 +22,16 @@
 
       <span class="govuk-caption-xl">First block in the building</span>
 
-      <form class="form" action="/completion-year-answer" method="post">
-
-        {% from "govuk/components/input/macro.njk" import govukInput %}
-        {{ govukInput({
-          label: {
-            text: "What year was the block completed?",
-            classes: "govuk-label--xl",
-            isPageHeading: true
-          },
-          id: "completion-year",
-          name: "completion-year",
-          classes: "govuk-input--width-4"
-        }) }}
-
-        <p>or</p>
+      <form class="form" action="/questions/blocks/completion-certificate-issuer" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
-        {% set rangesHtml %}
         {{ govukRadios({
           name: "completion-year",
           value: data['completion-year'],
           fieldset: {
             legend: {
-              text: "Select the year range",
-              classes: "govuk-label--s"
+              text: "What year was the block completed?",
+              classes: "govuk-label--xl"
             }
           },
           items: [
@@ -81,34 +66,6 @@
             {
               value: "2015 to 2023",
               text: "2015 to 2023"
-            },
-            {
-              value: "Not yet completed",
-              text: "Not yet completed"
-            }
-          ]
-        }) }}
-        {% endset -%}
-
-        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
-        {{ govukCheckboxes({
-          name: "completion-year-radio",
-          fieldset: {
-            legend: {
-            }
-          },
-          items: [
-            {
-              text: "I don't know the exact year",
-              conditional: {
-                html: rangesHtml
-              },
-              behaviour: "exclusive"
-            },
-            {
-              value: "The block has not yet been completed",
-              text: "The block has not yet been completed",
-              behaviour: "exclusive"
             }
           ]
         }) }}

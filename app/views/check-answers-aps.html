@@ -5,6 +5,13 @@
 {% endblock %}
 
 {% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service in development - do not take anything you see here as guidance.'
+}) }}
   <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
 {% endblock %}
 
@@ -16,8 +23,6 @@
 
       <h1 class="govuk-heading-xl">Check your answers</h1>
 
-      <p>These are in addition to the principal accountable person <strong>{{ data['pap-org-name'] }}</strong></p>
-
       <h2 class="govuk-heading-m">First accountable person</h2>
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -26,7 +31,8 @@
             Type
           </dt>
           <dd class="govuk-summary-list__value">
-            Individual
+            {{ data['ap-type'] }}
+            <br>{{ data['ap-org-type'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="/questions/aps/ap-type">
@@ -40,12 +46,12 @@
             Contact details
           </dt>
           <dd class="govuk-summary-list__value">
-            name
-            <br>email
-            <br>phone
+            {{ data['ap-individual-name'] }}
+            <br>{{ data['ap-individual-email'] }}
+            <br>{{ data['ap-individual-phone'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/questions/aps/ap-individual-details">
+            <a href="/questions/aps/ap-individual-contact-details">
               Change
               <span class="govuk-visually-hidden"> contact details</span>
             </a>
@@ -86,9 +92,23 @@
             </a>
           </dd>
         </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Add another accountable person?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Yes
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/aps/add-ap">
+              Change
+              <span class="govuk-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
       </dl>
 
-      <h2 class="govuk-heading-m">Second accountable person</h2>
+      <h2 class="govuk-heading-m">Second accountable person (example organisation)</h2>
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
@@ -97,10 +117,9 @@
           </dt>
           <dd class="govuk-summary-list__value">
             Organisation
-            <br>{{ data['ap-org-type'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/questions/pap/pap-type">
+            <a href="#">
               Change
               <span class="govuk-visually-hidden"> name</span>
             </a>
@@ -108,15 +127,29 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Name
+            Organisation type
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['ap-org-name'] }}
+            Local authority
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/questions/aps/ap-org-name">
+            <a href="#">
               Change
               <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Organisation name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Lighthouse Holdings
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> date of birth</span>
             </a>
           </dd>
         </div>
@@ -125,12 +158,12 @@
             Address
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['ap-address-line-1'] }}
-            <br>{{ data['ap-address-line-2'] }}
-            <br>{{ data['ap-postcode'] }}
+            50 Farringdon Road
+            <br>London
+            <br>EC1M 5FE
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/questions/aps/ap-org-address">
+            <a href="#">
               Change
               <span class="govuk-visually-hidden"> date of birth</span>
             </a>
@@ -145,7 +178,7 @@
             <br>Internal common parts
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/questions/aps/ap-areas">
+            <a href="#">
               Change
               <span class="govuk-visually-hidden"> date of birth</span>
             </a>
@@ -156,14 +189,112 @@
             Named contact details
           </dt>
           <dd class="govuk-summary-list__value">
-            name
-            <br>email
-            <br>phone
+            David Marshall
+            <br>dmarshall@lighthouse.co.uk
+            <br>07819274671
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/questions/aps/ap-org-named-contact-details">
+            <a href="#">
               Change
               <span class="govuk-visually-hidden"> contact details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Add another accountable person?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Yes
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">Third accountable person (example individual)</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Type
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Individual
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Contact details
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Chelsea Brown
+            <br>chelseabrown@gmail.com
+            <br>07183929991
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> contact details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            10 The Highstreet
+            <br>Blacon
+            <br>CH6 7UL
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Areas of accountability
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <strong>Block A</strong>
+            <br>Surrounding areas
+            <p>            <br><strong>Block C</strong>
+              <br>Internal common parts
+              <br>Surrounding areas
+            </p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Add another accountable person?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            No
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> date of birth</span>
             </a>
           </dd>
         </div>

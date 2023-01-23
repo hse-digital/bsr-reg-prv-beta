@@ -5,13 +5,6 @@
 {% endblock %}
 
 {% block beforeContent %}
-{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
-{{ govukPhaseBanner({
-  tag: {
-    text: "prototype"
-  },
-  html: 'This is a new service in development - do not take anything you see here as guidance.'
-}) }}
   <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
 {% endblock %}
 
@@ -22,9 +15,9 @@
 
       <span class="govuk-caption-xl">Principal accountable person</span>
 
-      <h1 class="govuk-heading-xl">Provide contact details for the lead contact at {{ data['pap-org-name'] }}</h1>
+      <h1 class="govuk-heading-xl">Provide details for the lead contact at {{ data['pap-org-name'] }}</h1>
 
-      <form class="form" action="/questions/pap/pap-authorised-boolean" method="post">
+      <form class="form" action="/pap-org-lead-contact-details-answer" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({
@@ -62,7 +55,6 @@
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
         {{ govukRadios({
           name: "pap-org-lead-contact-role",
-          value: data['pap-org-lead-contact-role'],
           fieldset: {
             legend: {
               text: "Job role",

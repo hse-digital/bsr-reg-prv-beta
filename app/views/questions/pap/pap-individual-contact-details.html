@@ -5,6 +5,13 @@
 {% endblock %}
 
 {% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service in development - do not take anything you see here as guidance.'
+}) }}
   <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
 {% endblock %}
 
@@ -13,11 +20,11 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-xl">Other accountable persons</span>
+      <span class="govuk-caption-xl">Principal accountable person</span>
 
-      <h1 class="govuk-heading-xl">Provide contact details for this accountable person</h1>
+      <h1 class="govuk-heading-xl">Principal accountable person contact details</h1>
 
-      <form class="form" action="/questions/ap/ap-individual-address" method="post">
+      <form class="form" action="/questions/pap/pap-address" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({

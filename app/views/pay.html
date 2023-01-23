@@ -5,6 +5,13 @@
 {% endblock %}
 
 {% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service in development - do not take anything you see here as guidance.'
+}) }}
   <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
 {% endblock %}
 
@@ -12,12 +19,6 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
-      <div class="govuk-!-padding-bottom-5">
-        <span class="govuk-caption-m">
-          <strong>{{ data['building-name'] }}</strong>, {{ data['address-line-1'] }}, {{ data['address-line-2'] }}, {{ data['postcode'] }}
-        </span>
-      </div>
 
       <span class="govuk-caption-xl">Submit and pay the fee</span>
 
@@ -34,10 +35,10 @@
         [
         [
           {
-            text: "Building name/s"
+            text: "Building name"
           },
           {
-            text: "Building A name, address"
+            text: data['building-name']
           }
         ],
           [
@@ -121,93 +122,38 @@
 
           {{ govukInput({
             label: {
+              text: "Address line 1",
+              classes: "govuk-label--s"
+            },
+            id: "billing-address-line-1",
+            name: "billing-address-line-1",
+            value: data['billing-address-line-1']
+          }) }}
+  
+          {{ govukInput({
+            label: {
+              text: "Address line 2",
+              classes: "govuk-label--s"
+            },
+            id: "billing-address-line-2",
+            name: "billing-address-line-2",
+            value: data['billing-address-line-2']
+          }) }}
+  
+          {{ govukInput({
+            label: {
               text: "Postcode",
               classes: "govuk-label--s"
             },
             classes: "govuk-input--width-10",
-            id: "postcode",
-            name: "postcode"
+            id: "billing-postcode",
+            name: "billing-postcode",
+            value: data['billing-postcode']
           }) }}
-  
-          {% from "govuk/components/button/macro.njk" import govukButton %}
-          {{ govukButton({
-            text: "Find address",
-            href: "#",
-            classes: "govuk-button--secondary"
-          }) }}
-  
-          {% from "govuk/components/radios/macro.njk" import govukRadios %}
-          {{ govukRadios({
-            name: "where-do-you-live",
-            fieldset: {
-              legend: {
-                text: "Which is the correct address?",
-                isPageHeading: false,
-                classes: "govuk-fieldset__legend--s"
-              }
-            },
-            items: [
-              {
-                value: "england",
-                text: "1 Acme Street, London, SW32 9KL"
-              },
-              {
-                value: "scotland",
-                text: "2 Acme Street, London, SW32 9KL"
-              },
-              {
-                value: "wales",
-                text: "3 Acme Street, London, SW32 9KL"
-              },
-              {
-                value: "northern-ireland",
-                text: "4 Acme Street, London, SW32 9KL"
-              }
-            ]
-          }) }}
-  
-          <p><a href="#">Find a postcode on Royal Mail's postcode finder</a></p>
-  
-          <details class="govuk-details" data-module="govuk-details">
-            <summary class="govuk-details__summary">
-              <span class="govuk-details__summary-text">
-                Enter address manually
-              </span>
-            </summary>
-            <div class="govuk-details__text">
-  
-              {{ govukInput({
-                label: {
-                  text: "Address line 1",
-                  classes: "govuk-label--s"
-                },
-                id: "postcode",
-                name: "postcode"
-              }) }}
-  
-              {{ govukInput({
-                label: {
-                  text: "Address line 2",
-                  classes: "govuk-label--s"
-                },
-                id: "postcode",
-                name: "postcode"
-              }) }}
-  
-              {{ govukInput({
-                label: {
-                  text: "Postcode",
-                  classes: "govuk-label--s"
-                },
-                classes: "govuk-input--width-10",
-                id: "postcode",
-                name: "postcode"
-              }) }}
-  
-            </div>
-          </details>
           
         {% endcall %}
+
+        <p><a href="#">Find a postcode on Royal Mail's postcode finder</a></p>
 
         <button class="govuk-button" data-module="govuk-button">Pay and submit</button>
 

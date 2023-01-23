@@ -5,13 +5,6 @@
 {% endblock %}
 
 {% block beforeContent %}
-{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
-{{ govukPhaseBanner({
-  tag: {
-    text: "prototype"
-  },
-  html: 'This is a new service in development - do not take anything you see here as guidance.'
-}) }}
   <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
 {% endblock %}
 
@@ -22,7 +15,7 @@
 
       <span class="govuk-caption-xl">Principal accountable person</span>
 
-      <h1 class="govuk-heading-xl">What is the principal accountable person?</h1>
+      <h1 class="govuk-heading-xl">Who is the principal accountable person?</h1>
 
       <details class="govuk-details" data-module="govuk-details">
         <summary class="govuk-details__summary">
@@ -43,6 +36,69 @@
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
         {% from "govuk/components/input/macro.njk" import govukInput %}
 
+        {% set otherHtml %}
+        {{ govukInput({
+          id: "other-pap-type-org",
+          name: "other-pap-type-org",
+          type: "text",
+          spellcheck: false,
+          label: {
+            text: "What type of organisation is the principle accountable person?"
+          }
+        }) }}
+        {% endset -%}
+
+        {% set orgHtml %}
+        {{ govukRadios({
+          name: "pap-type-org",
+          value: data['pap-type-org'],
+          fieldset: {
+            legend: {
+              text: "The principle accountable person is a:",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          items: [
+            {
+              value: "Building owner (individual)",
+              text: "Building owner (individual)"
+            },
+            {
+              value: "commonhold-association",
+              text: "Commonhold association"
+            },
+            {
+              value: "housing-association",
+              text: "Housing association or other company operating under section 27 of the Housing Act 1985"
+            },
+            {
+              value: "local-authority",
+              text: "Local authority"
+            },
+            {
+              value: "management-company",
+              text: "Management company"
+            },
+            {
+              value: "rmc",
+              text: "Resident management company (RMC) or orgnaisation"
+            },
+            {
+              value: "rtm",
+              text: "Right to manage (RTM) company or orgnaisation"
+            },
+            {
+              value: "other",
+              text: "Other",
+              conditional: {
+                html: otherHtml
+              }
+            }
+          ]
+        }) }}
+        {% endset -%}
+
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
         {{ govukRadios({
           name: "pap-type",
@@ -56,7 +112,10 @@
           items: [
             {
               value: "Organisation",
-              text: "An organisation"
+              text: "An organisation",
+              conditional: {
+                html: orgHtml
+              }
             },
             {
               value: "Individual",

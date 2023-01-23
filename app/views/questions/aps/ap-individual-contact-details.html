@@ -22,41 +22,38 @@
 
       <span class="govuk-caption-xl">Other accountable persons</span>
 
-      <h1 class="govuk-heading-xl">Provide details for the named contact at {{ data['ap-org-name'] }}</h1>
+      <h1 class="govuk-heading-xl">Provide contact details for this accountable person</h1>
 
-      <form class="form" action="/questions/aps/add-ap" method="post">
+      <form class="form" action="/questions/aps/ap-address" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
-            text: "Enter their full name",
-            classes: "govuk-label--s"
+            text: "Enter their full name"
           },
-          id: "ap-org-named-contact-name",
-          name: "ap-org-named-contact-name",
-          value: data['ap-org-named-contact-name']
+          id: "ap-individual-name",
+          name: "ap-individual-name",
+          value: data['ap-individual-name']
         }) }}
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
-            text: "Enter their phone number",
-            classes: "govuk-label--s"
+            text: "Enter their phone number"
           },
-          id: "ap-org-named-contact-phone",
-          name: "ap-org-named-contact-phone",
-          value: data['ap-org-named-contact-phone']
+          id: "ap-individual-phone",
+          name: "ap-individual-phone",
+          value: data['ap-individual-phone']
         }) }}
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
-            text: "Enter their email address",
-            classes: "govuk-label--s"
+            text: "Enter their email address"
           },
-          id: "ap-org-named-contact-email",
-          name: "ap-org-named-contact-email",
-          value: data['ap-org-named-contact-email']
+          id: "ap-individual-email",
+          name: "ap-individual-email",
+          value: data['ap-individual-email']
         }) }}
 
         <button class="govuk-button" data-module="govuk-button">Save and continue</button>

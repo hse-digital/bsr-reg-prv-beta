@@ -5,6 +5,13 @@
 {% endblock %}
 
 {% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service in development - do not take anything you see here as guidance.'
+}) }}
   <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
 {% endblock %}
 
@@ -15,12 +22,12 @@
 
       <span class="govuk-caption-xl">Other accountable persons</span>
 
-      <form class="form" action="/questions/aps/ap-org-address" method="post">
+      <form class="form" action="/questions/aps/ap-address" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
-            text: "Enter the name of the accountable person organisation",
+            text: "What is the name of this accountable person organisation?",
             classes: "govuk-label--xl",
             isPageHeading: true
           },

@@ -1,0 +1,101 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service in development - do not take anything you see here as guidance.'
+}) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">Principal accountable person</span>
+
+      <form class="form" action="/questions/pap/pap-org-name" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {% set otherHtml %}
+        {{ govukInput({
+          id: "pap-org-type-other",
+          name: "pap-org-type-other",
+          value: data['pap-org-type-other'],
+          type: "text",
+          spellcheck: false,
+          label: {
+            text: "What type of organisation is the principle accountable person?"
+          }
+        }) }}
+        {% endset -%}
+
+        {{ govukRadios({
+          name: "pap-org-type",
+          value: data['pap-org-type'],
+          fieldset: {
+            legend: {
+              text: "What type of organisation is the principle accountable person?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          items: [
+            {
+              value: "Building owner (individual)",
+              text: "Building owner (individual)"
+            },
+            {
+              value: "Commonhold association",
+              text: "Commonhold association"
+            },
+            {
+              value: "Housing association",
+              text: "Housing association or other company operating under section 27 of the Housing Act 1985"
+            },
+            {
+              value: "local authority",
+              text: "Local authority"
+            },
+            {
+              value: "Management company",
+              text: "Management company"
+            },
+            {
+              value: "Resident management company",
+              text: "Resident management company (RMC) or orgnaisation"
+            },
+            {
+              value: "Right to manage company",
+              text: "Right to manage (RTM) company or orgnaisation"
+            },
+            {
+              value: "Other",
+              text: "Other",
+              conditional: {
+                html: otherHtml
+              }
+            }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+      <p><a href="#">Save and exit this application</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}

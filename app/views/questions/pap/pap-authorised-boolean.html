@@ -22,18 +22,30 @@
 
       <span class="govuk-caption-xl">Principal accountable person</span>
 
-      <form class="form" action="/questions/pap/pap-address" method="post">
+      <h1 class="govuk-heading-xl">Has the principal accountable person authorised someone to act for them?</h1>
 
-        {% from "govuk/components/input/macro.njk" import govukInput %}
-        {{ govukInput({
-          label: {
-            text: "What is the name of the organisation that is the principal accountable person?",
-            classes: "govuk-label--xl",
-            isPageHeading: true
+      <p>Authorised persons must have written confirmation. We may ask to see this later on.</p>
+
+      <form class="form" action="/pap-authorised-boolean-answer" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {{ govukRadios({
+          name: "pap-authorised-boolean",
+          value: data['pap-authorised-boolean'],
+          fieldset: {
+            legend: {
+            }
           },
-          id: "pap-org-name",
-          name: "pap-org-name",
-          value: data['pap-org-name']
+          items: [
+            {
+              value: "Yes",
+              text: "Yes"
+            },
+            {
+              value: "No",
+              text: "No"
+            }
+          ]
         }) }}
 
         <button class="govuk-button" data-module="govuk-button">Save and continue</button>
