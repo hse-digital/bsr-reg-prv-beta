@@ -25,7 +25,7 @@
         titleText: "There is a problem",
         errorList: [
           {
-            text: "You must enter your full name",
+            text: "You must enter your name",
             href: "#name"
           }
         ]
@@ -33,24 +33,44 @@
 
       <span class="govuk-caption-xl">Your contact details</span>
 
+      <h1 class="govuk-heading-xl">Enter your name</h1>
+
+      <p>We will use this if we need to contact you about your application.</p>
+
       <form class="form" action="/questions/contact-details/phone" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
-        {{ govukInput({
-          label: {
-            text: "Enter your full name",
-            classes: "govuk-label--xl",
-            isPageHeading: true
-          },
+        {% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
+        {% call govukFieldset({
           hint: {
             text: "We will use this if we need to contact you about your application."
-          },
-          id: "name",
-          name: "name",
-          errorMessage: {
-            text: "Enter your full name"
           }
+        }) %}
+
+        {% from "govuk/components/error-message/macro.njk" import govukErrorMessage %}
+        {{ govukErrorMessage({
+          text: "Enter your name"
         }) }}
+
+          {{ govukInput({
+            label: {
+              text: 'First name'
+            },
+            id: "first-name",
+            name: "first-name",
+            errorMessage: {
+            }
+          }) }}
+          {{ govukInput({
+            label: {
+              text: 'Last name'
+            },
+            id: "last-name",
+            name: "last-name",
+            errorMessage: {
+            }
+          }) }}
+        {% endcall %}
 
         <button class="govuk-button" data-module="govuk-button">Save and continue</button>
 

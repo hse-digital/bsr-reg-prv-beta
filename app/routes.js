@@ -95,7 +95,6 @@ router.post('/eligibility-answer', function (req, res) {
   
   })
 
-  // Run this code when a form is submitted to number-of-residential-units-answer
 router.post('/completion-year-answer', function (req, res) {
 
   var completionYear = req.session.data['completion-year-radio']
@@ -104,21 +103,12 @@ router.post('/completion-year-answer', function (req, res) {
 
     res.redirect('/questions/blocks/add-block')
 
-  } else {
+  } else if (completionYear == "No, I don't know the exact year") {
 
-    res.redirect('/completion-year-unknown-answer')
+    res.redirect('/questions/blocks/completion-year-bands')
   }
 
-})
-
-router.post('/completion-year-unknown-answer', function (req, res) {
-
-  var completionYearUnknown = req.session.data['completion-year-radio']
-
-  if (completionYear == "I don't know the exact year") {
-    res.redirect('/questions/blocks/completion-year-band')
-
-  } else {
+  else {
 
     res.redirect('/questions/blocks/completion-certificate-issuer')
   }
@@ -168,10 +158,110 @@ router.post('/pap-type-answer', function (req, res) {
   // Check whether the variable matches a condition
   if (papType == "Organisation"){
     // Send user to next page
-    res.redirect('/questions/pap/pap-org-name')
+    res.redirect('/questions/pap/pap-org-type')
   } else {
     // Send user to ineligible page
-    res.redirect('/questions/pap/who-are-you-individual')
+    res.redirect('/questions/pap/pap-individual-contact-details')
+  }
+
+})
+
+router.post('/who-are-you-org-answer', function (req, res) {
+
+  var whoAreYouOrg = req.session.data['are-you-the-pap']
+  if (whoAreYouOrg == "I am none of the above"){
+    res.redirect('/not-authorised')
+  } else if (whoAreYouOrg == "I am the lead contact at the principal accountable person organisation") {
+    res.redirect('/questions/pap/pap-org-lead-contact-details-user=lead')
+  } else if (whoAreYouOrg == "I have written authorisation from the lead contact to register this building for them") {
+    res.redirect('/questions/pap/pap-org-lead-contact-details')
+  } else if (whoAreYouOrg == "I am a staff member of BSR, registering this building for someone by telephone") {
+    res.redirect('/questions/pap/pap-org-lead-contact-details')
+  }
+
+})
+
+router.post('/pap-org-lead-contact-details-answer', function (req, res) {
+
+  var whoAreYouOrg = req.session.data['are-you-the-pap']
+  if (whoAreYouOrg == "I am the lead contact at the principal accountable person organisation") {
+    res.redirect('/questions/pap/pap-org-act-on-behalf-user=lead')
+  } else if (whoAreYouOrg == "I have written authorisation from the lead contact to register this building for them") {
+    res.redirect('/questions/pap/pap-org-lead-contact-details-user=lead')
+  } else if (whoAreYouOrg == "I am a staff member of BSR, registering this building for someone by telephone") {
+    res.redirect('/questions/pap/pap-org-lead-contact-details')
+  }
+
+})
+
+router.post('/pap-address-answer', function (req, res) {
+
+  var papType = req.session.data['pap-type']
+  if (papType == "Organisation") {
+    res.redirect('/questions/pap/pap-org-lead-contact-details')
+  } else {
+    res.redirect('/questions/pap/pap-authorised-boolean')
+  }
+
+})
+
+router.post('/pap-authorised-boolean-answer', function (req, res) {
+
+  var papAuthorisedBoolean = req.session.data
+  ['pap-authorised-boolean']
+  var papType = req.session.data['pap-type']
+  if (papAuthorisedBoolean == "Yes") {
+    res.redirect('/questions/pap/pap-authorised-person-contact-details')
+  } else if (papAuthorisedBoolean == "No" && papType == "Organisation") {
+    res.redirect('check-answers-pap-org')
+  } else if (papAuthorisedBoolean == "No" && papType == "Individual") {
+    res.redirect('check-answers-pap-individual')
+  }
+
+})
+
+router.post('/check-answers-pap-answer', function (req, res) {
+
+  var papType = req.session.data['pap-type']
+  if (papType == "Organisation") {
+    res.redirect('/check-answers-pap-org')
+  } else {
+    res.redirect('check-answers-pap-individual')
+  }
+
+})
+
+router.post('/add-ap-answer', function (req, res) {
+
+  var addAp = req.session.data['add-another-ap']
+  if (addAp == "Yes") {
+    res.redirect('/questions/aps/ap-type')
+  } else {
+    res.redirect('check-answers-aps')
+  }
+
+})
+
+router.post('/ap-type-answer', function (req, res) {
+
+  var apType = req.session.data['ap-type']
+  if (apType == "Organisation"){
+    // Send user to next page
+    res.redirect('/questions/aps/ap-org-type')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/questions/aps/ap-individual-contact-details')
+  }
+
+})
+
+router.post('/ap-areas-answer', function (req, res) {
+
+  var apType = req.session.data['ap-type']
+  if (apType == "Organisation") {
+    res.redirect('/questions/aps/ap-org-named-contact-details')
+  } else {
+    res.redirect('/questions/aps/add-ap')
   }
 
 })

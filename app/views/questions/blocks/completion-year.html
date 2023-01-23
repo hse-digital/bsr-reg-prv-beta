@@ -22,11 +22,12 @@
 
       <span class="govuk-caption-xl">First block in the building</span>
 
-      <h1 class="govuk-heading-xl">What year was the block completed?</h1>
+      <h1 class="govuk-heading-xl">Do you know what year the block was completed?</h1>
 
       <form class="form" action="/completion-year-answer" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
+        {% set exactYearHtml %}
         {{ govukInput({
           label: {
             text: "Enter exact year",
@@ -40,8 +41,7 @@
           name: "completion-year",
           classes: "govuk-input--width-4"
         }) }}
-
-        <p>or</p>
+        {% endset -%}
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
         {{ govukRadios({
@@ -52,8 +52,15 @@
           },
           items: [
             {
-              value: "I don't know the exact year",
-              text: "I don't know the exact year"
+              value: "Yes, I know the exact year",
+              text: "Yes, I know the exact year",
+              conditional: {
+                html: exactYearHtml
+              }
+            },
+            {
+              value: "No, I don't know the exact year",
+              text: "No, I don't know the exact year"
             },
             {
               value: "The block has not yet been completed",

@@ -1,0 +1,62 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">Principal accountable person</span>
+
+      <h1 class="govuk-heading-xl">What is your job role at {{ data['pap-org-name'] }}</h1>
+
+      <form class="form" action="/pap-org-lead-contact-details-answer" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {{ govukRadios({
+          name: "pap-org-lead-contact-role",
+          fieldset: {
+            legend: {
+            }
+          },
+          items: [
+            {
+              value: "Director",
+              text: "Director"
+            },
+            {
+              value: "Administrative or office worker",
+              text: "Administrative or office worker"
+            },
+            {
+              value: "Building or facilities manager",
+              text: "Building or facilities manager"
+            },
+            {
+              value: "Building safety director",
+              text: "Building safety director"
+            },
+            {
+              value: "Other",
+              text: "Other"
+            }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+      <p><a href="#">Save and exit this application</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}

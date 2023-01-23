@@ -5,6 +5,13 @@
 {% endblock %}
 
 {% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service in development - do not take anything you see here as guidance.'
+}) }}
   <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
 {% endblock %}
 
@@ -17,13 +24,14 @@
 
       <h1 class="govuk-heading-xl">Add another accountable person</h1>
 
-      <p>If anyone other than {{ data['pap-name'] }} is accountable for any of the internal common parts, surrounding parts or plant machinery of any of the blocks then you should tell us about them here.</p>
+      <p>If anyone other than {{ data['pap-name'] }} is accountable for any parts of any of the blocks then you should tell us about them here.</p>
 
-      <form class="form" action="/add-ap-answers" method="post">
+      <form class="form" action="/add-ap-answer" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
         {{ govukRadios({
           name: "add-another-ap",
+          value: data['add-another-ap'],
           fieldset: {
             legend: {
               text: "Add another accountable person?",

@@ -5,6 +5,13 @@
 {% endblock %}
 
 {% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service in development - do not take anything you see here as guidance.'
+}) }}
   <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
 {% endblock %}
 
@@ -33,21 +40,24 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Who are you?
+            Contact details
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['who-are-you-individual'] }}
+            {{ data['pap-org-lead-contact-name'] }}
+            <br>{{ data['pap-org-lead-contact-email'] }}
+            <br>{{ data['pap-org-lead-contact-phone'] }}
+            <br>{{ data['pap-org-lead-contact-role'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/questions/pap/pap-type">
+            <a href="/questions/pap/pap-org-lead-contact-details">
               Change
-              <span class="govuk-visually-hidden"> name</span>
+              <span class="govuk-visually-hidden"> contact information</span>
             </a>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Your address
+            Address
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['pap-address-line-1'] }}
@@ -55,7 +65,7 @@
             <br>{{ data['pap-postcode'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/questions/pap/pap-name-address">
+            <a href="/questions/pap/pap-address">
               Change
               <span class="govuk-visually-hidden"> date of birth</span>
             </a>
@@ -63,13 +73,13 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Can someone act on your behalf?
+            Has the principal accountable person authorsied someone to act for them?
           </dt>
           <dd class="govuk-summary-list__value">
-            Yes
+            {{ data['pap-authorised-boolean'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/questions/pap/pap-common-parts">
+            <a href="/questions/pap/pap-authorised-boolean">
               Change
               <span class="govuk-visually-hidden"> contact details</span>
             </a>
@@ -80,14 +90,15 @@
             Authorised person contact details
           </dt>
           <dd class="govuk-summary-list__value">
-            name
-            <br>email
-            <br>phone
+            {{ data['pap-authorised-person-name'] }}
+            <br>{{ data['pap-authorised-person-email'] }}
+            <br>{{ data['pap-authorised-person-phone'] }}
+            <br>{{ data['pap-authorised-person-role'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/questions/pap/pap-authorisation">
+            <a href="/questions/pap/pap-org-lead-contact-details">
               Change
-              <span class="govuk-visually-hidden"> contact details</span>
+              <span class="govuk-visually-hidden"> contact information</span>
             </a>
           </dd>
         </div>
@@ -96,14 +107,14 @@
             Authorised person address
           </dt>
           <dd class="govuk-summary-list__value">
-            2 Smith Road
-            <br>Southampton
-            <br>SO40 2LP
+            {{ data['pap-address-line-1'] }}
+            <br>{{ data['pap-address-line-2'] }}
+            <br>{{ data['pap-postcode'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/questions/pap/pap-name-address-offshore">
+            <a href="/questions/pap/pap-authorised-person-address">
               Change
-              <span class="govuk-visually-hidden"> contact details</span>
+              <span class="govuk-visually-hidden"> date of birth</span>
             </a>
           </dd>
         </div>
