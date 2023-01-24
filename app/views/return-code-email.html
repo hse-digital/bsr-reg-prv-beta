@@ -34,11 +34,6 @@
 
 <p>From the Health and Safety Executive</p>
 
-  {% from "govuk/components/button/macro.njk" import govukButton %}
-  {{ govukButton({
-    text: "Return to service",
-    href: "/returning-code",
-    classes: "govuk-button--secondary"
-  }) }}
+<a class="govuk-back-link" href="javascript:window.history.back()">Return to service</a>
 
 {% endblock %}
