@@ -25,8 +25,12 @@
         titleText: "There is a problem",
         errorList: [
           {
-            text: "You must enter your name",
-            href: "#name"
+            text: "Enter your first name",
+            href: "#first-name"
+          },
+          {
+            text: "Enter your last name",
+            href: "#last-name"
           }
         ]
       }) }}
@@ -47,11 +51,6 @@
           }
         }) %}
 
-        {% from "govuk/components/error-message/macro.njk" import govukErrorMessage %}
-        {{ govukErrorMessage({
-          text: "Enter your name"
-        }) }}
-
           {{ govukInput({
             label: {
               text: 'First name'
@@ -59,6 +58,7 @@
             id: "first-name",
             name: "first-name",
             errorMessage: {
+              text: "Enter your first name"
             }
           }) }}
           {{ govukInput({
@@ -68,6 +68,7 @@
             id: "last-name",
             name: "last-name",
             errorMessage: {
+              text: "Enter your last name"
             }
           }) }}
         {% endcall %}

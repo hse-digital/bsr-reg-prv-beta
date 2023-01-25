@@ -29,7 +29,16 @@
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
-            text: "Enter their full name"
+            text: "Enter their first name"
+          },
+          id: "pap-individual-name",
+          name: "pap-individual-name"
+        }) }}
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {{ govukInput({
+          label: {
+            text: "Enter their last name"
           },
           id: "pap-individual-name",
           name: "pap-individual-name"
