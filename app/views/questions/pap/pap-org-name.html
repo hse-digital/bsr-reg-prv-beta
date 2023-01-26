@@ -20,15 +20,15 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-xl">Principal accountable person</span>
+      <span class="govuk-caption-l">Principal accountable person</span>
 
       <form class="form" action="/questions/pap/pap-address" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
-            text: "What is the name of the organisation that is the principal accountable person?",
-            classes: "govuk-label--xl",
+            text: "Organisation name",
+            classes: "govuk-label--l",
             isPageHeading: true
           },
           id: "pap-org-name",

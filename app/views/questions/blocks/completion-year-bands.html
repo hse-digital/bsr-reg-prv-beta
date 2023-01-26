@@ -20,7 +20,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-xl">First block in the building</span>
+      <span class="govuk-caption-l">First block in the building</span>
 
       <form class="form" action="/questions/blocks/completion-certificate-issuer" method="post">
 
@@ -31,7 +31,7 @@
           fieldset: {
             legend: {
               text: "What year was the block completed?",
-              classes: "govuk-label--xl"
+              classes: "govuk-label--l"
             }
           },
           items: [
@@ -66,6 +66,13 @@
             {
               value: "2015 to 2023",
               text: "2015 to 2023"
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "The block has not yet been completed",
+              text: "The block has not yet been completed"
             }
           ]
         }) }}

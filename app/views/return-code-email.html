@@ -10,7 +10,7 @@
 
 <p><strong>From:</strong> enquiries@hse.gov.uk
   <br><strong>To:</strong> {{ data['email'] }}
-  <br><strong>Subject:</strong> Register {{ data['building-name'] }} return code
+  <br><strong>Subject:</strong> Register {{ data['building-name'] }} application
 </p>
 
 {% from "govuk/components/header/macro.njk" import govukHeader %}
@@ -20,9 +20,11 @@
 
 <div class="govuk-!-padding-bottom-5"></div>
 
-<h1 class="govuk-heading-xl">Your application to register {{ data['building-name'] }}</h1>
+<h1 class="govuk-heading-l">Your application to register {{ data['building-name'] }}</h1>
 
-<p>Your return code is <strong>BSR019388477</strong></p>
+<p>Your application number is <strong>BSR019388477</strong></p>
+
+<p>Keep this safe. You can use this to return to your application at any time.</p>
 
 <p><a href="/returning-code">Return to your application and enter your code</a></p>
 

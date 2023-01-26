@@ -20,25 +20,24 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">What is this building's name?</h1>
+      <span class="govuk-caption-l">First block in the building</span>
 
-      <p>If your application is succesful, this is the name that will appear on the public register of high-rise buildings in England.</p>
+      <h1 class="govuk-heading-l">What is this block's name?</h1>
 
-      <form class="form" action="/questions/contact-details/name" method="post">
+      <p>This will help you to identify which block we are asking you about later on.</p>
+
+      <form class="form" action="/questions/blocks/floors-above" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
-            text: "Building name",
+            text: "Block name",
             classes: "govuk-label--s",
             isPageHeading: false
           },
-          id: "building-name",
-          name: "building-name",
-          value: data['building-name'],
-          hint: {
-            text: "For example 'The Gherkin'."
-          }
+          id: "block-name",
+          name: "block-name",
+          value: data['block-name']
         }) }}
 
         <button class="govuk-button" data-module="govuk-button">Save and continue</button>
