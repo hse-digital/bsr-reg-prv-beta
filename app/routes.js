@@ -198,7 +198,7 @@ router.post('/pap-address-answer', function (req, res) {
 
   var papType = req.session.data['pap-type']
   if (papType == "Organisation") {
-    res.redirect('/questions/pap/pap-org-lead-contact-details')
+    res.redirect('/questions/pap/pap-org-lead-contact-name')
   } else {
     res.redirect('/questions/pap/pap-authorised-boolean')
   }
@@ -250,7 +250,7 @@ router.post('/ap-type-answer', function (req, res) {
     res.redirect('/questions/aps/ap-org-type')
   } else {
     // Send user to ineligible page
-    res.redirect('/questions/aps/ap-individual-contact-details')
+    res.redirect('/questions/aps/ap-individual-name')
   }
 
 })
@@ -259,7 +259,7 @@ router.post('/ap-areas-answer', function (req, res) {
 
   var apType = req.session.data['ap-type']
   if (apType == "Organisation") {
-    res.redirect('/questions/aps/ap-org-named-contact-details')
+    res.redirect('/questions/aps/ap-org-named-contact-name')
   } else {
     res.redirect('/questions/aps/add-ap')
   }

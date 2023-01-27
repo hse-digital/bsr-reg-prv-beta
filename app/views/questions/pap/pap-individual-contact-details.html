@@ -22,7 +22,7 @@
 
       <span class="govuk-caption-l">Principal accountable person</span>
 
-      <h1 class="govuk-heading-l">Contact details</h1>
+      <h1 class="govuk-heading-l">{{ data['pap-individual-first-name'] }} {{ data['pap-individual-last-name'] }}'s contact details</h1>
 
       <form class="form" action="/questions/pap/pap-address" method="post">
 
@@ -32,7 +32,8 @@
             text: "Email address"
           },
           id: "pap-individual-email",
-          name: "pap-individual-email"
+          name: "pap-individual-email",
+          value: data['pap-individual-email']
         }) }}
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
@@ -41,7 +42,8 @@
             text: "Telephone number"
           },
           id: "pap-individual-phone",
-          name: "pap-individual-phone"
+          name: "pap-individual-phone",
+          value: data['pap-individual-phone']
         }) }}
 
         <button class="govuk-button" data-module="govuk-button">Save and continue</button>

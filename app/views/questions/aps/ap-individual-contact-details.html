@@ -22,38 +22,28 @@
 
       <span class="govuk-caption-l">Other accountable persons</span>
 
-      <h1 class="govuk-heading-l">Provide contact details for this accountable person</h1>
+      <h1 class="govuk-heading-l">{{ data['ap-individual-first-name'] }} {{ data['ap-individual-last-name'] }}'s contact details</h1>
 
       <form class="form" action="/questions/aps/ap-address" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
-            text: "Enter their full name"
-          },
-          id: "ap-individual-name",
-          name: "ap-individual-name",
-          value: data['ap-individual-name']
-        }) }}
-
-        {% from "govuk/components/input/macro.njk" import govukInput %}
-        {{ govukInput({
-          label: {
-            text: "Enter their phone number"
-          },
-          id: "ap-individual-phone",
-          name: "ap-individual-phone",
-          value: data['ap-individual-phone']
-        }) }}
-
-        {% from "govuk/components/input/macro.njk" import govukInput %}
-        {{ govukInput({
-          label: {
-            text: "Enter their email address"
+            text: "Email address"
           },
           id: "ap-individual-email",
           name: "ap-individual-email",
           value: data['ap-individual-email']
+        }) }}
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {{ govukInput({
+          label: {
+            text: "Telephone number"
+          },
+          id: "ap-individual-phone",
+          name: "ap-individual-phone",
+          value: data['ap-individual-phone']
         }) }}
 
         <button class="govuk-button" data-module="govuk-button">Save and continue</button>

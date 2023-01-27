@@ -24,7 +24,16 @@
 
       <h1 class="govuk-heading-l">Add another accountable person</h1>
 
-      <p>If anyone other than {{ data['pap-name'] }} is accountable for any parts of the building then you should tell us about them here.</p>
+      <p>If anyone other than 
+        <strong>
+        {{ data['pap-org-name'] }}
+
+        {{ data['pap-individual-first-name'] }} {{ data['pap-individual-last-name'] }}
+
+        {{ data['ap-org-name'] }}
+        {{ data['ap-individual-first-name'] }} {{ data['ap-individual-last-name'] }}
+        </strong> 
+        is accountable for any parts of the building then you should tell us about them here.</p>
 
       <form class="form" action="/add-ap-answer" method="post">
 

@@ -32,7 +32,8 @@
             text: "First name"
           },
           id: "pap-individual-first-name",
-          name: "pap-individual-first-name"
+          name: "pap-individual-first-name",
+          value: data['pap-individual-first-name']
         }) }}
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
@@ -41,7 +42,8 @@
             text: "Last name"
           },
           id: "pap-individual-last-name",
-          name: "pap-individual-last-name"
+          name: "pap-individual-last-name",
+          value: data['pap-individual-last-name']
         }) }}
 
         <button class="govuk-button" data-module="govuk-button">Save and continue</button>

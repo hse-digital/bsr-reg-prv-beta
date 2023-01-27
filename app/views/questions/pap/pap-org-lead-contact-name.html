@@ -20,30 +20,32 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-l">Other accountable persons</span>
+      <span class="govuk-caption-l">Principal accountable person</span>
 
-      <h1 class="govuk-heading-l">{{ data['ap-org-named-contact-first-name'] }} {{ data['ap-org-named-contact-last-name'] }}'s contact details</h1>
+      <h1 class="govuk-heading-l">Lead contact's name</h1>
 
-      <form class="form" action="/questions/aps/add-ap" method="post">
+      <p>This is the person at {{ data['pap-org-name'] }} that we will contact for building safety queries.</p>
+
+      <form class="form" action="/questions/pap/pap-org-lead-contact-details" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
-            text: "Email address"
+            text: "First name"
           },
-          id: "ap-org-named-contact-email",
-          name: "ap-org-named-contact-email",
-          value: data['ap-org-named-contact-email']
+          id: "pap-org-lead-contact-first-name",
+          name: "pap-org-lead-contact-first-name",
+          value: data['pap-org-lead-contact-first-name']
         }) }}
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
-            text: "Telephone number"
+            text: "Last name"
           },
-          id: "ap-org-named-contact-phone",
-          name: "ap-org-named-contact-phone",
-          value: data['ap-org-named-contact-phone']
+          id: "pap-org-lead-contact-last-name",
+          name: "pap-org-lead-contact-last-name",
+          value: data['pap-org-lead-contact-last-name']
         }) }}
 
         <button class="govuk-button" data-module="govuk-button">Save and continue</button>
