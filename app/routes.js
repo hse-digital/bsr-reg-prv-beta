@@ -161,7 +161,7 @@ router.post('/pap-type-answer', function (req, res) {
     res.redirect('/questions/pap/pap-org-type')
   } else {
     // Send user to ineligible page
-    res.redirect('/questions/pap/pap-individual-contact-details')
+    res.redirect('/questions/pap/pap-individual-name')
   }
 
 })
