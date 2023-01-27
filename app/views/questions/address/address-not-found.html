@@ -1,0 +1,29 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Principal accountable person</span>
+
+      <h1 class="govuk-heading-l">Address of [organisations name] or [individuals first name] [individuals last name]</h1>
+
+      <h2 class="govuk-heading-m">Address not found</h2>
+
+      <p>No addresses found for {{ data['search-address-postcode'] }} and {{ data['search-address-line-1'] }}.</p>
+
+      <p>You can either <a href="find-address">search again</a> or <a href="enter-address-manually">enter the address manually</a>.</p>
+
+    </div>
+  </div>
+
+{% endblock %}
