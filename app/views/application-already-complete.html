@@ -1,0 +1,25 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Your application for [building name] has already been submitted</h1>
+
+      <p>We will contact you on <strong>[email]</strong> if we require any further information.</p>
+
+      <p>You can either <a href="returning-code">return to another application</a> or <a href="questions/building/building-name">register another building</a>.</p>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -15,22 +15,37 @@
 
       <h1 class="govuk-heading-l">Returning to a saved application</h1>
 
-      <p>When you began your application we sent you an email with a security code. Use that code here to return to your application.</p>
-
-      <p>If that email or security code is no longer available to you, <a href="/contact">contact us</a> or call the building safety regulation team on XXXXX XXXXXX and they can reissue it to you.</p>
-
       <form class="form" action="#" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
-            text: "Security code",
+            text: "Email address",
             classes: "govuk-label--s",
             isPageHeading: false
+          },
+          hint: {
+            text: "This is the email address you used when you began this application."
           },
           id: "returning-code",
           name: "returning-code"
         }) }}
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {{ govukInput({
+          label: {
+            text: "Application number",
+            classes: "govuk-label--s",
+            isPageHeading: false
+          },
+          hint: {
+            text: "Find this in the email we sent to you when you began your application. For example: '028163729927'."
+          },
+          id: "returning-code",
+          name: "returning-code"
+        }) }}
+
+        <p>If that email address or application number is no longer available to you, <a href="/contact">contact us</a>.</p>
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 

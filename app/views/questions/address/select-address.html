@@ -13,11 +13,9 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-l">Principal accountable person</span>
+      <span class="govuk-caption-l">Address of [organisations name] (or) [individuals first name] [individuals last name]</span>
 
-      <h1 class="govuk-heading-l">Address of [organisations name] or [individuals first name] [individuals last name]</h1>
-
-      <form class="form" action="/url/of/next/page" method="post">
+      <form class="form" action="/questions/address/confirm-address" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
         {{ govukRadios({
@@ -25,8 +23,8 @@
           fieldset: {
             legend: {
               text: "Select the address",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--m"
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
             }
           },
           items: [
