@@ -10,7 +10,7 @@
 
 <p><strong>From:</strong> enquiries@hse.gov.uk
   <br><strong>To:</strong> {{ data['email'] }}
-  <br><strong>Subject:</strong> Register {{ data['building-name'] }} application
+  <br><strong>Subject:</strong> Register {{ data['building-name'] }} application number
 </p>
 
 {% from "govuk/components/header/macro.njk" import govukHeader %}
@@ -26,7 +26,7 @@
 
 <p>Keep this safe. You can use this to return to your application at any time.</p>
 
-<p><a href="/returning-code">Return to your application and enter your code</a></p>
+<p>To return to your application enter this code at <a href="/returning-code">www.hse.gov.uk/register-a-high-rise-building/continue-a-saved-application</a>.</p>
 
 <h2 class="govuk-heading-l">Why you recieved this email</h2>
 
@@ -36,6 +36,11 @@
 
 <p>From the Health and Safety Executive</p>
 
-<a class="govuk-back-link" href="javascript:window.history.back()">Return to service</a>
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{{ govukButton({
+  text: "Return to service",
+  href: "javascript:window.history.back()",
+  classes: "govuk-button--secondary"
+}) }}
 
 {% endblock %}

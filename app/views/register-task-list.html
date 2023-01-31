@@ -19,27 +19,17 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
-      {% set html %}
-        <p class="govuk-notification-banner__heading">
-          We have sent an email containing your application number to {{ data['email'] }}.
-        </p>
-        <p>
-          We will save the information you give to us on each page. Use this email to return to this application at any time.
-        </p>
-        <p><a href="/return-code-email">Launch email</a></p>
-      {% endset %}
-      {{ govukNotificationBanner({
-        html: html,
-        type: 'success'
-      }) }}
-
       <h1 class="govuk-heading-xl">
         Register {{ data['building-name'] }}
       </h1>
 
       <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Application incomplete</h2>
-      <p class="govuk-body govuk-!-margin-bottom-7">You have completed 0 of 4 sections.</p>
+
+      <p>You have completed 0 of 4 sections.</p>
+
+      <p class="govuk-body govuk-!-margin-bottom-7">
+        We will save the information you give to us on each page. <br><br>We have sent an email containing your application number to {{ data['email'] }}. Use this email to return to this application at any time.
+      </p>
 
       <ol class="app-task-list">
         <li>
