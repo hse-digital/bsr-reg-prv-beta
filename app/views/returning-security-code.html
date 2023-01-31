@@ -20,7 +20,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">Verify your email address</h1>
+      <h1 class="govuk-heading-l">Enter security code</h1>
 
       <p>We have sent a 6 digit security code to: <strong>{{ data['email'] }}</strong>.</p>
 
@@ -31,12 +31,16 @@
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
-            text: "6 digit security code",
+            text: "Security code",
             classes: "govuk-label--s",
             isPageHeading: false
           },
+          hint: {
+            text: "For example, '123456'."
+          },
           id: "security-code",
-          name: "security-code"
+          name: "security-code",
+          classes: "govuk-input--width-10"
         }) }}
 
         {% from "govuk/components/button/macro.njk" import govukButton %}

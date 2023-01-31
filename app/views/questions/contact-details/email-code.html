@@ -35,12 +35,16 @@
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
-            text: "Your 6 digit security code",
+            text: "Security code",
             classes: "govuk-label--s",
             isPageHeading: false
           },
           id: "security-code",
-          name: "security-code"
+          name: "security-code",
+          hint: {
+            text: "For example, '123456'."
+          },
+          classes: "govuk-input--width-10"
         }) }}
 
         {% from "govuk/components/button/macro.njk" import govukButton %}
