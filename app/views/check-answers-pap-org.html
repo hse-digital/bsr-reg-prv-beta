@@ -85,7 +85,7 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Lead contact details
+            Named contact's name
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['pap-org-lead-contact-name'] }}
@@ -102,27 +102,12 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Has the principal accountable person authorsied someone to act for them?
+            Named contact's details
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['pap-authorised-boolean'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="/questions/pap/pap-authorised-boolean">
-              Change
-              <span class="govuk-visually-hidden"> contact details</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Authorised person contact details
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['pap-authorised-person-name'] }}
-            <br>{{ data['pap-authorised-person-email'] }}
-            <br>{{ data['pap-authorised-person-phone'] }}
-            <br>{{ data['pap-authorised-person-role'] }}
+            {{ data['pap-org-lead-contact-role'] }}
+            <br>{{ data['pap-org-lead-contact-email'] }}
+            <br>{{ data['pap-org-lead-contact-phone'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="/questions/pap/pap-org-lead-contact-details">
@@ -133,7 +118,7 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Authorised person address
+            Your address
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['pap-address-line-1'] }}
@@ -159,7 +144,7 @@
 
       </form>
 
-      <p><a href="#">Save and exit this application</a></p>
+      <p><a href="#">Save and come back later</a></p>
 
     </div>
   </div>

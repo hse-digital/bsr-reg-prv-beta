@@ -15,6 +15,10 @@
 
       <span class="govuk-caption-l">Address of [organisations name] (or) [individuals first name] [individuals last name]</span>
 
+      <h1 class="govuk-heading-l">Select the address</h1>
+
+      <p>30 addresses found for <strong>{{ data['search-address-postcode'] }}</strong> and <strong>{{ data['search-address-line-1'] }}</strong>.</p>
+
       <form class="form" action="/questions/address/confirm-address" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
@@ -22,9 +26,6 @@
           name: "select-the-address",
           fieldset: {
             legend: {
-              text: "Select the address",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--l"
             }
           },
           items: [

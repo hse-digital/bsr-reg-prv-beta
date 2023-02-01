@@ -200,7 +200,7 @@ router.post('/pap-address-answer', function (req, res) {
   if (papType == "Organisation") {
     res.redirect('/questions/pap/pap-org-lead-contact-name')
   } else {
-    res.redirect('/questions/pap/pap-authorised-boolean')
+    res.redirect('/check-answers-pap-individual')
   }
 
 })

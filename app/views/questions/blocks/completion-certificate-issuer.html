@@ -27,12 +27,12 @@
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
-            text: "Who issued the completion certificate for this block? (optional)",
+            text: "Completion certificate issuer (optional)",
             classes: "govuk-label--l",
             isPageHeading: true
           },
           hint: {
-            text: "Enter the name of the organisation or controlling body."
+            text: "Enter the name of the organisation or controlling body who issued the completion certificate. If you don't have a completion certificate, leave this blank."
           },
           id: "completion-certificate-issuer",
           name: "completion-certificate-issuer",
@@ -43,7 +43,7 @@
 
       </form>
 
-      <p><a href="#">Save and exit this application</a></p>
+      <p><a href="#">Save and come back later</a></p>
 
     </div>
   </div>

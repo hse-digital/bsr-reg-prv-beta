@@ -22,6 +22,10 @@
 
       <span class="govuk-caption-l">Blocks in the building</span>
 
+      <h1 class="govuk-heading-l">Are there more blocks in the building?</h1>
+
+      <p>So far you have told us about <strong>[block A]</strong> and <strong>[block B]</strong>.</p>
+
       <form class="form" action="/add-block-boolean-answer" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
@@ -30,9 +34,9 @@
           id: "add-block-boolean",
           fieldset: {
             legend: {
-              text: "Are there more blocks in the building?",
+              text: "Add another block?",
               isPageHeading: true,
-              classes: "govuk-fieldset__legend--l"
+              classes: "govuk-fieldset__legend--s"
             }
           },
           items: [

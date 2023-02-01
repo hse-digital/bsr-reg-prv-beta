@@ -1,0 +1,36 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service in development - do not take anything you see here as guidance.'
+}) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Generate a new security code</h1>
+
+      <p>We will send a 6-digit security code to: <strong>{{ data['email'] }}</strong>.</p>
+
+      <form class="form" action="/returning-security-code" method="post">
+
+        <button class="govuk-button" data-module="govuk-button">Send new security code</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

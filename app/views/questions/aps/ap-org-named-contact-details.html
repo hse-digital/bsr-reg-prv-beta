@@ -39,7 +39,10 @@
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
-            text: "Telephone number"
+            text: "Telephone or mobile number"
+          },
+          hint: {
+            text: "Enter a UK phone number with or without spaces. For example, '012 3456 7890' or '01234567890' or '+44 07654321098'"
           },
           id: "ap-org-named-contact-phone",
           name: "ap-org-named-contact-phone",
@@ -50,7 +53,7 @@
 
       </form>
 
-      <p><a href="#">Save and exit this application</a></p>
+      <p><a href="#">Save and come back later</a></p>
 
     </div>
   </div>

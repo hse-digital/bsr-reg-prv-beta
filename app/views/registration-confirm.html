@@ -50,29 +50,7 @@
 
       <form class="form" action="/kbi-task-list" method="post">
 
-        {% from "govuk/components/radios/macro.njk" import govukRadios %}
-        {{ govukRadios({
-          name: "where-do-you-live",
-          fieldset: {
-            legend: {
-              text: "Would you like to complete structural and safety information now?",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--l"
-            }
-          },
-          items: [
-            {
-              value: "england",
-              text: "Yes"
-            },
-            {
-              value: "scotland",
-              text: "No"
-            }
-          ]
-        }) }}
-
-        <button class="govuk-button" data-module="govuk-button">Continue</button>
+        <button class="govuk-button" data-module="govuk-button">Continue to structural and safety information</button>
 
       </form>
 
