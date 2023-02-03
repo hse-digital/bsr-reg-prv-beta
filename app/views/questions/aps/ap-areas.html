@@ -22,9 +22,7 @@
 
       <span class="govuk-caption-l">Other accountable persons</span>
 
-      <h1 class="govuk-heading-l">Which common parts of the building is {{ data['ap-org-name'] }}{{ data['ap-name'] }} accountable for?</h1>
-
-      <p>Select all that apply.</p>
+      <h1 class="govuk-heading-l">What is [person or organisations name] {{ data['ap-org-name'] }}{{ data['ap-individual-first-name'] }}{{ data['ap-individual-last-name'] }} accountable for?</h1>
 
       <form class="form" action="/ap-areas-answer" method="post">
 
@@ -33,10 +31,10 @@
           name: "first-block-parts",
           fieldset: {
             legend: {
-              text: "Which parts of Block A of is this person accountable for?",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--m"
             }
+          },
+          hint: {
+            text: "Select all that apply."
           },
           items: [
             {
@@ -57,133 +55,7 @@
               value: "Maintenance of plant and equipment",
               text: "Maintenance of plant and equipment",
               hint: {
-                text: "This includes all utlities (like gas, electricity and water), fire alarm, sprinklers, and other fire precautions."
-              }
-            },
-            {
-              value: "Any other areas",
-              text: "Any other areas",
-              hint: {
-                text: "This could be car parking, fire engine access, waste disposal and other storage areas."
-              }
-            }
-          ]
-        }) }}
-
-        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
-        {{ govukCheckboxes({
-          name: "second-block-parts",
-          fieldset: {
-            legend: {
-              text: "Which parts of Block B of is this person accountable for?",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          items: [
-            {
-              value: "External walls",
-              text: "External walls",
-              hint: {
-                text: "This includes the roof."
-              }
-            },
-            {
-              value: "Internal common parts",
-              text: "Internal common parts",
-              hint: {
-                text: "This includes all internal communal areas like stairs, lobbies, corridors, shared amenity areas, internal walls and floors."
-              }
-            },
-            {
-              value: "Maintenance of plant and equipment",
-              text: "Maintenance of plant and equipment",
-              hint: {
-                text: "This includes all utlities (like gas, electricity and water), fire alarm, sprinklers, and other fire precautions."
-              }
-            },
-            {
-              value: "Any other areas",
-              text: "Any other areas",
-              hint: {
-                text: "This could be car parking, fire engine access, waste disposal and other storage areas."
-              }
-            }
-          ]
-        }) }}
-
-        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
-        {{ govukCheckboxes({
-          name: "third-block-parts",
-          fieldset: {
-            legend: {
-              text: "Which parts of Block C of is this person accountable for?",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          items: [
-            {
-              value: "External walls",
-              text: "External walls",
-              hint: {
-                text: "This includes the roof."
-              }
-            },
-            {
-              value: "Internal common parts",
-              text: "Internal common parts",
-              hint: {
-                text: "This includes all internal communal areas like stairs, lobbies, corridors, shared amenity areas, internal walls and floors."
-              }
-            },
-            {
-              value: "Maintenance of plant and equipment",
-              text: "Maintenance of plant and equipment",
-              hint: {
-                text: "This includes all utlities (like gas, electricity and water), fire alarm, sprinklers, and other fire precautions."
-              }
-            },
-            {
-              value: "Any other areas",
-              text: "Any other areas",
-              hint: {
-                text: "This could be car parking, fire engine access, waste disposal and other storage areas."
-              }
-            }
-          ]
-        }) }}
-
-        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
-        {{ govukCheckboxes({
-          name: "forth-block-parts",
-          fieldset: {
-            legend: {
-              text: "Which parts of Block D of is this person accountable for?",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          items: [
-            {
-              value: "External walls",
-              text: "External walls",
-              hint: {
-                text: "This includes the roof."
-              }
-            },
-            {
-              value: "Internal common parts",
-              text: "Internal common parts",
-              hint: {
-                text: "This includes all internal communal areas like stairs, lobbies, corridors, shared amenity areas, internal walls and floors."
-              }
-            },
-            {
-              value: "Maintenance of plant and equipment",
-              text: "Maintenance of plant and equipment",
-              hint: {
-                text: "This includes all utlities (like gas, electricity and water), fire alarm, sprinklers, and other fire precautions."
+                text: "This includes all utilities (like gas, electricity and water), fire alarm, sprinklers, and other fire precautions."
               }
             },
             {
