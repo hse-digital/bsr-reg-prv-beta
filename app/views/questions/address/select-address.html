@@ -19,7 +19,7 @@
 
       <p>30 addresses found for <strong>{{ data['search-address-postcode'] }}</strong> and <strong>{{ data['search-address-line-1'] }}</strong>.</p>
 
-      <form class="form" action="/questions/address/confirm-address" method="post">
+      <form class="form" action="confirm-address" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
         {{ govukRadios({

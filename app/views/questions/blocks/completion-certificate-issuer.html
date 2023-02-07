@@ -24,6 +24,12 @@
 
       <form class="form" action="/questions/blocks/completion-certificate-reference-number" method="post">
 
+        {% from "govuk/components/details/macro.njk" import govukDetails %}
+        {{ govukDetails({
+          summaryText: "Help with completion certificate",
+          text: "This is the certificate issued by somebody when the block's construction work was completed."
+        }) }}
+
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
@@ -32,7 +38,7 @@
             isPageHeading: true
           },
           hint: {
-            text: "Enter the name of the organisation or controlling body who issued the completion certificate. If you don't have a completion certificate, leave this blank."
+            text: "Enter the full name of the organisation or controlling body who issued the completion certificate. If you don't have a completion certificate, leave this blank."
           },
           id: "completion-certificate-issuer",
           name: "completion-certificate-issuer",

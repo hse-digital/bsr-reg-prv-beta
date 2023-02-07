@@ -1,0 +1,67 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">External walls and features <!--(section 8 of 11)--></span>
+
+      <h1 class="govuk-heading-l">Percentage of each type of insulation</h1>
+
+      <form class="form" action="/questions/walls/external-wall-attached" method="post">
+
+      <p>Estimate the percentage of each type of material used as insulation in the outside walls.</p>
+
+      <p>They must all add up to 100%.</p>
+
+        {{ govukInput({
+          label: {
+            text: "Fiber insulation"
+          },
+          suffix: {
+            text: "%"
+          },
+          classes: "govuk-input--width-3",
+          id: "width-3",
+          name: "width-3"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Masonry"
+          },
+          suffix: {
+            text: "%"
+          },
+          classes: "govuk-input--width-3",
+          id: "width-3",
+          name: "width-3"
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+      <span class="govuk-caption-m">
+        <strong>{{ data['building-name'] }}</strong>
+        <br>{{ data['building-address-line-1'] }}
+        <br>{{ data['building-address-line-2'] }}
+        <br>{{ data['building-postcode'] }}
+      </span>
+    </div>
+    
+  </div>
+
+{% endblock %}

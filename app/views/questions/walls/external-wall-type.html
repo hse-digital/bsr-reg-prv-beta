@@ -15,6 +15,8 @@
 
       <span class="govuk-caption-l">External walls and features <!--(section 8 of 11)--></span>
 
+      <h1 class="govuk-heading-l">Materials on the outside walls</h1>
+
       <form class="form" action="/questions/walls/external-wall-composite" method="post">
 
         {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
@@ -22,9 +24,9 @@
           name: "waste",
           fieldset: {
             legend: {
-              text: "What materials are used on the external walls of this building?",
+              text: "What materials are visible on the outside walls of this block?",
               isPageHeading: true,
-              classes: "govuk-fieldset__legend--l"
+              classes: "govuk-fieldset__legend--s"
             }
           },
           hint: {

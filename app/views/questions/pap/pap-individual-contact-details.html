@@ -24,7 +24,7 @@
 
       <h1 class="govuk-heading-l">{{ data['pap-individual-first-name'] }} {{ data['pap-individual-last-name'] }}'s contact details</h1>
 
-      <form class="form" action="/questions/pap/pap-address" method="post">
+      <form class="form" action="/questions/pap-address/find-address" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({

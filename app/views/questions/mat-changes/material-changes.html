@@ -15,6 +15,10 @@
 
       <span class="govuk-caption-l">Changes since completion <!--(section 10 of 11)--></span>
 
+      <h1 class="govuk-heading-l">Material changes since original build</h1>
+
+      <p>Material change is defined by building regulations.</p>
+
       <form class="form" action="/questions/mat-changes/material-changes-year" method="post">
 
         {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
@@ -23,12 +27,12 @@
           fieldset: {
             legend: {
               text: "Have there been any material changes since the building was originally built?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--l"
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--s"
             }
           },
           hint: {
-            text: "Select all that apply."
+            text: "Select all that apply (even if there has only been a partial change)."
           },
           items: [
             {
@@ -37,7 +41,7 @@
             }, 
             {
               value: "office",
-              text: "Change in nunmber of floors"
+              text: "Change in number of floors"
             },
             {
               value: "residential-dwelling",
@@ -45,7 +49,7 @@
             },
             {
               value: "residential-institution",
-              text: "Changes in number and/or location of staircase cores"
+              text: "Changes in number or location of staircase cores"
             },
             {
               value: "residential-other",
@@ -74,6 +78,10 @@
             {
               value: "storage-and-other-non-residential",
               text: "Installation, replacement or removal of gas supply to building"
+            },
+            {
+              value: "Removal of cladding",
+              text: "Removal of cladding"
             },
             {
               value: "storage-and-other-non-residential",

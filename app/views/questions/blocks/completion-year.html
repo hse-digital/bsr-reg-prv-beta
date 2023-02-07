@@ -22,9 +22,15 @@
 
       <span class="govuk-caption-l">First block in the building</span>
 
-      <h1 class="govuk-heading-l">Do you know the exact year the block was completed?</h1>
+      <h1 class="govuk-heading-l">Do you know the exact year {{ data['block-name'] }} was completed?</h1>
 
       <form class="form" action="/completion-year-answer" method="post">
+
+        {% from "govuk/components/details/macro.njk" import govukDetails %}
+        {{ govukDetails({
+          summaryText: "Help with completed",
+          text: "This is the year the block's construction work was completed. /This is the year the block's completion certificate was issued."
+        }) }}
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {% set exactYearHtml %}

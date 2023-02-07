@@ -28,7 +28,7 @@
           id: "more-than-one-block",
           fieldset: {
             legend: {
-              text: "Is your building a complex structure?",
+              text: "What type of structure is your building?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
@@ -36,11 +36,17 @@
           items: [
           {
             value: "One",
-            text: "No"
+            text: "Simple structure",
+            hint: {
+              text: "A single structure that is not connected to any other structures by a basement, lobby or walkway that contains a residential unit."
+            }
           },
           {
             value: "Two or more",
-            text: "Yes"
+            text: "Complex structure",
+            hint: {
+              text: "Multiple tower blocks that are connected together by a basement, lobby or walkway that contains a residential unit."
+            }
           }
           ]
         }) }}

@@ -16,12 +16,24 @@
 
       <h1 class="govuk-heading-l">Check your answers</h1>
 
-      <h2 class="govuk-heading-m">First block</h2>
-
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Number of floors
+            Structure type
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['more-than-one-block'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/blocks/more-than-one-block">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Number of floors above ground
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['number-of-floors'] }}
@@ -63,7 +75,7 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Are people living in the block?
+            Are people living in the building?
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['are-people-living-in-the-building'] }}
@@ -105,7 +117,7 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Completion certificate reference
+            Completion certificate number
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['completion-certificate-reference-number'] }}
@@ -128,6 +140,20 @@
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="/questions/blocks/best-known-address">
+              Change
+              <span class="govuk-visually-hidden"> contact details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Add another address?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            No
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/blocks/other-name-address-postcode-boolean">
               Change
               <span class="govuk-visually-hidden"> contact details</span>
             </a>

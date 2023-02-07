@@ -15,9 +15,11 @@
 
       <span class="govuk-caption-l">External walls and features <!--(section 8 of 11)--></span>
 
-      <form class="form" action="/questions/walls/external-wall-attached" method="post">
+      <h1 class="govuk-heading-l">Materials used as insulation in the outside walls</h1>
 
-      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+      <form class="form" action="/questions/walls/external-wall-insulation-percentage" method="post">
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
       {% from "govuk/components/input/macro.njk" import govukInput %}
 
       {% set textHtml %}
@@ -29,17 +31,18 @@
         }
       }) }}
       {% endset -%}
-      {{ govukRadios({
+
+      {{ govukCheckboxes({
         name: "contact",
         fieldset: {
           legend: {
-            text: "What insulation is used in the external walls?",
+            text: "What insulation materials are used in the outside walls of this block?",
             isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
+            classes: "govuk-fieldset__legend--s"
           }
         },
         hint: {
-          text: "Select one option."
+          text: "Select all that apply."
         },
         items: [
           {
@@ -84,8 +87,12 @@
             }
           },
           {
+            divider: "or"
+          },
+          {
             value: "email",
-            text: "None"
+            text: "None",
+            behaviour: "exclusive"
           }
         ]
       }) }}
