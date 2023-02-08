@@ -229,8 +229,8 @@ router.post('/pap-address-answer', function (req, res) {
 router.post('/what-is-your-role-at-pap-org-answer', function (req, res) {
 
   var papType = req.session.data['pap-org-role']
-  if (papType == "I am the lead contact") {
-    res.redirect('/questions/pap/lead-contact-role')
+  if (papType == "I am the named contact") {
+    res.redirect('/questions/pap/what-is-your-job-role')
   } else {
     res.redirect('/questions/pap/same-address-as-pap-org')
   }

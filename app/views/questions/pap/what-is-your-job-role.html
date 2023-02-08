@@ -22,9 +22,9 @@
 
       <span class="govuk-caption-l">Principal accountable person</span>
 
-      <h1 class="govuk-heading-l">What is your role at {{ data['pap-org-name'] }}?</h1>
+      <h1 class="govuk-heading-l">What is your job role at {{ data['pap-org-name'] }}?</h1>
 
-      <form class="form" action="/what-is-your-role-at-pap-org-answer" method="post">
+      <form class="form" action="/check-answers-pap-org" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
@@ -37,15 +37,24 @@
           },
           items: [
             {
-              value: "I am the named contact",
-              text: "I am the named contact",
-              hint: {
-                text: "This is the person who will be contacted about building safety issues on behalf of the organisation, usually a director."
-              }
+              value: "Director",
+              text: "Director"
             },
             {
-              value: "I am acting for the named contact",
-              text: "I am acting for the named contact"
+              value: "Administrative or office worker",
+              text: "Administrative or office worker"
+            },
+            {
+              value: "Building or facilities manager",
+              text: "Building or facilities manager"
+            },
+            {
+              value: "Building safety director",
+              text: "Building safety director"
+            },
+            {
+              value: "Other",
+              text: "Other"
             }
           ]
         }) }}
