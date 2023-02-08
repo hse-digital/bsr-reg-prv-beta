@@ -22,9 +22,15 @@
 
       <span class="govuk-caption-l">First block in the building</span>
 
-      <h1 class="govuk-heading-l">When was {{ data['block-name'] }} originally built?</h1>
+      <h1 class="govuk-heading-l">Do you know the exact year {{ data['block-name'] }} was originally built?</h1>
 
       <form class="form" action="/completion-year-answer" method="post">
+
+        {% from "govuk/components/details/macro.njk" import govukDetails %}
+        {{ govukDetails({
+          summaryText: "Help with completed",
+          text: "This is the year the block's construction work was completed. /This is the year the block's completion certificate was issued."
+        }) }}
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {% set exactYearHtml %}
@@ -53,14 +59,14 @@
           items: [
             {
               value: "Yes, I know the exact year",
-              text: "I know the exact year",
+              text: "Yes, I know the exact year",
               conditional: {
                 html: exactYearHtml
               }
             },
             {
               value: "No, I don't know the exact year",
-              text: "I do not know the exact year",
+              text: "No, I don't know the exact year",
               hint: {
                 text: "Select this option if you know a general range"
               }

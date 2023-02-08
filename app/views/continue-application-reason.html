@@ -13,19 +13,17 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/questions/pap/who-is-the-pap" method="post">
+      <form class="form" action="/questions/pap/pap-type" method="post">
 
-        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
-        {{ govukTextarea({
+        {% from "govuk/components/character-count/macro.njk" import govukCharacterCount %}
+        {{ govukCharacterCount({
           name: "more-detail",
           id: "more-detail",
+          maxwords: 150,
           label: {
-            text: "Tell us why you still want to continue",
+            text: "Tell us why you still want to register this building",
             classes: "govuk-label--l",
             isPageHeading: true
-          },
-          hint: {
-            text: "Do not include personal or financial information."
           }
         }) }}
 

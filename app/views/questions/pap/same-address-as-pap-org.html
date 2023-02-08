@@ -24,7 +24,7 @@
 
       <h1 class="govuk-heading-l">Your address</h1>
 
-      <p>You have told us that the address of <strong>{{ data['pap-org-nam'] }}</strong> is <strong>7 Example Street, Exampleton, EX1 AB1</strong>.</p>
+      <p>You have told us that the address of <strong>{{ data['pap-org-name'] }}</strong> is <strong>7 Example Street, Exampleton, EX1 AB1</strong>.</p>
 
       <form class="form" action="/same-address-as-pap-org-answer" method="post">
 
@@ -43,11 +43,11 @@
           items: [
             {
               value: "Use this address",
-              text: "Use this address"
+              text: "Yes, use this address"
             },
             {
               value: "Use a different address",
-              text: "Use a different address"
+              text: "No, use a different address"
             }
           ]
         }) }}

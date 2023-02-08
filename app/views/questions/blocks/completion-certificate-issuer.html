@@ -22,6 +22,8 @@
 
       <span class="govuk-caption-l">First block in the building</span>
 
+      <h1 class="govuk-heading-l">Completion certificate issuer</h1>
+
       <form class="form" action="/questions/blocks/completion-certificate-reference-number" method="post">
 
         {% from "govuk/components/details/macro.njk" import govukDetails %}
@@ -33,12 +35,12 @@
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
-            text: "Completion certificate issuer (optional)",
-            classes: "govuk-label--l",
-            isPageHeading: true
+            text: "Issuer name (optional)",
+            classes: "govuk-label--s",
+            isPageHeading: false
           },
           hint: {
-            text: "Enter the full name of the organisation or controlling body who issued the completion certificate. If you don't have a completion certificate, leave this blank."
+            text: "Enter the full name of the building control body or authority that issued the completion certificate. If you do not have access to the completion certificate, leave this blank."
           },
           id: "completion-certificate-issuer",
           name: "completion-certificate-issuer",

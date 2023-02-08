@@ -24,8 +24,6 @@
 
       <h1 class="govuk-heading-l">Is this accountable person an organisation or an individual?</h1>
 
-      <p>Tell us about one of the accountable persons. You'll be able to add more accountable persons later.</p>
-
       <form class="form" action="/ap-type-answer" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
@@ -36,7 +34,7 @@
           value: data['ap-type'],
           fieldset: {
             legend: {
-              text: "This accountable person is",
+              text: "This accountable person is:",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
