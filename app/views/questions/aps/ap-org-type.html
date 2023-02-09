@@ -20,7 +20,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-xl">Other accountable persons</span>
+      <span class="govuk-caption-l">Other accountable persons</span>
 
       <form class="form" action="/questions/aps/ap-org-name" method="post">
 
@@ -35,7 +35,7 @@
           type: "text",
           spellcheck: false,
           label: {
-            text: "What type of organisation is this accountable person?"
+            text: "Other organisation type"
           }
         }) }}
         {% endset -%}
@@ -45,15 +45,18 @@
           value: data['ap-org-type'],
           fieldset: {
             legend: {
-              text: "What type of organisation is this accountable person?",
+              text: "Type of organisation",
               isPageHeading: true,
-              classes: "govuk-fieldset__legend--xl"
+              classes: "govuk-fieldset__legend--l"
             }
+          },
+          hint: {
+            text: "What type of organisation is this accountable person?"
           },
           items: [
             {
-              value: "Building owner (individual)",
-              text: "Building owner (individual)"
+              value: "Arms length management organisation (ALMO)",
+              text: "Arms length management organisation (ALMO)"
             },
             {
               value: "Commonhold association",
@@ -93,7 +96,7 @@
 
       </form>
 
-      <p><a href="#">Save and exit this application</a></p>
+      <p><a href="#">Save and come back later</a></p>
 
     </div>
   </div>

@@ -13,11 +13,12 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-xl">Fire and smoke controls <!--(section 2 of 11)--></span>
-      <h1 class="govuk-heading-xl">Fire and smoke control provisions and equipment</h1>
-      <p>What fire and smoke control provisions or equipment are in the residential parts of the building?</p>
+      <span class="govuk-caption-l">Fire and smoke controls <!--(section 2 of 11)--></span>
+      <h1 class="govuk-heading-l">Provisions and equipment in the residential units</h1>
+      <p>What fire and smoke control provisions or equipment are in the residential units?</p>
+      <p>This is not a complete list. It includes only the provisions and equipment we need to know about.</p>
       <p>Select all that apply</p>
-      <form class="form" action="/questions/fire/fire-provisions-location" method="post">
+      <form class="form" action="/questions/fire/fire-provisions-common-parts" method="post">
 
         {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
         {{ govukCheckboxes({
@@ -29,40 +30,24 @@
           },
           items: [
             {
-              value: "carcasses",
-              text: "Alarm connected to heat or smoke detection and call points"
-            },
-            {
               value: "mines",
-              text: "Duct dampers"
+              text: "Heat detectors"
             },
             {
               value: "farm",
-              text: "Fire shutters"
-            },
-            {
-              value: "mines",
-              text: "Heat detector heads"
-            },
-            {
-              value: "farm",
-              text: "Lifts for firefighters, firefighting or evacuation"
-            },
-            {
-              value: "mines",
-              text: "Risers - wet or dry"
-            },
-            {
-              value: "farm",
-              text: "Smoke control systems, automatic or manual"
-            },
-            {
-              value: "farm",
-              text: "Smoke detector heads"
+              text: "Smoke detectors"
             },
             {
               value: "farm",
               text: "Sprinklers"
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "farm",
+              text: "None of these",
+              behaviour: "exclusive"
             }
           ]
         }) }}

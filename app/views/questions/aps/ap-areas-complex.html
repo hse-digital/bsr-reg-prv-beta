@@ -1,0 +1,196 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service in development - do not take anything you see here as guidance.'
+}) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Other accountable persons</span>
+
+      <h1 class="govuk-heading-l">What is [person or organisations name] {{ data['ap-org-name'] }}{{ data['ap-individual-first-name'] }} {{ data['ap-individual-last-name'] }} accountable for?</h1>
+
+      <p>Select all that apply.</p>
+
+      <form class="form" action="/ap-areas-answer" method="post">
+
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+        {{ govukCheckboxes({
+          name: "first-block-parts",
+          fieldset: {
+            legend: {
+              text: "[Block A name]",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+          {
+            value: "External walls and roof",
+            text: "External walls and roof"
+          },
+          {
+            value: "Routes that residents can walk throughs",
+            text: "Routes that residents can walk through",
+            hint: {
+              text: "This includes stairs, lobbies, corridors, and maintaining the internal walls and floors."
+            }
+          },
+          {
+            value: "Maintaining plant and equipment",
+            text: "Maintaining plant and equipment",
+            hint: {
+              text: "This includes all utilities, fire alarms, sprinklers, and other fire and smoke provisions."
+            }
+          },
+          {
+            value: "Facilities that residents share",
+            text: "Facilities that residents share",
+            hint: {
+              text: "This includes underground car parks, laundry rooms, bin stores and other storage areas."
+            }
+          }
+        ]
+      }) }}
+
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+        {{ govukCheckboxes({
+          name: "second-block-parts",
+          fieldset: {
+            legend: {
+              text: "[Block B name]",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "External walls and roof",
+              text: "External walls and roof"
+            },
+            {
+              value: "Routes that residents can walk throughs",
+              text: "Routes that residents can walk through",
+              hint: {
+                text: "This includes stairs, lobbies, corridors, and maintaining the internal walls and floors."
+              }
+            },
+            {
+              value: "Maintaining plant and equipment",
+              text: "Maintaining plant and equipment",
+              hint: {
+                text: "This includes all utilities, fire alarms, sprinklers, and other fire and smoke provisions."
+              }
+            },
+            {
+              value: "Facilities that residents share",
+              text: "Facilities that residents share",
+              hint: {
+                text: "This includes underground car parks, laundry rooms, bin stores and other storage areas."
+              }
+            }
+          ]
+        }) }}
+
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+        {{ govukCheckboxes({
+          name: "third-block-parts",
+          fieldset: {
+            legend: {
+              text: "[Block C name]",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "External walls and roof",
+              text: "External walls and roof"
+            },
+            {
+              value: "Routes that residents can walk throughs",
+              text: "Routes that residents can walk through",
+              hint: {
+                text: "This includes stairs, lobbies, corridors, and maintaining the internal walls and floors."
+              }
+            },
+            {
+              value: "Maintaining plant and equipment",
+              text: "Maintaining plant and equipment",
+              hint: {
+                text: "This includes all utilities, fire alarms, sprinklers, and other fire and smoke provisions."
+              }
+            },
+            {
+              value: "Facilities that residents share",
+              text: "Facilities that residents share",
+              hint: {
+                text: "This includes underground car parks, laundry rooms, bin stores and other storage areas."
+              }
+            }
+          ]
+        }) }}
+
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+        {{ govukCheckboxes({
+          name: "forth-block-parts",
+          fieldset: {
+            legend: {
+              text: "[Block D name]",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "External walls and roof",
+              text: "External walls and roof"
+            },
+            {
+              value: "Routes that residents can walk throughs",
+              text: "Routes that residents can walk through",
+              hint: {
+                text: "This includes stairs, lobbies, corridors, and maintaining the internal walls and floors."
+              }
+            },
+            {
+              value: "Maintaining plant and equipment",
+              text: "Maintaining plant and equipment",
+              hint: {
+                text: "This includes all utilities, fire alarms, sprinklers, and other fire and smoke provisions."
+              }
+            },
+            {
+              value: "Facilities that residents share",
+              text: "Facilities that residents share",
+              hint: {
+                text: "This includes underground car parks, laundry rooms, bin stores and other storage areas."
+              }
+            }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+      <p><a href="#">Save and come back later</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -20,11 +20,26 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-xl">Other accountable persons</span>
+      <span class="govuk-caption-l">Other accountable persons</span>
 
-      <h1 class="govuk-heading-xl">Add another accountable person</h1>
+      <h1 class="govuk-heading-l">Add another accountable person</h1>
 
-      <p>If anyone other than {{ data['pap-name'] }} is accountable for any parts of any of the blocks then you should tell us about them here.</p>
+      <p class="govuk-body">You have told us that           <strong>
+        {{ data['pap-org-name'] }}
+        {{ data['pap-individual-first-name'] }}
+        {{ data['pap-individual-last-name'] }}
+      </strong> is the principal accountable person.</p>
+
+      <p class="govuk-body">You have also told us about these accountable persons:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <strong>
+            {{ data['ap-org-name'] }}
+            {{ data['ap-individual-first-name'] }}
+            {{ data['ap-individual-last-name'] }}
+          </strong>
+        </li>
+      </ul>
 
       <form class="form" action="/add-ap-answer" method="post">
 
@@ -34,7 +49,7 @@
           value: data['add-another-ap'],
           fieldset: {
             legend: {
-              text: "Add another accountable person?",
+              text: "Is anyone else accountable for any residential part of any of the blocks in this building?",
               isPageHeading: false,
               classes: "govuk-fieldset__legend--m"
             }
@@ -55,7 +70,7 @@
 
       </form>
 
-      <p><a href="#">Save and exit this application</a></p>
+      <p><a href="#">Save and come back later</a></p>
 
     </div>
   </div>

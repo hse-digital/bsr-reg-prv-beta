@@ -1,0 +1,71 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service in development - do not take anything you see here as guidance.'
+}) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Principal accountable person</span>
+
+      <h1 class="govuk-heading-l">What is your job role at {{ data['pap-org-name'] }}?</h1>
+
+      <form class="form" action="/check-answers-pap-org" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {{ govukRadios({
+          name: "pap-org-role",
+          fieldset: {
+            legend: {
+            }
+          },
+          items: [
+            {
+              value: "Director",
+              text: "Director"
+            },
+            {
+              value: "Administrative or office worker",
+              text: "Administrative or office worker"
+            },
+            {
+              value: "Building or facilities manager",
+              text: "Building or facilities manager"
+            },
+            {
+              value: "Building safety director",
+              text: "Building safety director"
+            },
+            {
+              value: "Other",
+              text: "Other"
+            }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+      <p><a href="#">Save and come back later</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}

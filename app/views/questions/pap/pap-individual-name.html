@@ -1,0 +1,60 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service in development - do not take anything you see here as guidance.'
+}) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Principal accountable person</span>
+
+      <h1 class="govuk-heading-l">Name</h1>
+
+      <p>Tell us the name of the principal accountable person.</p>
+
+      <form class="form" action="/questions/pap/pap-individual-contact-details" method="post">
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {{ govukInput({
+          label: {
+            text: "First name"
+          },
+          id: "pap-individual-first-name",
+          name: "pap-individual-first-name",
+          value: data['pap-individual-first-name']
+        }) }}
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {{ govukInput({
+          label: {
+            text: "Last name"
+          },
+          id: "pap-individual-last-name",
+          name: "pap-individual-last-name",
+          value: data['pap-individual-last-name']
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+      <p><a href="#">Save and come back later</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}

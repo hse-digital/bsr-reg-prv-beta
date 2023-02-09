@@ -1,0 +1,64 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service in development - do not take anything you see here as guidance.'
+}) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Principal accountable person</span>
+
+      <h1 class="govuk-heading-l">Your address</h1>
+
+      <p>You have told us that the address of <strong>{{ data['pap-org-name'] }}</strong> is <strong>7 Example Street, Exampleton, EX1 AB1</strong>.</p>
+
+      <form class="form" action="/same-address-as-pap-org-answer" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {{ govukRadios({
+          name: "pap-org-role",
+          fieldset: {
+            legend: {
+              text: "Should we use the same address to contact you?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          items: [
+            {
+              value: "Use this address",
+              text: "Yes, use this address"
+            },
+            {
+              value: "Use a different address",
+              text: "No, use a different address"
+            }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+      <p><a href="#">Save and come back later</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}

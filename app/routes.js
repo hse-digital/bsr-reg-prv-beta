@@ -68,7 +68,7 @@ router.post('/residential-units-answer', function (req, res) {
   // Check whether the variable matches a condition
   if (Number(residentialUnits) < 2){
     // Send user to next page
-    res.redirect('/questions/blocks/add-block')
+    res.redirect('/questions/blocks/completion-year')
   } else {
     // Send user to ineligible page
     res.redirect('/questions/blocks/are-people-living-in-the-building')
@@ -86,11 +86,9 @@ router.post('/eligibility-answer', function (req, res) {
     var occupied = req.session.data['are-people-living-in-the-building']
   
     if ((Number(numberOfFloors) >= 7 || Number(buildingHeight) >= 18) && Number(residentialUnits) >= 2 && occupied !== "No and people will not be moving in"){
-      // Send user to eligible page
-      res.redirect('/questions/blocks/completion-year')
+      res.redirect('/questions/aps/add-ap')
     } else {
-        // Send user to not eligible page
-        res.redirect('/questions/blocks/add-block')
+        res.redirect('/not-eligible')
     }
   
   })
@@ -99,11 +97,7 @@ router.post('/completion-year-answer', function (req, res) {
 
   var completionYear = req.session.data['completion-year-radio']
 
-  if (completionYear == "The block has not yet been completed") {
-
-    res.redirect('/questions/blocks/add-block')
-
-  } else if (completionYear == "No, I don't know the exact year") {
+  if (completionYear == "No, I don't know the exact year") {
 
     res.redirect('/questions/blocks/completion-year-bands')
   }
@@ -115,21 +109,37 @@ router.post('/completion-year-answer', function (req, res) {
 
 })
 
+router.post('/completion-certificate-reference-number-answer', function (req, res) {
+
+  var completionYear = req.session.data['more-than-one-block']
+
+  if (completionYear == "One") {
+
+    res.redirect('/questions/building-address/find-address')
+  }
+
+  else {
+
+    res.redirect('/questions/block-address/find-address')
+  }
+
+})
+
   // Run this code when a form is submitted to other-name-address-postcode-boolean-answer
 router.post('/other-name-address-postcode-boolean-answer', function (req, res) {
 
-    // Make a variable and give it the value from 'returning-boolean'
     var otherNameAddressPostcode = req.session.data['other-name-address-postcode-boolean']
-  
-    // Check whether the variable matches a condition
-    if (otherNameAddressPostcode == "Yes"){
-      // Send user to next page
-      res.redirect('/questions/blocks/other-name-address-postcode')
+    var numberOfBlocks = req.session.data['more-than-one-block']
+
+    console.log(numberOfBlocks)
+
+    if (otherNameAddressPostcode === "Yes"){
+      res.redirect('/questions/block-address/find-address')
+    } else if (numberOfBlocks === "One"){
+      res.redirect('/check-answers-blocks')
     } else {
-      // Send user to ineligible page
       res.redirect('/questions/blocks/add-block')
     }
-  
   })
 
 // Run this code when a form is submitted to returning-boolean-answer
@@ -144,7 +154,7 @@ router.post('/add-block-boolean-answer', function (req, res) {
     res.redirect('/questions/blocks/floors-above')
   } else {
     // Send user to ineligible page
-    res.redirect('/check-answers-blocks')
+    res.redirect('/check-answers-blocks-complex')
   }
 
 })
@@ -161,7 +171,18 @@ router.post('/pap-type-answer', function (req, res) {
     res.redirect('/questions/pap/pap-org-type')
   } else {
     // Send user to ineligible page
-    res.redirect('/questions/pap/pap-individual-contact-details')
+    res.redirect('/questions/pap/are-you-the-pap')
+  }
+
+})
+
+router.post('/are-you-the-pap-answer', function (req, res) {
+
+  var areYouThePap = req.session.data['are-you-the-pap']
+  if (areYouThePap == "Yes") {
+    res.redirect('/check-answers-pap-individual')
+  } else {
+    res.redirect('/questions/pap/pap-individual-name')
   }
 
 })
@@ -198,9 +219,46 @@ router.post('/pap-address-answer', function (req, res) {
 
   var papType = req.session.data['pap-type']
   if (papType == "Organisation") {
-    res.redirect('/questions/pap/pap-org-lead-contact-details')
+    res.redirect('/questions/pap/what-is-your-role-at-pap-org')
   } else {
-    res.redirect('/questions/pap/pap-authorised-boolean')
+    res.redirect('/check-answers-pap-individual')
+  }
+
+})
+
+router.post('/pap-confirm-address-answer', function (req, res) {
+
+  var papType = req.session.data['pap-type']
+  var userPap = req.session.data['are-you-the-pap']
+
+  if (papType == "Organisation") {
+    res.redirect('/questions/pap/pap-org-lead-contact-name')
+  } else if (userPap == "Yes") {
+    res.redirect('/check-answers-pap-individual')
+  } else {
+    res.redirect('/questions/pap/pap-individual-name')
+  }
+
+})
+
+router.post('/what-is-your-role-at-pap-org-answer', function (req, res) {
+
+  var papType = req.session.data['pap-org-role']
+  if (papType == "I am the named contact") {
+    res.redirect('/questions/pap/what-is-your-job-role')
+  } else {
+    res.redirect('/questions/pap/same-address-as-pap-org')
+  }
+
+})
+
+router.post('/same-address-as-pap-org-answer', function (req, res) {
+
+  var papType = req.session.data['pap-org-role']
+  if (papType == "Use this address") {
+    res.redirect('/questions/pap/pap-org-lead-contact-name')
+  } else {
+    res.redirect('/questions/users-address/find-address')
   }
 
 })
@@ -250,7 +308,7 @@ router.post('/ap-type-answer', function (req, res) {
     res.redirect('/questions/aps/ap-org-type')
   } else {
     // Send user to ineligible page
-    res.redirect('/questions/aps/ap-individual-contact-details')
+    res.redirect('/questions/aps/ap-individual-name')
   }
 
 })
@@ -259,9 +317,53 @@ router.post('/ap-areas-answer', function (req, res) {
 
   var apType = req.session.data['ap-type']
   if (apType == "Organisation") {
-    res.redirect('/questions/aps/ap-org-named-contact-details')
+    res.redirect('/questions/aps/ap-org-named-contact-name')
   } else {
     res.redirect('/questions/aps/add-ap')
+  }
+
+})
+
+router.post('/more-than-one-block-answer', function (req, res) {
+
+  var multipleBlocks = req.session.data['more-than-one-block']
+  if (multipleBlocks == "Complex") {
+    res.redirect('/what-we-need-blocks')
+  } else {
+    res.redirect('/questions/blocks/floors-above')
+  }
+
+})
+
+router.post('/registration-confirm-answer', function (req, res) {
+
+  var multipleBlocks = req.session.data['more-than-one-block']
+  if (multipleBlocks == "Complex") {
+    res.redirect('/kbi-task-list-complex')
+  } else {
+    res.redirect('/kbi-task-list')
+  }
+
+})
+
+router.post('/connected-high-rise-buildings-boolean-answer', function (req, res) {
+
+  var connectedBuildings = req.session.data['connected-high-rise-buildings-boolean']
+  if (connectedBuildings == "No") {
+    res.redirect('/questions/connected/connected-high-rise-buildings-boolean')
+  } else {
+    res.redirect('/questions/connected/connected-high-rise-buildings')
+  }
+
+})
+
+router.post('/connected-other-buildings-boolean-answer', function (req, res) {
+
+  var connectedBuildings = req.session.data['connected-other-buildings-boolean']
+  if (connectedBuildings == "No") {
+    res.redirect('/questions/roof/roof-type')
+  } else {
+    res.redirect('/questions/connected/connected-other-buildings')
   }
 
 })

@@ -20,19 +20,19 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-xl">First block in the building</span>
+      <span class="govuk-caption-l">First block in the building</span>
 
-      <form class="form" action="/questions/blocks/best-known-address" method="post">
+      <form class="form" action="/completion-certificate-reference-number-answer" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
-            text: "What is the completion certificate number for this block? (optional)",
-            classes: "govuk-label--xl",
+            text: "Completion certificate number (optional)",
+            classes: "govuk-label--l",
             isPageHeading: true
           },
           hint: {
-            text: "This should be on the completion certificate."
+            text: "This should be on the completion certificate. If you do not have access to the completion certificate, leave this blank."
           },
           id: "completion-certificate-reference-number",
           name: "completion-certificate-reference-number",
@@ -43,7 +43,7 @@
 
       </form>
 
-      <p><a href="#">Save and exit this application</a></p>
+      <p><a href="#">Save and come back later</a></p>
 
     </div>
   </div>

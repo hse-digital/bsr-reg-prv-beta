@@ -13,22 +13,22 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-xl">External walls and features <!--(section 8 of 11)--></span>
+      <span class="govuk-caption-l">External walls and features <!--(section 8 of 11)--></span>
 
-      <form class="form" action="/external-walls-and-features-check-answers" method="post">
+      <form class="form" action="/questions/uses-above/primary-use" method="post">
 
         {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
         {{ govukCheckboxes({
           name: "waste",
           fieldset: {
             legend: {
-              text: "What materials are used in the balconies?",
+              text: "Which materials are used most in the balconies?",
               isPageHeading: true,
-              classes: "govuk-fieldset__legend--xl"
+              classes: "govuk-fieldset__legend--l"
             }
           },
           hint: {
-            text: "Select no more than 2 of these materials:"
+            text: "Select no more than 2."
           },
           items: [
             {
@@ -46,10 +46,6 @@
             {
               value: "mines",
               text: "Masonry"
-            },
-            {
-              value: "mines",
-              text: "Phone masts"
             },
             {
               value: "mines",

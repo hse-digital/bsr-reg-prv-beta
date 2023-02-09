@@ -13,9 +13,9 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-xl">Fire and smoke controls <!--(section 2 of 11)--></span>
+      <span class="govuk-caption-l">Fire and smoke controls <!--(section 2 of 11)--></span>
 
-      <form class="form" action="/fire-check-answers" method="post">
+      <form class="form" action="/questions/energy-supply-and-storage" method="post">
 
         {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
         {% from "govuk/components/input/macro.njk" import govukInput %}
@@ -25,7 +25,7 @@
             legend: {
               text: "Where can you access the smoke detector heads?",
               isPageHeading: true,
-              classes: "govuk-fieldset__legend--xl"
+              classes: "govuk-fieldset__legend--l"
             }
           },
           hint: {
@@ -46,15 +46,21 @@
             },
             {
               value: "mines",
-              text: "Common space"
+              text: "Shared space with equipment",
+              hint: {
+                text: "like a utility room, meter room, or shared laundry room"
+              }
+            },
+            {
+              value: "mines",
+              text: "Shared space with no equipment",
+              hint: {
+                text: "like a communal lounge"
+              }
             },
             {
               value: "farm",
               text: "Rooftop"
-            },
-            {
-              value: "mines",
-              text: "Utilities"
             },
             {
               value: "mines",

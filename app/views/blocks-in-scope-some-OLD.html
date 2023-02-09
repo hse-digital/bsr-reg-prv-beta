@@ -1,0 +1,83 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">We need more information about some of your blocks</h1>
+
+      <form class="form" action="/questions/pap/pap-type" method="post">
+
+        <p class="govuk-body">For these blocks, we need you to tell us about:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>the principal accountable person</li>
+          <li>other accountable persons</li>
+          <li>how we can contact them</li>
+          <li>what they're accountable for</li>
+        </ul>
+
+        <table class="govuk-table">
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">[block A name]</th>
+              <td class="govuk-table__cell">6 floors above ground
+                <br>22 metres high
+                <br>30 residential units
+                <br>People are living in the block
+                <br>Completed in 1987
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">[block B name]</th>
+              <td class="govuk-table__cell">15 floors above ground
+                <br>32 metres high
+                <br>50 residential units
+                <br>People will be living in the block
+                <br>Completed in 1987
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2 class="govuk-heading-m">We do not need any more information about the following blocks</h2>
+
+        <table class="govuk-table">
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">[block C name]</th>
+              <td class="govuk-table__cell">6 floors above ground
+                <br>22 metres high
+                <br>0 residential units
+                <br>People will not be living in the block
+                <br>Completed in 1987
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">[block D name]</th>
+              <td class="govuk-table__cell">15 floors above ground
+                <br>32 metres high
+                <br>50 residential units
+                <br>People will not be living in the block
+                <br>Completed in 1987
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

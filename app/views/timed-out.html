@@ -1,0 +1,25 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Your unsaved answers have been deleted</h1>
+
+      <p>We have deleted your unsaved answers because you did not do anything for 15 minutes. This is to protect your information.</p>
+
+      <p>If we sent you an email with an application reference, you can <a href="/returning-code">return to your application</a>. If not, you will need to <a href="/questions/building/building-name">start again</a>.</p>
+
+    </div>
+  </div>
+
+{% endblock %}

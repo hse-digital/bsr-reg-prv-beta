@@ -1,0 +1,81 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Task list template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        Give structural and safety information for {{ data['building-name'] }}
+      </h1>
+
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Application incomplete</h2>
+      <p class="govuk-body govuk-!-margin-bottom-7">You have completed 0 of 5 sections.</p>
+
+      <ol class="app-task-list">
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">1. </span> Check before you start
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="/check-before-start" aria-describedby="uses-at-ground-level-and-above-status">
+                  Check you have the information you need
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="walls-information-status">Not started yet</strong>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">2. </span> Prepare information
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                  Block A
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="walls-information-status">Cannot start yet</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                  Block B
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="walls-information-status">Cannot start yet</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                  Connections
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="walls-information-status">Cannot start yet</strong>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">5. </span> Submit
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <p>
+                  Submit
+                </p>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="fire-and-smoke-provisions-status">Cannot start yet</strong>
+            </li>
+          </ul>
+        </li>
+
+      </ol>
+    </div>
+  </div>
+
+{% endblock %}

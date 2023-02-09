@@ -1,0 +1,60 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service in development - do not take anything you see here as guidance.'
+}) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Principal accountable person</span>
+
+      <h1 class="govuk-heading-l">Named contact</h1>
+
+      <p>Tell us the name of the person at {{ data['pap-org-name'] }} who we should contact about building safety issues.</p>
+
+      <form class="form" action="/questions/pap/pap-org-lead-contact-details" method="post">
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {{ govukInput({
+          label: {
+            text: "First name"
+          },
+          id: "pap-org-lead-contact-first-name",
+          name: "pap-org-lead-contact-first-name",
+          value: data['pap-org-lead-contact-first-name']
+        }) }}
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {{ govukInput({
+          label: {
+            text: "Last name"
+          },
+          id: "pap-org-lead-contact-last-name",
+          name: "pap-org-lead-contact-last-name",
+          value: data['pap-org-lead-contact-last-name']
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+      <p><a href="#">Save and come back later</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}

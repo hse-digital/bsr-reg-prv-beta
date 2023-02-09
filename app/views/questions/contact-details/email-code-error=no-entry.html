@@ -25,17 +25,17 @@
         titleText: "There is a problem",
         errorList: [
           {
-            text: "You must enter your 6 digit security code",
+            text: "You must enter your 6-digit security code",
             href: "#security-code"
           }
         ]
       }) }}
 
-      <span class="govuk-caption-xl">Your contact details</span>
+      <span class="govuk-caption-l">Your contact details</span>
 
-      <h1 class="govuk-heading-xl">Verify your email address</h1>
+      <h1 class="govuk-heading-l">Verify your email address</h1>
 
-      <p>We have sent a 6 digit security code to: <strong>{{ data['email'] }}</strong>.</p>
+      <p>We have sent a 6-digit security code to: <strong>{{ data['email'] }}</strong>.</p>
 
       <p>If you cannot find the email, please check your junk or spam folders.</p>
 
@@ -46,12 +46,12 @@
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
-            text: "Your 6 digit security code",
+            text: "Your 6-digit security code",
             classes: "govuk-label--s",
             isPageHeading: false
           },
           errorMessage: {
-            text: "Enter your 6 digit security code"
+            text: "Enter your 6-digit security code"
           },
           id: "security-code",
           name: "security-code"

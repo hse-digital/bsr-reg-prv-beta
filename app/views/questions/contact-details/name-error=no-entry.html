@@ -25,15 +25,19 @@
         titleText: "There is a problem",
         errorList: [
           {
-            text: "You must enter your name",
-            href: "#name"
+            text: "Enter your first name",
+            href: "#first-name"
+          },
+          {
+            text: "Enter your last name",
+            href: "#last-name"
           }
         ]
       }) }}
 
-      <span class="govuk-caption-xl">Your contact details</span>
+      <span class="govuk-caption-l">Your contact details</span>
 
-      <h1 class="govuk-heading-xl">Enter your name</h1>
+      <h1 class="govuk-heading-l">Enter your name</h1>
 
       <p>We will use this if we need to contact you about your application.</p>
 
@@ -47,11 +51,6 @@
           }
         }) %}
 
-        {% from "govuk/components/error-message/macro.njk" import govukErrorMessage %}
-        {{ govukErrorMessage({
-          text: "Enter your name"
-        }) }}
-
           {{ govukInput({
             label: {
               text: 'First name'
@@ -59,6 +58,7 @@
             id: "first-name",
             name: "first-name",
             errorMessage: {
+              text: "Enter your first name"
             }
           }) }}
           {{ govukInput({
@@ -68,6 +68,7 @@
             id: "last-name",
             name: "last-name",
             errorMessage: {
+              text: "Enter your last name"
             }
           }) }}
         {% endcall %}

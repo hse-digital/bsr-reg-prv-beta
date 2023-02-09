@@ -19,9 +19,9 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
-      <span class="govuk-caption-xl">Principal accountable person</span>
+      <span class="govuk-caption-l">Principal accountable person</span>
 
-      <h1 class="govuk-heading-xl">Check your answers</h1>
+      <h1 class="govuk-heading-l">Check your answers</h1>
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
@@ -40,32 +40,29 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Contact details
+            Are you the principal accountable person?
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['pap-individual-name'] }}
-            <br>{{ data['pap-individual-email'] }}
-            <br>{{ data['pap-individual-phone'] }}
-            <br>{{ data['pap-individual-role'] }}
+            {{ data['are-you-the-pap'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/questions/pap/pap-org-lead-contact-details">
+            <a href="/questions/pap/are-you-the-pap">
               Change
-              <span class="govuk-visually-hidden"> contact information</span>
+              <span class="govuk-visually-hidden"> name</span>
             </a>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Address
+            Your address
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['pap-address-line-1'] }}
-            <br>{{ data['pap-address-line-2'] }}
-            <br>{{ data['pap-postcode'] }}
+            7 Example Street
+            <br>Exampleton
+            <br>EX1 2AB
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/questions/pap/pap-address">
+            <a href="/questions/users-address/confirm-address">
               Change
               <span class="govuk-visually-hidden"> date of birth</span>
             </a>
@@ -73,30 +70,13 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Has the principal accountable person authorsied someone to act for them?
+            Principal accountable persons name
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['pap-authorised-boolean'] }}
+            {{ data['pap-individual-first-name'] }} {{ data['pap-individual-last-name'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/questions/pap/pap-authorised-boolean">
-              Change
-              <span class="govuk-visually-hidden"> contact details</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Authorised person contact details
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['pap-authorised-person-name'] }}
-            <br>{{ data['pap-authorised-person-email'] }}
-            <br>{{ data['pap-authorised-person-phone'] }}
-            <br>{{ data['pap-authorised-person-role'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="/questions/pap/pap-org-lead-contact-details">
+            <a href="/questions/pap/pap-individual-name">
               Change
               <span class="govuk-visually-hidden"> contact information</span>
             </a>
@@ -104,15 +84,30 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Authorised person address
+            Principal accountable persons contact details
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['pap-authorised-person-address-line-1'] }}
-            <br>{{ data['pap-authorised-person-address-line-2'] }}
-            <br>{{ data['pap-authorised-person-postcode'] }}
+            {{ data['pap-individual-email'] }}
+            <br>{{ data['pap-individual-phone'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/questions/pap/pap-authorised-person-address">
+            <a href="/questions/pap/pap-individual-contact-details">
+              Change
+              <span class="govuk-visually-hidden"> contact information</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Principal accountable persons address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            7 Example Street
+            <br>Exampleton
+            <br>EX1 2AB
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/pap-address/confirm-address">
               Change
               <span class="govuk-visually-hidden"> date of birth</span>
             </a>
@@ -130,7 +125,7 @@
 
       </form>
 
-      <p><a href="#">Save and exit this application</a></p>
+      <p><a href="#">Save and come back later</a></p>
 
     </div>
   </div>

@@ -20,23 +20,21 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-xl">Principal accountable person</span>
+      <span class="govuk-caption-l">Principal accountable person</span>
 
-      <h1 class="govuk-heading-xl">What is the principal accountable person?</h1>
+      <h1 class="govuk-heading-l">Is the principal accountable person an organisation or an individual?</h1>
 
-      <details class="govuk-details" data-module="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            Help with principal accountable person
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          <p>The principal accountable person is the person or organisation who owns or has accountability for the building.</p>
-          <p>If the building has more than one accountable person, then the accountable person for the external common parts of the building will be the principal accountable person.</p>
-        </div>
-      </details>
+      <p>
+        If we need to talk to someone about building safety issues for {{ data['building-name'] }}, we will contact the principal accountable person.
+      </p>
 
-      <p>You'll be able to add other accountable persons later.</p>
+      <p>
+        If they are an organisation, we will ask you to tell us what type of organisation they are. We will also ask you for the name and contact details of someone in the organisation we can contact.
+      </p>
+
+      <p>
+        If the principal accountable person is an individual, we will always contact that individual.
+      </p>
 
       <form class="form" action="/pap-type-answer" method="post">
 
@@ -46,9 +44,10 @@
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
         {{ govukRadios({
           name: "pap-type",
+          value: data['pap-type'],
           fieldset: {
             legend: {
-              text: "The principle accountable person is",
+              text: "The principal accountable person is",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
@@ -69,7 +68,7 @@
 
       </form>
 
-      <p><a href="#">Save and exit this application</a></p>
+      <p><a href="/register-task-list-return">Save and come back later</a></p>
 
     </div>
   </div>

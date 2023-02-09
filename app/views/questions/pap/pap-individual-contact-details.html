@@ -20,44 +20,40 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-xl">Principal accountable person</span>
+      <span class="govuk-caption-l">Principal accountable person</span>
 
-      <h1 class="govuk-heading-xl">Principal accountable person contact details</h1>
+      <h1 class="govuk-heading-l">{{ data['pap-individual-first-name'] }} {{ data['pap-individual-last-name'] }}'s contact details</h1>
 
-      <form class="form" action="/questions/pap/pap-address" method="post">
-
-        {% from "govuk/components/input/macro.njk" import govukInput %}
-        {{ govukInput({
-          label: {
-            text: "Enter their full name"
-          },
-          id: "pap-individual-name",
-          name: "pap-individual-name"
-        }) }}
+      <form class="form" action="/questions/pap-address/find-address" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
-            text: "Enter their phone number"
-          },
-          id: "pap-individual-phone",
-          name: "pap-individual-phone"
-        }) }}
-
-        {% from "govuk/components/input/macro.njk" import govukInput %}
-        {{ govukInput({
-          label: {
-            text: "Enter their email address"
+            text: "Email address"
           },
           id: "pap-individual-email",
-          name: "pap-individual-email"
+          name: "pap-individual-email",
+          value: data['pap-individual-email']
+        }) }}
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {{ govukInput({
+          label: {
+            text: "Telephone or mobile number"
+          },
+          hint: {
+            text: "Enter a UK phone number with or without spaces. For example, '012 3456 7890' or '+4407654321098'"
+          },
+          id: "pap-individual-phone",
+          name: "pap-individual-phone",
+          value: data['pap-individual-phone']
         }) }}
 
         <button class="govuk-button" data-module="govuk-button">Save and continue</button>
 
       </form>
 
-      <p><a href="#">Save and exit this application</a></p>
+      <p><a href="#">Save and come back later</a></p>
 
     </div>
   </div>

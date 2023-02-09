@@ -1,0 +1,61 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Your address</span>
+
+      <form class="form" action="select-address" method="post">
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
+        {% call govukFieldset({
+          legend: {
+            text: "Find an address",
+            classes: "govuk-fieldset__legend--l",
+            isPageHeading: true
+          }
+        }) %}
+
+        <p>This address must be in England or Wales.</p>
+        
+          {{ govukInput({
+            label: {
+              text: "Postcode"
+            },
+            classes: "govuk-input--width-10",
+            id: "search-address-postcode",
+            name: "search-address-postcode",
+            autocomplete: "postal-code"
+          }) }}
+          {{ govukInput({
+            label: {
+              text: 'Address line 1 (optional)'
+            },
+            id: "search-address-line-1",
+            name: "search-address-line-1",
+            autocomplete: "address-line1",
+            hint: {
+              text: "For example, 'Flat 3A' or '30 St Mary Axe'."
+            }
+          }) }}
+        {% endcall %}
+
+        <button class="govuk-button" data-module="govuk-button">Find address</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

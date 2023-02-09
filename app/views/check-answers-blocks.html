@@ -12,16 +12,28 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
-      <span class="govuk-caption-xl">Provide basic information about the blocks</span>
+      <span class="govuk-caption-l">The building</span>
 
-      <h1 class="govuk-heading-xl">Check your answers</h1>
-
-      <h2 class="govuk-heading-l">First block</h2>
+      <h1 class="govuk-heading-l">Check your answers</h1>
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Number of floors
+            Structure type
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['more-than-one-block'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/blocks/more-than-one-block">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Number of floors above ground level
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['number-of-floors'] }}
@@ -63,7 +75,7 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Are people living in the block?
+            Are people living in it?
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['are-people-living-in-the-building'] }}
@@ -77,7 +89,7 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Year of completion
+            When was it built?
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['completion-year'] }}
@@ -91,7 +103,7 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Completion certificate issuer
+            Completion certificate issuer (optional)
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['completion-certificate-issuer'] }}
@@ -105,7 +117,7 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Completion certificate reference
+            Completion certificate number (optional)
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['completion-certificate-reference-number'] }}
@@ -127,7 +139,21 @@
             <br>{{ data['building-postcode'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/questions/blocks/best-known-address">
+            <a href="/questions/block-address/confirm-address">
+              Change
+              <span class="govuk-visually-hidden"> contact details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Add another address?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            No
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/blocks/other-name-address-postcode-boolean">
               Change
               <span class="govuk-visually-hidden"> contact details</span>
             </a>
@@ -135,7 +161,7 @@
         </div>
       </dl>
 
-      <form action="/blocks-in-scope-some" method="post" novalidate>
+      <form action="/not-eligible" method="post" novalidate>
 
         <input type="hidden" name="answers-checked" value="true">
 
@@ -145,7 +171,7 @@
 
       </form>
 
-      <p><a href="#">Save and exit this application</a></p>
+      <p><a href="#">Save and come back later</a></p>
 
     </div>
   </div>

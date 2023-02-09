@@ -20,9 +20,9 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-xl">First block in the building</span>
+      <span class="govuk-caption-l">First block in the building</span>
 
-      <h1 class="govuk-heading-xl">Do you know what year the block was completed?</h1>
+      <h1 class="govuk-heading-l">When was {{ data['block-name'] }} originally built?</h1>
 
       <form class="form" action="/completion-year-answer" method="post">
 
@@ -30,7 +30,7 @@
         {% set exactYearHtml %}
         {{ govukInput({
           label: {
-            text: "Enter exact year",
+            text: "Exact year",
             classes: "govuk-label--s",
             isPageHeading: true
           },
@@ -53,14 +53,20 @@
           items: [
             {
               value: "Yes, I know the exact year",
-              text: "Yes, I know the exact year",
+              text: "I know the exact year",
               conditional: {
                 html: exactYearHtml
               }
             },
             {
               value: "No, I don't know the exact year",
-              text: "No, I don't know the exact year"
+              text: "I do not know the exact year",
+              hint: {
+                text: "Select this option if you know a general range"
+              }
+            },
+            {
+              divider: "or"
             },
             {
               value: "The block has not yet been completed",
@@ -73,7 +79,7 @@
 
       </form>
 
-      <p><a href="#">Save and exit this application</a></p>
+      <p><a href="#">Save and come back later</a></p>
 
     </div>
   </div>

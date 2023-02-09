@@ -13,54 +13,19 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">We need more information on some of your blocks</h1>
+      <h1 class="govuk-heading-l">We need more information about some of your blocks</h1>
 
-      <form class="form" action="/name-blocks" method="post">
+      <form class="form" action="/questions/pap/pap-type" method="post">
 
-        <p>You will be asked to tell us more about the following blocks:</p>
+        <p class="govuk-body">For <strong>[block A name]</strong> and <strong>[block B name]</strong>, we need you to tell us about:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>the principal accountable person</li>
+          <li>other accountable persons</li>
+          <li>how we can contact them</li>
+          <li>what they're accountable for</li>
+        </ul>
 
-        <table class="govuk-table">
-          <tbody class="govuk-table__body">
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">First block</th>
-              <td class="govuk-table__cell">6 floors
-                <br>22 metres high
-                <br>30 residential units
-                <br>People are living in the block
-              </td>
-            </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Second block</th>
-              <td class="govuk-table__cell">15 floors
-                <br>32 metres high
-                <br>50 residential units
-                <br>People will be living in the block
-              </td>
-            </tr>
-          </tbody>
-        </table>
-
-        <h2 class="govuk-heading-l">We do not need any more information about the following blocks</h2>
-
-        <table class="govuk-table">
-          <tbody class="govuk-table__body">
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Third block</th>
-              <td class="govuk-table__cell">6 floors
-                <br>22 metres high
-                <br>0 residential units
-              </td>
-            </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Forth block</th>
-              <td class="govuk-table__cell">15 floors
-                <br>32 metres high
-                <br>50 residential units
-                <br>People will not be living in the block
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <p>Based on the information you have given us, you do not need to tell us anything more about <strong>[block C name]</strong> and <strong>[block D name]</strong>.</p>
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 

@@ -13,19 +13,21 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-xl">Changes since completion <!--(section 10 of 11)--></span>
+      <span class="govuk-caption-l">Changes since completion <!--(section 10 of 11)--></span>
 
-      <form class="form" action="/changes-check-answers" method="post">
+      <h1 class="govuk-heading-l">Date of latest material change (optional)</h1>
+
+      <form class="form" action="/check-answers-kbi" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
-            text: "Year of the most recent material change (optional)",
-            classes: "govuk-label--xl",
+            text: "Year of the most recent material change",
+            classes: "govuk-label--s",
             isPageHeading: true
           },
           hint: {
-            text: "Material change is defined by building regulations. For example 1985"
+            text: "For example, '1985'."
           },
           classes: "govuk-input--width-4",
           id: "year-of-use-change",

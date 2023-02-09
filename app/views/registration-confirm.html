@@ -19,7 +19,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">Registration application submitted for {{ data['building-name'] }}</h1>
+      <h1 class="govuk-heading-l">Registration application submitted for {{ data['building-name'] }}</h1>
 
       <p>Your payment reference number is: <strong>PSH29HQ07J</strong></p>
 
@@ -36,43 +36,25 @@
 
       <p>If you did not get the email, <a href="/contact">contact us</a>.</p>
 
-      {% from "govuk/components/details/macro.njk" import govukDetails %}
-      {{ govukDetails({
-        summaryText: "What happens to my registration request?",
-        text: "We'll reach out to you if we have any queries regarding your registration application."
-      }) }}
+      <p>We have also sent an email to the principal accountable person that outlines their duties at this stage.</p>
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+
+      <p>We'll look at your application and contact you when we have made a decision.</p>
+
+      <p>We may also contact you if we need further information.</p>
+      
+      <p>We're registering all the high-rise buildings in England. This is likely to take several months. So you might not hear from us for a while. Do not worry. We have your application.</p>
 
       {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
       {{ govukWarningText({
-        text: "You must give us structural and safety information for Acme House by 28th October 2023.",
+        text: "You must give us structural and safety information for [building-name] by 30 September 2023.",
         iconFallbackText: "Warning"
       }) }}
 
-      <form class="form" action="/kbi-task-list" method="post">
+      <form class="form" action="/registration-confirm-answer" method="post">
 
-        {% from "govuk/components/radios/macro.njk" import govukRadios %}
-        {{ govukRadios({
-          name: "where-do-you-live",
-          fieldset: {
-            legend: {
-              text: "Would you like to complete structural and safety information now?",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--l"
-            }
-          },
-          items: [
-            {
-              value: "england",
-              text: "Yes"
-            },
-            {
-              value: "scotland",
-              text: "No"
-            }
-          ]
-        }) }}
-
-        <button class="govuk-button" data-module="govuk-button">Continue</button>
+        <button class="govuk-button" data-module="govuk-button">Continue to structural and safety information</button>
 
       </form>
 

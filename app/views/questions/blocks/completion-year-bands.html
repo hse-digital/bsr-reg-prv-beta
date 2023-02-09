@@ -20,7 +20,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-xl">First block in the building</span>
+      <span class="govuk-caption-l">First block in the building</span>
 
       <form class="form" action="/questions/blocks/completion-certificate-issuer" method="post">
 
@@ -30,42 +30,56 @@
           value: data['completion-year'],
           fieldset: {
             legend: {
-              text: "What year was the block completed?",
-              classes: "govuk-label--xl"
+              text: "When was the block completed?",
+              classes: "govuk-label--l"
             }
+          },
+          hint: {
+            text: "If you're not sure, tell us your best estimate."
           },
           items: [
             {
-              value: "Before 1955",
-              text: "Before 1955"
+              value: "Before 1900",
+              text: "Before 1900"
             },
             {
-              value: "1955 to 1964",
-              text: "1955 to 1964"
+              value: "1901 to 1955",
+              text: "1901 to 1955"
             },
             {
-              value: "1965 to 1974",
-              text: "1965 to 1974"
+              value: "1956 to 1969",
+              text: "1956 to 1969"
             },
             {
-              value: "1975 to 1984",
-              text: "1975 to 1984"
+              value: "1970 to 1984",
+              text: "1970 to 1984"
             },
             {
-              value: "1985 to 1994",
-              text: "1985 to 1994"
+              value: "1985 to 2000",
+              text: "1985 to 2000"
             },
             {
-              value: "1995 to 2004",
-              text: "1995 to 2004"
+              value: "2001 to 2006",
+              text: "2001 to 2006"
             },
             {
-              value: "2005 to 2014",
-              text: "2005 to 2014"
+              value: "2007 to 2018",
+              text: "2007 to 2018"
             },
             {
-              value: "2015 to 2023",
-              text: "2015 to 2023"
+              value: "2019 to 2022",
+              text: "2019 to 2022"
+            },
+            {
+              value: "2023 onwards",
+              text: "2023 onwards"
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "The block has not yet been completed",
+              text: "The block has not yet been completed"
             }
           ]
         }) }}
@@ -74,7 +88,7 @@
 
       </form>
 
-      <p><a href="#">Save and exit this application</a></p>
+      <p><a href="#">Save and come back later</a></p>
 
     </div>
   </div>

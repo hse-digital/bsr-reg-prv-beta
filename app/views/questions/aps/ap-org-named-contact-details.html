@@ -20,50 +20,40 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-xl">Other accountable persons</span>
+      <span class="govuk-caption-l">Other accountable persons</span>
 
-      <h1 class="govuk-heading-xl">Provide details for the named contact at {{ data['ap-org-name'] }}</h1>
+      <h1 class="govuk-heading-l">{{ data['ap-org-named-contact-first-name'] }} {{ data['ap-org-named-contact-last-name'] }}'s contact details</h1>
 
       <form class="form" action="/questions/aps/add-ap" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
-            text: "Enter their full name",
-            classes: "govuk-label--s"
-          },
-          id: "ap-org-named-contact-name",
-          name: "ap-org-named-contact-name",
-          value: data['ap-org-named-contact-name']
-        }) }}
-
-        {% from "govuk/components/input/macro.njk" import govukInput %}
-        {{ govukInput({
-          label: {
-            text: "Enter their phone number",
-            classes: "govuk-label--s"
-          },
-          id: "ap-org-named-contact-phone",
-          name: "ap-org-named-contact-phone",
-          value: data['ap-org-named-contact-phone']
-        }) }}
-
-        {% from "govuk/components/input/macro.njk" import govukInput %}
-        {{ govukInput({
-          label: {
-            text: "Enter their email address",
-            classes: "govuk-label--s"
+            text: "Email address"
           },
           id: "ap-org-named-contact-email",
           name: "ap-org-named-contact-email",
           value: data['ap-org-named-contact-email']
         }) }}
 
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {{ govukInput({
+          label: {
+            text: "Telephone or mobile number"
+          },
+          hint: {
+            text: "Enter a UK phone number with or without spaces. For example, '012 3456 7890' or '+4407654321098'"
+          },
+          id: "ap-org-named-contact-phone",
+          name: "ap-org-named-contact-phone",
+          value: data['ap-org-named-contact-phone']
+        }) }}
+
         <button class="govuk-button" data-module="govuk-button">Save and continue</button>
 
       </form>
 
-      <p><a href="#">Save and exit this application</a></p>
+      <p><a href="#">Save and come back later</a></p>
 
     </div>
   </div>

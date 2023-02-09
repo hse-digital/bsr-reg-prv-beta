@@ -1,0 +1,27 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Address of [name of the person, organisation, block or building we are collecting this for]</span>
+
+      <h1 class="govuk-heading-l">Too many results</h1>
+
+      <p>Too many results found for <strong>{{ data['search-address-postcode'] }}</strong> and <strong>{{ data['search-address-line-1'] }}</strong>.</p>
+
+      <p>You can either <a href="find-address">search again</a> or <a href="enter-address-manually">enter the address manually</a>.</p>
+
+    </div>
+  </div>
+
+{% endblock %}
