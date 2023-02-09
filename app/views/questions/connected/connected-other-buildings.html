@@ -17,7 +17,7 @@
 
       <h1 class="govuk-heading-l">How is {{ data['building-name'] }} connected to the other buildings?</h1>
 
-      <form class="form" action="/questions/roof/roof-type" method="post">
+      <form class="form" action="/check-answers-connections" method="post">
 
         {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
         {{ govukCheckboxes({

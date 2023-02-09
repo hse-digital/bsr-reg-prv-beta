@@ -44,6 +44,7 @@
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
         {{ govukRadios({
           name: "pap-type",
+          value: data['pap-type'],
           fieldset: {
             legend: {
               text: "The principal accountable person is",

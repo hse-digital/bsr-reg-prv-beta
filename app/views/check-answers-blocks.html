@@ -12,7 +12,7 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
-      <span class="govuk-caption-l">Blocks in the building</span>
+      <span class="govuk-caption-l">The building</span>
 
       <h1 class="govuk-heading-l">Check your answers</h1>
 
@@ -33,7 +33,7 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Number of floors above ground
+            Number of floors above ground level
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['number-of-floors'] }}
@@ -75,7 +75,7 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Are people living in the building?
+            Are people living in it?
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['are-people-living-in-the-building'] }}
@@ -89,7 +89,7 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Year of completion
+            When was it built?
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['completion-year'] }}
@@ -103,7 +103,7 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Completion certificate issuer
+            Completion certificate issuer (optional)
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['completion-certificate-issuer'] }}
@@ -117,7 +117,7 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Completion certificate number
+            Completion certificate number (optional)
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['completion-certificate-reference-number'] }}
@@ -139,7 +139,7 @@
             <br>{{ data['building-postcode'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/questions/blocks/best-known-address">
+            <a href="/questions/block-address/confirm-address">
               Change
               <span class="govuk-visually-hidden"> contact details</span>
             </a>

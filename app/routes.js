@@ -327,10 +327,21 @@ router.post('/ap-areas-answer', function (req, res) {
 router.post('/more-than-one-block-answer', function (req, res) {
 
   var multipleBlocks = req.session.data['more-than-one-block']
-  if (multipleBlocks == "Two or more") {
+  if (multipleBlocks == "Complex") {
     res.redirect('/what-we-need-blocks')
   } else {
     res.redirect('/questions/blocks/floors-above')
+  }
+
+})
+
+router.post('/registration-confirm-answer', function (req, res) {
+
+  var multipleBlocks = req.session.data['more-than-one-block']
+  if (multipleBlocks == "Complex") {
+    res.redirect('/kbi-task-list-complex')
+  } else {
+    res.redirect('/kbi-task-list')
   }
 
 })

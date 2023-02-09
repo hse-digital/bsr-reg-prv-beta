@@ -72,12 +72,12 @@
             Organisation address
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['pap-address-line-1'] }}
-            <br>{{ data['pap-address-line-2'] }}
-            <br>{{ data['pap-postcode'] }}
+            7 Example Street
+            <br>Exampleton
+            <br>EX1 2AB
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/questions/pap/pap-address">
+            <a href="/questions/pap-address/confirm-address">
               Change
               <span class="govuk-visually-hidden"> date of birth</span>
             </a>
@@ -91,7 +91,7 @@
             Acting for the named contact
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/questions/pap/pap-authorised-person-address">
+            <a href="/questions/pap/what-is-your-role-at-pap-org">
               Change
               <span class="govuk-visually-hidden"> date of birth</span>
             </a>
@@ -105,7 +105,7 @@
             Same as the organisation
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/questions/pap/pap-authorised-person-address">
+            <a href="/questions/pap/same-address-as-pap-org">
               Change
               <span class="govuk-visually-hidden"> date of birth</span>
             </a>
@@ -116,13 +116,10 @@
             Named contact's name
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['pap-org-lead-contact-name'] }}
-            <br>{{ data['pap-org-lead-contact-email'] }}
-            <br>{{ data['pap-org-lead-contact-phone'] }}
-            <br>{{ data['pap-org-lead-contact-role'] }}
+            {{ data['pap-org-lead-contact-first-name'] }} {{ data['pap-org-lead-contact-last-name'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/questions/pap/pap-org-lead-contact-details">
+            <a href="/questions/pap/pap-org-lead-contact-name">
               Change
               <span class="govuk-visually-hidden"> contact information</span>
             </a>

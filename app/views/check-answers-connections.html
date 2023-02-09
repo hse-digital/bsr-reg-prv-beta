@@ -5,13 +5,6 @@
 {% endblock %}
 
 {% block beforeContent %}
-{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
-{{ govukPhaseBanner({
-  tag: {
-    text: "prototype"
-  },
-  html: 'This is a new service in development - do not take anything you see here as guidance.'
-}) }}
   <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
 {% endblock %}
 
@@ -19,20 +12,20 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
-      <span class="govuk-caption-l">Principal accountable person</span>
+      <span class="govuk-caption-l">Connections</span>
 
       <h1 class="govuk-heading-l">Check your answers</h1>
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Type
+            Conections between the blocks
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['pap-type'] }}
+            Levels below ground with a residential unit
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/questions/pap/pap-type">
+            <a href="/questions/connected/connected-blocks">
               Change
               <span class="govuk-visually-hidden"> name</span>
             </a>
@@ -40,29 +33,13 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Are you the principal accountable person?
+            Connected to other high-rise buildings?
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['are-you-the-pap'] }}
+            Yes
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/questions/pap/are-you-the-pap">
-              Change
-              <span class="govuk-visually-hidden"> name</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Your address
-          </dt>
-          <dd class="govuk-summary-list__value">
-            7 Example Street
-            <br>Exampleton
-            <br>EX1 2AB
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="/questions/users-address/confirm-address">
+            <a href="/questions/connected/connected-high-rise-buildings-boolean">
               Change
               <span class="govuk-visually-hidden"> date of birth</span>
             </a>
@@ -70,13 +47,14 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Principal accountable persons name
+            Connections to other high-rise buildings
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['pap-individual-first-name'] }} {{ data['pap-individual-last-name'] }}
+            Car park below ground
+            <br>Ground floor
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/questions/pap/pap-individual-name">
+            <a href="/questions/connected/connected-high-rise-buildings">
               Change
               <span class="govuk-visually-hidden"> contact information</span>
             </a>
@@ -84,38 +62,35 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Principal accountable persons contact details
+            Connected to other buildings?
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['pap-individual-email'] }}
-            <br>{{ data['pap-individual-phone'] }}
+            Yes
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/questions/pap/pap-individual-contact-details">
+            <a href="/questions/connected/connected-other-buildings-boolean">
               Change
-              <span class="govuk-visually-hidden"> contact information</span>
+              <span class="govuk-visually-hidden"> contact details</span>
             </a>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Principal accountable persons address
+            Connections to other buildings
           </dt>
           <dd class="govuk-summary-list__value">
-            7 Example Street
-            <br>Exampleton
-            <br>EX1 2AB
+            Bridge or walkway between blocks
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/questions/pap-address/confirm-address">
+            <a href="/questions/connected/connected-other-buildings">
               Change
-              <span class="govuk-visually-hidden"> date of birth</span>
+              <span class="govuk-visually-hidden"> contact information</span>
             </a>
           </dd>
         </div>
       </dl>
 
-      <form action="/questions/aps/add-ap" method="post" novalidate>
+      <form action="/declaration" method="post" novalidate>
 
         <input type="hidden" name="answers-checked" value="true">
 

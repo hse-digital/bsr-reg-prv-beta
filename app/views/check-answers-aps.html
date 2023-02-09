@@ -55,11 +55,24 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['ap-individual-first-name'] }} {{ data['ap-individual-last-name'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/aps/ap-individual-name">
+              Change
+              <span class="govuk-visually-hidden"> contact details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Contact details
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['ap-individual-name'] }}
-            <br>{{ data['ap-individual-email'] }}
+            {{ data['ap-individual-email'] }}
             <br>{{ data['ap-individual-phone'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
@@ -74,12 +87,12 @@
             Address
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['ap-address-line-1'] }}
-            <br>{{ data['ap-address-line-2'] }}
-            <br>{{ data['ap-postcode'] }}
+            7 Example Street
+            <br>Exampleton
+            <br>EX1 2AB
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/questions/aps/ap-individual-address">
+            <a href="/questions/ap-address/confirm-address">
               Change
               <span class="govuk-visually-hidden"> date of birth</span>
             </a>
@@ -90,12 +103,6 @@
             Areas of accountability
           </dt>
           <dd class="govuk-summary-list__value">
-            <strong>Block A</strong>
-            <br>Surrounding areas
-            <p>            <br><strong>Block C</strong>
-              <br>Internal common parts
-              <br>Surrounding areas
-            </p>
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="/questions/aps/ap-areas">
@@ -109,7 +116,7 @@
             Add another accountable person?
           </dt>
           <dd class="govuk-summary-list__value">
-            Yes
+            No
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="/questions/aps/add-ap">

@@ -26,6 +26,7 @@
         {{ govukRadios({
           name: "more-than-one-block",
           id: "more-than-one-block",
+          value: data['more-than-one-block'],
           fieldset: {
             legend: {
               text: "What type of structure is your building?",
@@ -35,17 +36,17 @@
           },
           items: [
           {
-            value: "One",
+            value: "Simple",
             text: "Simple structure",
             hint: {
               text: "For example, this might be a single block of flats."
             }
           },
           {
-            value: "Two or more",
+            value: "Complex",
             text: "Complex structure",
             hint: {
-              text: "Multiple tower blocks that are connected together by a basement, lobby or walkway that contains a residential unit or a party wall."
+              text: "Multiple sections that are connected together by a basement, lobby or walkway that contains a residential unit, or a party wall."
             }
           }
           ]

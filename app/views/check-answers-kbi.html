@@ -12,9 +12,93 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
-      <span class="govuk-caption-l">Blocks in the building</span>
+      <span class="govuk-caption-l">{{ data['block-name'] }}</span>
 
       <h1 class="govuk-heading-l">Check your answers</h1>
+
+      <h2 class="govuk-heading-m">Fire and smoke controls</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Evacuation strategy
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Phased
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/fire/evacuation-policy">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Smoke controls in residential parts
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Smoke detector heads
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Smoke controls in common parts
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Smoke detector heads
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Smoke detector head access
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Basement
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> contact information</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">Energy supply and storage</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Energy supplies
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Eco boiler
+            <br>Electricity
+            <br>Hydrogen battery
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/ext-features/structural-type">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">Structural type and materials</h2>
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
@@ -22,29 +106,44 @@
             Structure type
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['more-than-one-block'] }}
+            Modular
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/questions/blocks/more-than-one-block">
+            <a href="/questions/ext-features/structural-type">
               Change
               <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Modular materials
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Composite
+            <br>Metal
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/ext-features/structural-type-modular">
+              Change
+              <span class="govuk-visually-hidden"> date of birth</span>
             </a>
           </dd>
         </div>
       </dl>
 
-      <h2 class="govuk-heading-m">First block</h2>
+      <h2 class="govuk-heading-m">Roof</h2>
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Block name
+            Type of roof surface
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['block-name'] }}
+            Flat roof
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/questions/blocks/block-name">
+            <a href="#">
               Change
               <span class="govuk-visually-hidden"> name</span>
             </a>
@@ -52,27 +151,13 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Number of floors above ground level
+            Roof insulation layer
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['number-of-floors'] }}
+            Yes
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/questions/blocks/floors-above">
-              Change
-              <span class="govuk-visually-hidden"> name</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Height
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['height'] }} metres
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="/questions/blocks/height">
+            <a href="#">
               Change
               <span class="govuk-visually-hidden"> date of birth</span>
             </a>
@@ -80,132 +165,67 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Number of residential units
+            Main roof material
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['number-of-residential-units'] }}
+            Sheet materials
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/questions/blocks/residential-units">
+            <a href="#">
               Change
               <span class="govuk-visually-hidden"> contact information</span>
             </a>
           </dd>
         </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">Staircases</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Are people living in the block?
+            Total staircases
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['are-people-living-in-the-building'] }}
+            22
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/questions/blocks/are-people-living-in-the-building">
+            <a href="#">
               Change
-              <span class="govuk-visually-hidden"> contact details</span>
+              <span class="govuk-visually-hidden"> previous application number</span>
             </a>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            When was it built?
+            Interior from ground floor
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['completion-year'] }}
+            14
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/questions/blocks/completion-year">
+            <a href="#">
               Change
-              <span class="govuk-visually-hidden"> contact details</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Completion certificate issuer (optional)
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['completion-certificate-issuer'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="/questions/blocks/completion-certificate-issuer">
-              Change
-              <span class="govuk-visually-hidden"> contact details</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Completion certificate number (optional)
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['completion-certificate-reference-number'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="/questions/blocks/completion-certificate-reference-number">
-              Change
-              <span class="govuk-visually-hidden"> contact details</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Address
-          </dt>
-          <dd class="govuk-summary-list__value">
-            7 Example Street
-            <br>Exampleton
-            <br>EX1 2AB
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="/questions/block-address/confirm-address">
-              Change
-              <span class="govuk-visually-hidden"> contact details</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Add another address?
-          </dt>
-          <dd class="govuk-summary-list__value">
-            No
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="/questions/blocks/other-name-address-postcode-boolean">
-              Change
-              <span class="govuk-visually-hidden"> contact details</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Add another block?
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Yes
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="/questions/blocks/other-name-address-postcode-boolean">
-              Change
-              <span class="govuk-visually-hidden"> contact details</span>
+              <span class="govuk-visually-hidden"> licence type</span>
             </a>
           </dd>
         </div>
       </dl>
 
-      <h2 class="govuk-heading-m">Second block</h2>
+      <h2 class="govuk-heading-m">External walls</h2>
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Block name
+            External wall materials
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['block-name'] }}
+            Composite panels
+            <br>Glass
+            <br>Masonry
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/questions/blocks/block-name">
+            <a href="#">
               Change
               <span class="govuk-visually-hidden"> name</span>
             </a>
@@ -213,27 +233,13 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Number of floors above ground level
+            Composite material
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['number-of-floors'] }}
+            Metal composite panels
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/questions/blocks/floors-above">
-              Change
-              <span class="govuk-visually-hidden"> name</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Height
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['height'] }} metres
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="/questions/blocks/height">
+            <a href="#">
               Change
               <span class="govuk-visually-hidden"> date of birth</span>
             </a>
@@ -241,13 +247,135 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Number of residential units
+            Percentage coverage
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['number-of-residential-units'] }}
+            Metal composite panels: 70%
+            <br>Glass: 20%
+            <br>Masonry: 10%
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/questions/blocks/residential-units">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> contact information</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">External features</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Attached features
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Balconies
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> previous application number</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Balconies materials
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Timber
+            <br>Metal
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> licence type</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">Uses at ground level and above</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Primary use
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Residential Dwelling
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/uses-above/primary-use.html">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Secondary uses
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>Residential (Other)</p>
+            <p>Shop and Commercial</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/uses-above/secondary-uses.html">
+              Change
+              <span class="govuk-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+      
+      <h2 class="govuk-heading-m">Uses below ground level</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Number of floors below ground level
+          </dt>
+          <dd class="govuk-summary-list__value">
+            1
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/use-below/floors-below-ground-level.html">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Primary use of floors below ground level
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Residential Dwelling
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/use-below/floors-below-primary-use">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">Changes since completion</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Change of use
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Yes
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/use-previous/previous-primary-use-boolean.html">
               Change
               <span class="govuk-visually-hidden"> contact information</span>
             </a>
@@ -255,13 +383,13 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Are people living in the block?
+            Year of change of use
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['are-people-living-in-the-building'] }}
+            1984
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/questions/blocks/are-people-living-in-the-building">
+            <a href="/questions/use-previous/previous-primary-use-year.html">
               Change
               <span class="govuk-visually-hidden"> contact details</span>
             </a>
@@ -269,13 +397,13 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            When was it built?
+            Previous primary use
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['completion-year'] }}
+            Office
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/questions/blocks/completion-year">
+            <a href="/questions/use-previous/previous-use.html">
               Change
               <span class="govuk-visually-hidden"> contact details</span>
             </a>
@@ -283,109 +411,37 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Completion certificate issuer (optional)
+            Material changes
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['completion-certificate-issuer'] }}
+            Asbestos removal
+            <br>Changes to windows
+            <br>Installation, replacement or removal of gas supply to building
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/questions/blocks/completion-certificate-issuer">
+            <a href="/questions/mat-changes/material-changes">
               Change
-              <span class="govuk-visually-hidden"> contact details</span>
+              <span class="govuk-visually-hidden"> name</span>
             </a>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Completion certificate number (optional)
+            Year of most recent material change
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['completion-certificate-reference-number'] }}
+            1992
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/questions/blocks/completion-certificate-reference-number">
+            <a href="/questions/mat-changes/material-changes-year">
               Change
-              <span class="govuk-visually-hidden"> contact details</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Address
-          </dt>
-          <dd class="govuk-summary-list__value">
-            7 Example Street
-            <br>Exampleton
-            <br>EX1 2AB
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="/questions/block-address/confirm-address">
-              Change
-              <span class="govuk-visually-hidden"> contact details</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Add another address?
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Yes
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="/questions/blocks/other-name-address-postcode-boolean">
-              Change
-              <span class="govuk-visually-hidden"> contact details</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Other address
-          </dt>
-          <dd class="govuk-summary-list__value">
-            8 Example Street
-            <br>Exampleton
-            <br>EX1 2AB
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="/questions/block-address/confirm-address">
-              Change
-              <span class="govuk-visually-hidden"> contact details</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Add another address?
-          </dt>
-          <dd class="govuk-summary-list__value">
-            No
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="/questions/blocks/other-name-address-postcode-boolean">
-              Change
-              <span class="govuk-visually-hidden"> contact details</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Add another block?
-          </dt>
-          <dd class="govuk-summary-list__value">
-            No
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="/questions/blocks/best-known-address">
-              Change
-              <span class="govuk-visually-hidden"> contact details</span>
+              <span class="govuk-visually-hidden"> date of birth</span>
             </a>
           </dd>
         </div>
       </dl>
 
-      <form action="/blocks-in-scope-some" method="post" novalidate>
+      <form action="/questions/connected/connected-blocks" method="post" novalidate>
 
         <input type="hidden" name="answers-checked" value="true">
 
@@ -394,8 +450,6 @@
         </button>
 
       </form>
-
-      <p><a href="#">Save and come back later</a></p>
 
     </div>
   </div>
