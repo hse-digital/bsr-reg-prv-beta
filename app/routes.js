@@ -226,6 +226,21 @@ router.post('/pap-address-answer', function (req, res) {
 
 })
 
+router.post('/pap-confirm-address-answer', function (req, res) {
+
+  var papType = req.session.data['pap-type']
+  var userPap = req.session.data['are-you-the-pap']
+
+  if (papType == "Organisation") {
+    res.redirect('/questions/pap/pap-org-lead-contact-name')
+  } else if (userPap == "Yes") {
+    res.redirect('/check-answers-pap-individual')
+  } else {
+    res.redirect('/questions/pap/pap-individual-name')
+  }
+
+})
+
 router.post('/what-is-your-role-at-pap-org-answer', function (req, res) {
 
   var papType = req.session.data['pap-org-role']
@@ -316,6 +331,28 @@ router.post('/more-than-one-block-answer', function (req, res) {
     res.redirect('/what-we-need-blocks')
   } else {
     res.redirect('/questions/blocks/floors-above')
+  }
+
+})
+
+router.post('/connected-high-rise-buildings-boolean-answer', function (req, res) {
+
+  var connectedBuildings = req.session.data['connected-high-rise-buildings-boolean']
+  if (connectedBuildings == "No") {
+    res.redirect('/questions/connected/connected-high-rise-buildings-boolean')
+  } else {
+    res.redirect('/questions/connected/connected-high-rise-buildings')
+  }
+
+})
+
+router.post('/connected-other-buildings-boolean-answer', function (req, res) {
+
+  var connectedBuildings = req.session.data['connected-other-buildings-boolean']
+  if (connectedBuildings == "No") {
+    res.redirect('/questions/roof/roof-type')
+  } else {
+    res.redirect('/questions/connected/connected-other-buildings')
   }
 
 })

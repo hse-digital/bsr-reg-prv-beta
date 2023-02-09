@@ -15,26 +15,15 @@
 
       <span class="govuk-caption-l">Connected buildings</span>
 
-      <h1 class="govuk-heading-l">Is the buildings connected to any other buildings?</h1>
+      <h1 class="govuk-heading-l">Is {{ data['building-name'] }} connected to any high-rise buildings?</h1>
 
-      <p>A building may be connected to another by:</p>
-
-      <ul class="govuk-list govuk-list--bullet">
-        <li>an underground connection, such as a shared car park</li>
-        <li>a shared entrance hall</li>
-        <li>a bridge between two towers</li>
-      </ul>
-
-      <form class="form" action="/questions/connected/connected-buildings" method="post">
+      <form class="form" action="/connected-high-rise-buildings-boolean-answer" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
         {{ govukRadios({
-          name: "primary-use",
+          name: "connected-high-rise-buildings-boolean",
           fieldset: {
             legend: {
-              text: "Is the building connected to any other buildings?",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--s"
             }
           },
           items: [

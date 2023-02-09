@@ -15,16 +15,15 @@
 
       <span class="govuk-caption-l">Connected buildings</span>
 
-      <form class="form" action="/questions/connected/connected-building-registration" method="post">
+      <h1 class="govuk-heading-l">How are the blocks in {{ data['building-name'] }} connected?</h1>
+
+      <form class="form" action="/questions/connected/connected-high-rise-buildings-boolean" method="post">
 
         {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
         {{ govukCheckboxes({
           name: "countries",
           fieldset: {
             legend: {
-              text: "How is the building connected with another building?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--l"
             }
           },
           hint: {
@@ -32,36 +31,38 @@
           },
           items: [
             {
-              value: "france",
-              text: "Internal connecting doors"
+              value: "Bridge or walkway between blocks",
+              text: "Bridge or walkway between blocks"
             },
             {
-              value: "portugal",
-              text: "Underground connection",
-              hint: {
-                text: "like a pedestrian tunnel or shared car park"
-              }
+              value: "Car park below ground",
+              text: "Car park below ground"
             },
             {
-              value: "spain",
-              text: "Ground level connection",
+              value: "Ground floor",
+              text: "Ground floor",
               hint: {
                 text: "like a shared entrance hall"
               }
             },
             {
-              value: "spain",
-              text: "Above ground connection",
-              hint: {
-                text: "like a bridge between two towers"
-              }
+              value: "Levels below ground with a residential unit",
+              text: "Levels below ground with a residential unit"
+            },
+            {
+              value: "Party wall with a doorway used day to day",
+              text: "Party wall with a doorway used day to day"
+            },
+            {
+              value: "Party wall with emergency access only",
+              text: "Party wall with emergency access only"
             },
             {
               divider: "or"
             },
             {
-              value: "none",
-              text: "Not connected to another building or structure",
+              value: "None of these",
+              text: "None of these",
               behaviour: "exclusive"
             }
           ]
