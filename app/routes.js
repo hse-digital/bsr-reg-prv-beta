@@ -151,7 +151,7 @@ router.post('/add-block-boolean-answer', function (req, res) {
   // Check whether the variable matches a condition
   if (addBlock == "Yes"){
     // Send user to next page
-    res.redirect('/questions/blocks/floors-above')
+    res.redirect('/questions/blocks/block-name')
   } else {
     // Send user to ineligible page
     res.redirect('/check-answers-blocks-complex')
@@ -309,6 +309,17 @@ router.post('/ap-type-answer', function (req, res) {
   } else {
     // Send user to ineligible page
     res.redirect('/questions/aps/ap-individual-name')
+  }
+
+})
+
+router.post('/ap-confirm-address-answer', function (req, res) {
+
+  var multipleBlocks = req.session.data['more-than-one-block']
+  if (multipleBlocks == "Complex") {
+    res.redirect('/questions/aps/ap-areas-complex')
+  } else {
+    res.redirect('/questions/aps/ap-areas')
   }
 
 })
