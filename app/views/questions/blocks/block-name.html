@@ -20,18 +20,18 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-l">First block in the building</span>
+      <span class="govuk-caption-l">First section in the building</span>
 
-      <h1 class="govuk-heading-l">What is this block's name?</h1>
+      <h1 class="govuk-heading-l">What is this section's name?</h1>
 
-      <p>This will help you to identify which block we are asking you about later on.</p>
+      <p>This will help you to identify which section we are asking you about later on.</p>
 
       <form class="form" action="/questions/blocks/floors-above" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
-            text: "Block name",
+            text: "Section name",
             classes: "govuk-label--s",
             isPageHeading: false
           },

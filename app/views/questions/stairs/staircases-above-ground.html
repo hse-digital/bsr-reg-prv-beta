@@ -19,13 +19,13 @@
 
       <form class="form" action="/questions/walls/external-wall-type" method="post">
 
-        <p>Count the number of staircases that are inside the block and serve all floors from the ground floor up.</p>
+        <p>Count the number of staircases that are inside the section and serve all floors from the ground floor up.</p>
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
             text: "Number of staircases",
-            classes: "govuk-label--m",
+            classes: "govuk-label--s",
             isPageHeading: false
           },
           classes: "govuk-input--width-5",

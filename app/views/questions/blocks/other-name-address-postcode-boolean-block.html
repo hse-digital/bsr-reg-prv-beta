@@ -17,11 +17,11 @@
 
       <h1 class="govuk-heading-l">Does {{ data['block-name'] }} have another address?</h1>
 
-      <p>Blocks may have more than one address and postcode.</p>
+      <p>Sections may have more than one address and postcode.</p>
 
       {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
       {{ govukInsetText({
-        text: "For example, where some units in the block have a different main entrance to others."
+        text: "For example, where some units in the section have a different main entrance to others."
       }) }}
 
       <form class="form" action="/other-name-address-postcode-boolean-answer" method="post">

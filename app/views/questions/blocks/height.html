@@ -20,11 +20,11 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-l">First block in the building</span>
+      <span class="govuk-caption-l">{{ data['block-name'] }}</span>
 
-      <h1 class="govuk-heading-l">Block height</h1>
+      <h1 class="govuk-heading-l">Section height</h1>
 
-      <p>Measure the block height in metres from ground level to the top floor.</p>
+      <p>Measure the section height in metres from ground level to the top floor.</p>
 
       <p>Do not measure the roof, unless there is a residential unit on it.</p>
 
@@ -35,7 +35,7 @@
           </span>
         </summary>
         <div class="govuk-details__text">
-          <p>Ground level is the level of land immediately next to the block. If the block is on uneven land, count from the lowest part of the land immediately next to the block.</p>
+          <p>Ground level is the level of land immediately next to the section. If the section is on uneven land, count from the lowest part of the land immediately next to the section.</p>
         </div>
       </details>
 
@@ -43,7 +43,7 @@
 
         {{ govukInput({
           label: {
-            text: "Enter the block height in metres",
+            text: "Enter the section height in metres",
             classes: "govuk-label--s"
           },
           hint: {
