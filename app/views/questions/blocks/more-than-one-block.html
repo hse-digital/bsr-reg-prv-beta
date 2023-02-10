@@ -20,6 +20,12 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+      <span class="govuk-caption-l">The building</span>
+
+      <h1 class="govuk-heading-l">Is [building-name]{{ data['building-name'] }} made up of multiple independent sections?</h1>
+
+      <p>An independent section is a collection of units in the building that share a main entrance.</p>
+
       <form class="form" action="/more-than-one-block-answer" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
@@ -29,24 +35,21 @@
           value: data['more-than-one-block'],
           fieldset: {
             legend: {
-              text: "What type of structure is your building?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--l"
             }
           },
           items: [
           {
             value: "Simple",
-            text: "Simple structure",
+            text: "Single independent section",
             hint: {
-              text: "For example, this might be a single block of flats."
+              text: "All units in the building can be accessed from the same main entrance without having to go though a party wall, walkway, shared lobby or basement."
             }
           },
           {
             value: "Complex",
-            text: "Complex structure",
+            text: "Multiple independent sections",
             hint: {
-              text: "Multiple sections that are connected together by a basement, lobby or walkway that contains a residential unit, or a party wall."
+              text: "Some of the units in the building have a different main entrance, or are separated from others by a party wall, walkway, shared lobby or basement."
             }
           }
           ]
