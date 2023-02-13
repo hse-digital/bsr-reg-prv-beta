@@ -22,7 +22,7 @@
 
       <span class="govuk-caption-l">{{ data['block-name'] }}</span>
 
-      <form class="form" action="/eligibility-answer" method="post">
+      <form class="form" action="/questions/blocks/completion-year" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
         {{ govukRadios({
@@ -30,7 +30,7 @@
           value: data['are-people-living-in-the-building'],
           fieldset: {
             legend: {
-              text: "Are people living in the block?",
+              text: "Are people living in the section?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
@@ -41,10 +41,10 @@
               text: "Yes"
             },
             {
-              value: "No, but the block is ready for people to move in",
-              text: "No, but the block is ready for people to move in",
+              value: "No, but the section is ready for people to move in",
+              text: "No, but the section is ready for people to move in",
               hint: {
-                text: "This could be if the block has been refurbished or is new."
+                text: "This could be if the section has been refurbished or is new."
               }
             },
             {
