@@ -28,7 +28,7 @@
 
       <p>You must not give false or misleading information to the Building Safety Regulator. Knowingly or recklessly giving false or misleading information is a criminal offence punishable by up to 2 years in prison.</p>
 
-      <h2 class="govuk-heading-l">If you are authorised to act for the principal accountable person</h2>
+      <h2 class="govuk-heading-m">If you are authorised to act for the principal accountable person</h2>
 
       <p>By submitting this application, you are also confirming that:</p>
 
@@ -39,6 +39,45 @@
       </uL>
 
       <p>We may ask you for written evidence that the principal accountable person has authorised you to act for them.</p>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            If you are a member of the BSR CAT team
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+          {% from "govuk/components/input/macro.njk" import govukInput %}
+          {% set phoneHtml %}
+          {{ govukInput({
+            id: "contact-by-phone",
+            name: "contact-by-phone",
+            type: "tel",
+            autocomplete: "tel",
+            label: {
+              text: "Your employee number"
+            }
+          }) }}
+          {% endset -%}
+          {{ govukCheckboxes({
+            name: "waste",
+            fieldset: {
+              legend: {
+              }
+            },
+            items: [
+              {
+                value: "carcasses",
+                text: "I have completed this application for someone over the phone",
+                conditional: {
+                  html: phoneHtml
+                }
+              }
+            ]
+          }) }}
+        </div>
+      </details>
 
       <form class="form" action="/pay" method="post">
 
