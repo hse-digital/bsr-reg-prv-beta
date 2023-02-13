@@ -21,22 +21,36 @@
 
       <h1 class="govuk-heading-l">Registration application submitted for {{ data['building-name'] }}</h1>
 
-      <p>Your payment reference number is: <strong>PSH29HQ07J</strong></p>
+      <p>Your application number is <strong>BSR019388477</strong>.</p>
+
+      <p>Your payment reference number is <strong>PSH29HQ07J</strong>.</p>
 
       <p>
-        We've emailed your payment reference to <b>{{ data['email'] }}</b>. If you cannot find the email, check your junk or spam folders.
+        We've emailed confirmation of your payment to <b>{{ data['email'] }}</b>. If you cannot find the email, check your junk or spam folders. If you did not get the email, <a href="/contact">contact us</a>.
       </p>
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
       {{ govukButton({
-        text: "Launch emails",
-        href: "/registration-submitted-email",
+        text: "Launch email sent to the user if they are the PAP",
+        href: "/registration-submitted-email-recipient=user-pap",
         classes: "govuk-button--secondary"
       }) }}
 
-      <p>If you did not get the email, <a href="/contact">contact us</a>.</p>
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Launch email sent to the user if they are not the PAP",
+        href: "/registration-submitted-email-recipient=user-not-pap",
+        classes: "govuk-button--secondary"
+      }) }}
 
-      <p>We have also sent an email to the principal accountable person that outlines their duties at this stage.</p>
+      <p>[We have also sent an email to the principal accountable person that outlines their duties at this stage.]</p>
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Launch email sent to the PAP if they are not the user",
+        href: "/registration-submitted-email-recipient=pap",
+        classes: "govuk-button--secondary"
+      }) }}
 
       <h2 class="govuk-heading-m">What happens next</h2>
 
@@ -58,7 +72,7 @@
 
       </form>
 
-      <p>Alternatively, you can <a href="#">pay for any outstanding buildings</a> or <a href="#">register another building</a>.</p>
+      <p>Alternatively, you can <a href="#">register another building</a>.</p>
 
     </div>
   </div>
