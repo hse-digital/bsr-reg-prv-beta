@@ -43,7 +43,7 @@
         classes: "govuk-button--secondary"
       }) }}
 
-      <p>[We have also sent an email to the principal accountable person that outlines their duties at this stage.]</p>
+      <p>[We have also sent an email to the [lead contact at the] principal accountable person that outlines their duties at this stage.]</p>
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
       {{ govukButton({
@@ -62,13 +62,13 @@
 
       {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
       {{ govukWarningText({
-        text: "You must give us structural and safety information for [building-name] by 30 September 2023.",
+        text: "You must give us structure and safety information for [building-name] by 30 September 2023.",
         iconFallbackText: "Warning"
       }) }}
 
       <form class="form" action="/registration-confirm-answer" method="post">
 
-        <button class="govuk-button" data-module="govuk-button">Continue to structural and safety information</button>
+        <button class="govuk-button" data-module="govuk-button">Continue to structure and safety information</button>
 
       </form>
 
