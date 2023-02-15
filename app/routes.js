@@ -372,7 +372,7 @@ router.post('/connected-other-buildings-boolean-answer', function (req, res) {
 
   var connectedBuildings = req.session.data['connected-other-buildings-boolean']
   if (connectedBuildings == "No") {
-    res.redirect('/questions/roof/roof-type')
+    res.redirect('/check-answers-connections')
   } else {
     res.redirect('/questions/connected/connected-other-buildings')
   }
