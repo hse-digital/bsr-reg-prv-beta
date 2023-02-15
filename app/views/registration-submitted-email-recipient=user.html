@@ -1,0 +1,51 @@
+{% extends "govuk-prototype-kit/layouts/unbranded.html" %}
+
+{% block pageTitle %}
+  Unbranded page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-!-padding-bottom-5"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Microsoft_Office_Outlook_%282018–present%29.svg/826px-Microsoft_Office_Outlook_%282018–present%29.svg.png" width="40px"></div>
+
+<p><strong>From:</strong> enquiries@hse.gov.uk
+  <br><strong>To:</strong> {{ data['email'] }}
+  <br><strong>Subject:</strong> {building-name] registration
+</p>
+
+{% from "govuk/components/header/macro.njk" import govukHeader %}
+{{ govukHeader({
+  homepageUrl: "#"
+}) }}
+
+<div class="govuk-!-padding-bottom-5"></div>
+
+  <h1 class="govuk-heading-l">Your building registration application</h1>
+
+  <p>We have received your application to register <strong>{{ data['building-name']}}</strong>.</p>
+
+  <div class="govuk-inset-text">
+    Your application number is <strong>BSR019388477</strong>.
+  </div>
+
+  <p>Keep this safe. You will need it again when you return to your application.</p>
+
+  <p>You may also need it if you contact us.</p>
+
+  <h2 class="govuk-heading-m">What you need to do next</h2>
+
+  <p>You need to prepare some information about the structure and safety of the building. [LINK TO THE GUIDANCE]. We will contact you again when we need you to give us that information.</p>
+
+  <p>[WHEN USER IS PAP - In your application, you told us about other people or organisations who are accountable for this building. You must tell those people and organisations that they have been named as accountable persons for this building.]</p>
+
+  <h2 class="govuk-heading-m">Why you got this email</h2>
+
+  <p>You completed an application to register a high-rise building with the Building Safety Regulator.</p>
+
+  <p>From Health and Safety Executive</p>
+
+  <p>You can apply to register another high-rise building at any time at <a href="#">www.hse.gov.uk/register-a-high-rise-building</a>.</p>
+
+  <p>[WHEN USER IS PAP - If you are not the principal accountable person for this building, contact us at <a href="/contact">www.hse.gov.uk/register-a-high-rise-building/contact</a>.]</p>
+
+{% endblock %}

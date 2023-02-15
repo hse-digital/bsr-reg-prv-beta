@@ -31,15 +31,8 @@
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
       {{ govukButton({
-        text: "Launch email sent to the user if they are the PAP",
-        href: "/registration-submitted-email-recipient=user-pap",
-        classes: "govuk-button--secondary"
-      }) }}
-
-      {% from "govuk/components/button/macro.njk" import govukButton %}
-      {{ govukButton({
-        text: "Launch email sent to the user if they are not the PAP",
-        href: "/registration-submitted-email-recipient=user-not-pap",
+        text: "View email sent to the user",
+        href: "/registration-submitted-email-recipient=user",
         classes: "govuk-button--secondary"
       }) }}
 
@@ -47,7 +40,7 @@
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
       {{ govukButton({
-        text: "Launch email sent to the PAP if they are not the user",
+        text: "View email sent to the PAP if they are not the user",
         href: "/registration-submitted-email-recipient=pap",
         classes: "govuk-button--secondary"
       }) }}

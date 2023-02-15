@@ -1,0 +1,52 @@
+{% extends "govuk-prototype-kit/layouts/unbranded.html" %}
+
+{% block pageTitle %}
+  Unbranded page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-!-padding-bottom-5"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Microsoft_Office_Outlook_%282018–present%29.svg/826px-Microsoft_Office_Outlook_%282018–present%29.svg.png" width="40px"></div>
+
+<p><strong>From:</strong> enquiries@hse.gov.uk
+  <br><strong>To:</strong> {{ data['email'] }}
+  <br><strong>Subject:</strong> {{ data['building-name'] }} high-rise building registration submitted
+</p>
+
+{% from "govuk/components/header/macro.njk" import govukHeader %}
+{{ govukHeader({
+  homepageUrl: "#"
+}) }}
+
+<div class="govuk-!-padding-bottom-5"></div>
+
+  <h1 class="govuk-heading-l">Building registration application</h1>
+
+  <p>We have received an application to register <strong>{{ data['building-name']}}</strong>.</p>
+
+  <p>The application number is <strong>BSR019388477</strong>. Keep this safe. You will be asked for this if you contact us about this application.</p>
+
+  <p>You have been named as the [lead contact at the] principal accountable person for this building.</p>
+
+  <h2 class="govuk-heading-m">Your duties</h2>
+
+  <p>As the [named contact at the] principal accountable person, it is your duty to inform any other accountable persons that:</p>
+
+  <ul class="govuk-list govuk-list--bullet">
+    <li>the application to register this building has been submitted</li>
+    <li>they have been named as other accountable persons</li>
+  </ul>
+
+  <p>We need more information about the structure and safety of this building. You must ensure that the person who started this application gives this information to us by <strong>30 September 2023</strong>.</p>
+
+  <h2 class="govuk-heading-m">Why you got this email</h2>
+
+  <p>You were named as the [lead contact at the] principal accountable person in an application to register a high-rise building with the Building Safety Regulator.</p>
+
+  <p>You can apply to register another high-rise building at any time at <a href="#">www.hse.gov.uk/register-a-high-rise-building</a>.</p>
+
+  <p>If you are not the principal accountable person for this building, contact us at <a href="/contact">www.hse.gov.uk/register-a-high-rise-building/contact</a>.</p>
+
+  <p>From Health and Safety Executive</p>
+
+{% endblock %}
