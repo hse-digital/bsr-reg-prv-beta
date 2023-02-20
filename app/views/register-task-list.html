@@ -25,15 +25,18 @@
 
       <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Application incomplete</h2>
 
-      <p>You have completed 0 of 4 sections.</p>
+      <p>You have completed 0 of 3 sections.</p>
 
-      <p>
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Returning to this application</h2>
+      
+      <p class="govuk-!-margin-bottom-2">
         We will save the information you give to us on each page.
       </p>
 
       <p class="govuk-body govuk-!-margin-bottom-7">
-        We have sent an email containing your application number to {{ data['email'] }}. Use this email to return to this application at any time.
+        Your application number and instructions on how to return later have been sent to <strong>{{ data['email'] }}</strong>.
       </p>
+
 
       <ol class="app-task-list">
         <li>
@@ -44,20 +47,14 @@
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
                 <a href="/questions/blocks/more-than-one-block" aria-describedby="eligibility-status">
-                  The building
+                  Building details
                 </a>
               </span>
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started yet</strong>
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                  Principal accountable person
-              </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Cannot start yet</strong>
-            </li>
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                  Other accountable persons
+                  Accountable persons
               </span>
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Cannot start yet</strong>
             </li>

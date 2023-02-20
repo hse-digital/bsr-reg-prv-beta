@@ -20,11 +20,9 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-l">The building</span>
+      <span class="govuk-caption-l">{{ data['building-name'] }}</span>
 
       <h1 class="govuk-heading-l">Is {{ data['building-name'] }} made up of multiple independent sections?</h1>
-
-      <p>An independent section is a collection of units in the building that share a main entrance, or can only be accessed by crossing a party wall, walkway, shared lobby or basement.</p>
 
       <form class="form" action="/more-than-one-block-answer" method="post">
 

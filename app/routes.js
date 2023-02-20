@@ -68,7 +68,7 @@ router.post('/residential-units-answer', function (req, res) {
   // Check whether the variable matches a condition
   if (Number(residentialUnits) < 2){
     // Send user to next page
-    res.redirect('/questions/blocks/completion-year')
+    res.redirect('/questions/block-address/find-address')
   } else {
     // Send user to ineligible page
     res.redirect('/questions/blocks/are-people-living-in-the-building')
