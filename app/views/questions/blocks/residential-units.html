@@ -22,7 +22,7 @@
 
       <span class="govuk-caption-l">{{ data['block-name'] }}</span>
 
-      <h1 class="govuk-heading-l">Number of residential units in the section</h1>
+      <h1 class="govuk-heading-l">Number of residential units in {{ data['building-name'] }}</h1>
 
       <p>A residential unit is a flat, maisonette, student bedroom, room or flat in a house in multiple occupation or any other place where someone could live.</p>
 
@@ -32,6 +32,9 @@
           label: {
             text: "Number of residential units",
             classes: "govuk-label--s"
+          },
+          hint: {
+            text: "Count all of the residential units, whether someone is living in them or not."
           },
           classes: "govuk-input--width-4",
           id: "number-of-residential-units",

@@ -68,7 +68,7 @@ router.post('/residential-units-answer', function (req, res) {
   // Check whether the variable matches a condition
   if (Number(residentialUnits) < 2){
     // Send user to next page
-    res.redirect('/questions/blocks/completion-year')
+    res.redirect('/questions/block-address/find-address')
   } else {
     // Send user to ineligible page
     res.redirect('/questions/blocks/are-people-living-in-the-building')
@@ -113,7 +113,7 @@ router.post('/completion-certificate-reference-number-answer', function (req, re
 
   var completionYear = req.session.data['more-than-one-block']
 
-  if (completionYear == "One") {
+  if (completionYear == "Single independent section") {
 
     res.redirect('/questions/building-address/find-address')
   }
@@ -135,7 +135,7 @@ router.post('/other-name-address-postcode-boolean-answer', function (req, res) {
 
     if (otherNameAddressPostcode === "Yes"){
       res.redirect('/questions/block-address/find-address')
-    } else if (numberOfBlocks === "One"){
+    } else if (numberOfBlocks === "Single independent section"){
       res.redirect('/check-answers-blocks')
     } else {
       res.redirect('/questions/blocks/add-block')
@@ -316,7 +316,7 @@ router.post('/ap-type-answer', function (req, res) {
 router.post('/ap-confirm-address-answer', function (req, res) {
 
   var multipleBlocks = req.session.data['more-than-one-block']
-  if (multipleBlocks == "Complex") {
+  if (multipleBlocks == "Multiple independent sections") {
     res.redirect('/questions/aps/ap-areas-complex')
   } else {
     res.redirect('/questions/aps/ap-areas')
@@ -338,7 +338,7 @@ router.post('/ap-areas-answer', function (req, res) {
 router.post('/more-than-one-block-answer', function (req, res) {
 
   var multipleBlocks = req.session.data['more-than-one-block']
-  if (multipleBlocks == "Complex") {
+  if (multipleBlocks == "Multiple independent sections") {
     res.redirect('/what-we-need-blocks')
   } else {
     res.redirect('/questions/blocks/floors-above')
@@ -349,7 +349,7 @@ router.post('/more-than-one-block-answer', function (req, res) {
 router.post('/registration-confirm-answer', function (req, res) {
 
   var multipleBlocks = req.session.data['more-than-one-block']
-  if (multipleBlocks == "Complex") {
+  if (multipleBlocks == "Multiple independent sections") {
     res.redirect('/kbi-task-list-complex')
   } else {
     res.redirect('/kbi-task-list')
@@ -372,7 +372,7 @@ router.post('/connected-other-buildings-boolean-answer', function (req, res) {
 
   var connectedBuildings = req.session.data['connected-other-buildings-boolean']
   if (connectedBuildings == "No") {
-    res.redirect('/questions/roof/roof-type')
+    res.redirect('/check-answers-connections')
   } else {
     res.redirect('/questions/connected/connected-other-buildings')
   }

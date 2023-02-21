@@ -1,0 +1,70 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Staircases <!--(section 7 of 11)--></span>
+
+      <h1 class="govuk-heading-l">Staircases in {{ data['building-name'] }}</h1>
+
+      <form class="form" action="/questions/walls/external-wall-type" method="post">
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {{ govukInput({
+          label: {
+            text: "Total number of staircases",
+            classes: "govuk-label--s",
+            isPageHeading: false
+          },
+          hint: {
+            text: "Count all the staircases on the inside and outside of [section name/building name]."
+          },
+          classes: "govuk-input--width-3",
+          id: "year-of-use-change",
+          name: "year-of-use-change"
+        }) }}
+        
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {{ govukInput({
+          label: {
+            text: "Number of staircases serving all floors from ground level",
+            classes: "govuk-label--s",
+            isPageHeading: false
+          },
+          hint: {
+            text: "Count the number of staircases inside [section name/building name] that serve all floors from ground level to the top floor."
+          },
+          classes: "govuk-input--width-3",
+          id: "year-of-use-change",
+          name: "year-of-use-change"
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+      <span class="govuk-caption-m">
+        <strong>{{ data['building-name'] }}</strong>
+        <br>{{ data['building-address-line-1'] }}
+        <br>{{ data['building-address-line-2'] }}
+        <br>{{ data['building-postcode'] }}
+      </span>
+    </div>
+    
+  </div>
+
+{% endblock %}
+

@@ -22,14 +22,14 @@
 
       <span class="govuk-caption-l">{{ data['block-name'] }}</span>
 
-      <h1 class="govuk-heading-l">Completion certificate issuer (optional)</h1>
+      <h1 class="govuk-heading-l">Completion certificate issuer for {{ data['block-name'] }} (optional)</h1>
 
       <form class="form" action="/questions/blocks/completion-certificate-reference-number" method="post">
 
         {% from "govuk/components/details/macro.njk" import govukDetails %}
         {{ govukDetails({
           summaryText: "Help with completion certificate",
-          text: "A completion certificate is supplied as proof that building work has been inspected by building control and complies with building regulations."
+          text: "A building control body or authority issues a completion certificate as proof that the building work has been inspected and complies with building regulations."
         }) }}
 
         {% from "govuk/components/input/macro.njk" import govukInput %}

@@ -15,7 +15,7 @@
 
       <span class="govuk-caption-l">Connected buildings</span>
 
-      <h1 class="govuk-heading-l">How is {{ data['building-name'] }} connected to the other high-rise buildings?</h1>
+      <h1 class="govuk-heading-l">What connects {{ data['building-name'] }} to the other high-rise residential buildings?</h1>
 
       <form class="form" action="/questions/connected/connected-other-buildings-boolean" method="post">
 
@@ -31,12 +31,20 @@
           },
           items: [
             {
-              value: "Bridge or walkway between blocks",
-              text: "Bridge or walkway between blocks"
+              value: "Bridge or walkway",
+              text: "Bridge or walkway"
             },
             {
               value: "Car park below ground",
               text: "Car park below ground"
+            },
+            {
+              value: "Doorway for emergency use only",
+              text: "Doorway for emergency use only"
+            },
+            {
+              value: "Doorway for everyday use",
+              text: "Doorway for everyday use"
             },
             {
               value: "Ground floor",
@@ -46,16 +54,8 @@
               }
             },
             {
-              value: "Levels below ground with a residential unit",
-              text: "Levels below ground with a residential unit"
-            },
-            {
-              value: "Party wall with a doorway used day to day",
-              text: "Party wall with a doorway used day to day"
-            },
-            {
-              value: "Party wall with emergency access only",
-              text: "Party wall with emergency access only"
+              value: "Levels below ground",
+              text: "Levels below ground"
             },
             {
               divider: "or"

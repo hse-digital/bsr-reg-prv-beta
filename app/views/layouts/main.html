@@ -4,3 +4,32 @@ https://prototype-kit.service.gov.uk/docs/layouts
 #}
 
 {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+{% block footer %}
+  {{ govukFooter({
+    meta: {
+      items: [
+        {
+          href: "/accessibility",
+          text: "Accessibility"
+        },
+        {
+          href: "/cookies",
+          text: "Cookies"
+        },
+        {
+            href: "/service-feedback",
+            text: "Feedback"
+          },
+        {
+          href: "/privacy",
+          text: "Privacy"
+        },
+        {
+          href: "/terms-and-conditions",
+          text: "Terms and conditions"
+        }
+      ]
+    }
+  }) }}
+{% endblock %}

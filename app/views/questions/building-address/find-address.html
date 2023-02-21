@@ -29,6 +29,9 @@
 
         <p>This address must be in England.</p>
 
+        <p>You can use the building's temporary postcode, if its postcode has not been approved yet.
+        </p>
+
           {{ govukInput({
             label: {
               text: "Postcode"
@@ -46,7 +49,7 @@
             name: "search-address-line-1",
             autocomplete: "address-line1",
             hint: {
-              text: "For example, 'Flat 3A' or '30 St Mary Axe'."
+              text: "For example, '30 St Mary Axe'."
             }
           }) }}
         {% endcall %}

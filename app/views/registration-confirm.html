@@ -29,46 +29,25 @@
         We've emailed confirmation of your payment to <b>{{ data['email'] }}</b>. If you cannot find the email, check your junk or spam folders. If you did not get the email, <a href="/contact">contact us</a>.
       </p>
 
-      {% from "govuk/components/button/macro.njk" import govukButton %}
-      {{ govukButton({
-        text: "Launch email sent to the user if they are the PAP",
-        href: "/registration-submitted-email-recipient=user-pap",
-        classes: "govuk-button--secondary"
-      }) }}
-
-      {% from "govuk/components/button/macro.njk" import govukButton %}
-      {{ govukButton({
-        text: "Launch email sent to the user if they are not the PAP",
-        href: "/registration-submitted-email-recipient=user-not-pap",
-        classes: "govuk-button--secondary"
-      }) }}
-
-      <p>[We have also sent an email to the principal accountable person that outlines their duties at this stage.]</p>
-
-      {% from "govuk/components/button/macro.njk" import govukButton %}
-      {{ govukButton({
-        text: "Launch email sent to the PAP if they are not the user",
-        href: "/registration-submitted-email-recipient=pap",
-        classes: "govuk-button--secondary"
-      }) }}
+      <p>[We have also sent an email to the [named contact at the] principal accountable person that outlines their duties at this stage.]</p>
 
       <h2 class="govuk-heading-m">What happens next</h2>
 
-      <p>We'll look at your application and contact you when we have made a decision.</p>
+      <p>We'll look at your application to register this building.</p>
 
-      <p>We may also contact you if we need further information.</p>
+      <p>We'll contact you when we have decided if your building should be registered. We'll also contact you if we need more information.</p>
       
       <p>We're registering all the high-rise buildings in England. This is likely to take several months. So you might not hear from us for a while. Do not worry. We have your application.</p>
 
       {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
       {{ govukWarningText({
-        text: "You must give us structural and safety information for [building-name] by 30 September 2023.",
+        text: "You must give us structure and safety information for [building-name] by [30 September 2023].",
         iconFallbackText: "Warning"
       }) }}
 
       <form class="form" action="/registration-confirm-answer" method="post">
 
-        <button class="govuk-button" data-module="govuk-button">Continue to structural and safety information</button>
+        <button class="govuk-button" data-module="govuk-button">Continue to structure and safety information</button>
 
       </form>
 
