@@ -29,21 +29,7 @@
         We've emailed confirmation of your payment to <b>{{ data['email'] }}</b>. If you cannot find the email, check your junk or spam folders. If you did not get the email, <a href="/contact">contact us</a>.
       </p>
 
-      {% from "govuk/components/button/macro.njk" import govukButton %}
-      {{ govukButton({
-        text: "View email sent to the user",
-        href: "/registration-submitted-email-recipient=user",
-        classes: "govuk-button--secondary"
-      }) }}
-
       <p>[We have also sent an email to the [named contact at the] principal accountable person that outlines their duties at this stage.]</p>
-
-      {% from "govuk/components/button/macro.njk" import govukButton %}
-      {{ govukButton({
-        text: "View email sent to the PAP if they are not the user",
-        href: "/registration-submitted-email-recipient=pap",
-        classes: "govuk-button--secondary"
-      }) }}
 
       <h2 class="govuk-heading-m">What happens next</h2>
 
