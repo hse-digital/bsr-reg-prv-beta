@@ -24,6 +24,8 @@
 
       <h1 class="govuk-heading-l">Add another accountable person</h1>
 
+      <p>An accountable person is an organisation or individual who is accountable for the safety of part of the building.</p>
+
       <p class="govuk-body">You have told us that           <strong>
         {{ data['pap-org-name'] }}
         {{ data['pap-individual-first-name'] }}
@@ -49,10 +51,13 @@
           value: data['add-another-ap'],
           fieldset: {
             legend: {
-              text: "Is anyone else accountable for any residential part of any of the sections in this building?",
+              text: "Is anyone else accountable for any residential part of [building name]?",
               isPageHeading: false,
-              classes: "govuk-fieldset__legend--m"
+              classes: "govuk-fieldset__legend--s"
             }
+          },
+          hint: {
+            text: "We do not need to know about responsible persons, like those under the Fire Safety Order, unless they are also accountable."
           },
           items: [
             {

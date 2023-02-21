@@ -28,18 +28,16 @@
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <h1 class="govuk-fieldset__heading">
-                Who are you?
+                Are you the named contact at {{ data['pap-org-name'] }}?
               </h1>
             </legend>
+            <p>The named contact is the person we will talk to about building safety issues on behalf of {{ data['pap-org-name'] }}.</p>
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="pap-org-role" name="pap-org-role" type="radio" value="I am the named contact">
                 <label class="govuk-label govuk-radios__label" for="where-do-you-live">
                   I am the named contact at {{ data['pap-org-name'] }}
                 </label>
-                <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
-                  This is the person who will deal with building safety issues on behalf of {{ data['pap-org-name'] }}
-                </div>
               </div>
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="pap-org-role-2" name="pap-org-role" type="radio" value="I am registering this building for the named contact">

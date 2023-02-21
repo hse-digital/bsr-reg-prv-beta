@@ -27,12 +27,12 @@
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
-            text: "Completion certificate number (optional)",
+            text: "Completion certificate number for [building-name] (optional)",
             classes: "govuk-label--l",
             isPageHeading: true
           },
           hint: {
-            text: "This should be on the completion certificate. If you do not have access to the completion certificate, leave this blank."
+            text: "This should be on the completion certificate for the building. Do not use the Unique Property Reference Number (UPRN) instead. If you do not have the completion certificate number, leave this blank."
           },
           id: "completion-certificate-reference-number",
           name: "completion-certificate-reference-number",
