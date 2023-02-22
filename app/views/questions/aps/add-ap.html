@@ -20,30 +20,38 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-l">Other accountable persons</span>
+      <span class="govuk-caption-l">Accountable persons for {{ data['building-name'] }}</span>
 
       <h1 class="govuk-heading-l">Add another accountable person</h1>
 
-      <p>An accountable person is an organisation or individual who is accountable for the safety of part of the building.</p>
+      <p>An accountable person is an organisation or individual who is accountable for the safety of part of {{ data['building-name'] }}.</p>
 
-      <p class="govuk-body">You have told us that           <strong>
+      <p class="govuk-body">You have told us that <strong>
+        {% if data['pap-type'] === "Organisation" %}
         {{ data['pap-org-name'] }}
-        {{ data['pap-individual-first-name'] }}
-        {{ data['pap-individual-last-name'] }}
+        {% endif %}
+        {% if data['pap-type'] === "Individual" %}
+        {{ data['pap-individual-first-name'] }} {{ data['pap-individual-last-name'] }}
+        {% endif %}
       </strong> is the principal accountable person.</p>
 
       <p class="govuk-body">You have also told us about these accountable persons:</p>
       <ul class="govuk-list govuk-list--bullet">
         <li>
           <strong>
+            {% if data['ap-type'] === "Organisation" %}
             {{ data['ap-org-name'] }}
-            {{ data['ap-individual-first-name'] }}
-            {{ data['ap-individual-last-name'] }}
+            {% endif %}
+            {% if data['ap-type'] === "Individual" %}
+            {{ data['ap-individual-first-name'] }} {{ data['ap-individual-last-name'] }}
+            {% endif %}
           </strong>
         </li>
       </ul>
 
       <form class="form" action="/add-ap-answer" method="post">
+
+        <h2 class="govuk-heading-s">Is anyone else accountable for any residential part of {{ data['building-name'] }}?</h2>
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
         {{ govukRadios({
@@ -51,9 +59,6 @@
           value: data['add-another-ap'],
           fieldset: {
             legend: {
-              text: "Is anyone else accountable for any residential part of [building name]?",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--s"
             }
           },
           hint: {
