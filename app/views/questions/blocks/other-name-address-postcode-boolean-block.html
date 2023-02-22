@@ -13,15 +13,28 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-l">{{ data['block-name'] }}</span>
+      <span class="govuk-caption-l">Building details of {{ data['building-name'] }}</span>
 
-      <h1 class="govuk-heading-l">Does {{ data['block-name'] }} have another address?</h1>
+      <h1 class="govuk-heading-l">Does 
+        {% if data['more-than-one-block'] === "Multiple independent sections" %}
+        {{ data['block-name'] }}
+        {% endif %}
+        {% if data['more-than-one-block'] === "Single independent section" %}
+        {{ data['building-name'] }}
+        {% endif %}
+         have another address?</h1>
 
-      <p>Sections may have more than one address and postcode.</p>
+      <p>{% if data['more-than-one-block'] === "Multiple independent sections" %}
+        Section's
+        {% endif %}
+        {% if data['more-than-one-block'] === "Single independent section" %}
+        Building's
+        {% endif %}
+         may have more than one address and postcode.</p>
 
       {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
       {{ govukInsetText({
-        text: "For example, where some units in the section have a different main entrance to others."
+        text: "For example, where some units have a different main entrance to others."
       }) }}
 
       <form class="form" action="/other-name-address-postcode-boolean-answer" method="post">

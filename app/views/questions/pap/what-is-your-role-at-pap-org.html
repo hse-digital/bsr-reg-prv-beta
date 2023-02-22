@@ -20,7 +20,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-l">Principal accountable person</span>
+      <span class="govuk-caption-l">Accountable persons for {{ data['building-name'] }}</span>
 
       <form class="form" action="/what-is-your-role-at-pap-org-answer" method="post">
 
@@ -31,7 +31,7 @@
                 Are you the named contact at {{ data['pap-org-name'] }}?
               </h1>
             </legend>
-            <p>The named contact is the person we will talk to about building safety issues on behalf of {{ data['pap-org-name'] }}.</p>
+            <p>The named contact is the person we will talk to about building safety issues relating to {{ data['building-name'] }} on behalf of {{ data['pap-org-name'] }}.</p>
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="pap-org-role" name="pap-org-role" type="radio" value="I am the named contact">

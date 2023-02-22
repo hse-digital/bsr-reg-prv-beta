@@ -20,7 +20,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-l">Other accountable persons</span>
+      <span class="govuk-caption-l">Accountable persons for {{ data['building-name'] }}</span>
 
       <form class="form" action="/questions/aps/ap-org-name" method="post">
 
@@ -55,36 +55,54 @@
           },
           items: [
             {
-              value: "Arms length management organisation (ALMO)",
-              text: "Arms length management organisation (ALMO)"
-            },
-            {
               value: "Commonhold association",
-              text: "Commonhold association"
+              text: "Commonhold association",
+              hint: {
+                text: "A non-profit company formed by freeholders who manage and maintain the building they live in."
+              }
             },
             {
-              value: "Housing association",
-              text: "Housing association or other company operating under section 27 of the Housing Act 1985"
+              value: "Housing association or company operating under section 27 of the Housing Act Act 1985",
+              text: "Housing association or company operating under section 27 of the Housing Act Act 1985",
+              hint: {
+                text: "Any housing association or any company managing social housing for the local housing authority, like an arms length management organisation (ALMO)."
+              }
             },
             {
               value: "local authority",
-              text: "Local authority"
+              text: "Local authority",
+              hint: {
+                text: "Any local authority that manages or maintains its own housing stock.
+                "
+              }
             },
             {
               value: "Management company",
-              text: "Management company"
+              text: "Management company",
+              hint: {
+                text: "Any company that manages or maintains a building for a private owner or group of owners."
+              }
             },
             {
               value: "Resident management company",
-              text: "Resident management company (RMC) or orgnaisation"
+              text: "Resident management company (RMC) or orgnaisation",
+              hint: {
+                text: "A non-profit company formed by residents who manage or maintain the building they live in."
+              }
             },
             {
               value: "Right to manage company",
-              text: "Right to manage (RTM) company or orgnaisation"
+              text: "Right to manage (RTM) company or orgnaisation",
+              hint: {
+                text: "A non-profit company formed by long leaseholders who manage or maintain the building they live in."
+              }
             },
             {
               value: "Other",
               text: "Other",
+              hint: {
+                text: "Any other type of organisation."
+              },
               conditional: {
                 html: otherHtml
               }

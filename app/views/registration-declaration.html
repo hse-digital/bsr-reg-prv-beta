@@ -20,7 +20,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-l">Apply and pay the fee</span>
+      <span class="govuk-caption-l">Pay and apply for {{ data['building-name'] }}</span>
 
       <h1 class="govuk-heading-l">Declaration</h1>
 
@@ -40,14 +40,9 @@
 
       <p>We may ask you for written evidence that the principal accountable person has authorised you to act for them.</p>
 
-      <details class="govuk-details" data-module="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            If you are a member of the BSR CAT team
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+      <h2 class="govuk-heading-m">If you are a staff member of the Building Safety Regulator acting for someone over the phone</h2>
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
           {% from "govuk/components/input/macro.njk" import govukInput %}
           {% set phoneHtml %}
           {{ govukInput({
@@ -76,8 +71,6 @@
               }
             ]
           }) }}
-        </div>
-      </details>
 
       <form class="form" action="/pay" method="post">
 
