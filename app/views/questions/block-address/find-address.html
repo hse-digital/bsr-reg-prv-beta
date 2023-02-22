@@ -13,52 +13,46 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-l">Building details of {{ data['building-name'] }}</span>
+      <span class="govuk-caption-l">Address of {{ data['block-name'] }}</span>
 
       <form class="form" action="select-address" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
+        {% call govukFieldset({
+          legend: {
+            text: "Find an address",
+            classes: "govuk-fieldset__legend--l",
+            isPageHeading: true
+          }
+        }) %}
 
-        <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <h1 class="govuk-fieldset__heading">
-              Find the address of 
-              {% if data['more-than-one-block'] === "Multiple independent sections" %}
-              {{ data['block-name'] }}
-              {% endif %}
-              {% if data['more-than-one-block'] === "Single independent section" %}
-              {{ data['building-name'] }}
-              {% endif %}
-            </h1>
-          </legend>
-          <p>This address must be in England.</p>
-          <div class="govuk-form-group">
-            <label class="govuk-label" for="search-address-postcode">
-              Postcode
-            </label>
-            <div id="search-address-postcode-hint" class="govuk-hint">
-              You can use the 
-              {% if data['more-than-one-block'] === "Multiple independent sections" %}
-              section's
-              {% endif %}
-              {% if data['more-than-one-block'] === "Single independent section" %}
-              building's
-              {% endif %}
-               temporary postcode, if its postcode has not been approved yet.
-            </div>
-            <input class="govuk-input" id="search-address-postcode" name="search-address-postcode" type="text" autocomplete="postal-code">
-          </div>
-          <div class="govuk-form-group">
-            <label class="govuk-label" for="search-address-line-1">
-              Address line 1 (optional)
-            </label>
-            <div id="search-address-line-1-hint" class="govuk-hint">
-              For example, '30 St Mary Axe'.
-            </div>
-            <input class="govuk-input" id="search-address-line-1" name="search-address-line-1" type="text" autocomplete="address-line1">
-          </div>
-        </fieldset>
+        <p>This address must be in England.</p>
+
+          {{ govukInput({
+            label: {
+              text: "Postcode"
+            },
+            classes: "govuk-input--width-10",
+            id: "search-address-postcode",
+            name: "search-address-postcode",
+            autocomplete: "postal-code",
+            hint: {
+              text: "You can use the section's temporary postcode, if its postcode has not been approved yet."
+            }
+          }) }}
+          {{ govukInput({
+            label: {
+              text: 'Address line 1 (optional)'
+            },
+            id: "search-address-line-1",
+            name: "search-address-line-1",
+            autocomplete: "address-line1",
+            hint: {
+              text: "For example, '30 St Mary Axe'."
+            }
+          }) }}
+        {% endcall %}
 
         <button class="govuk-button" data-module="govuk-button">Find address</button>
 

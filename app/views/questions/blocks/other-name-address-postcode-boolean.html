@@ -13,11 +13,11 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-l">Building details of {{ data['building-name'] }}</span>
+      <span class="govuk-caption-l">The building</span>
 
-      <h1 class="govuk-heading-l">Does {{ data['block-name'] }} have another address?</h1>
+      <h1 class="govuk-heading-l">Does {{ data['building-name'] }} have another address?</h1>
 
-      <p>Sections/Buildings may have more than one address and postcode.</p>
+      <p>Buildings may have more than one address and postcode.</p>
 
       {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
       {{ govukInsetText({

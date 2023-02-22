@@ -20,16 +20,9 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-l">Accountable persons for {{ data['building-name'] }}</span>
+      <span class="govuk-caption-l">Other accountable persons</span>
 
-      <h1 class="govuk-heading-l">What is 
-        {% if data['ap-type'] === "Organisation" %}
-        {{ data['ap-org-name'] }}
-        {% endif %}
-        {% if data['ap-type'] === "Individual" %}
-        {{ data['ap-individual-first-name'] }} {{ data['ap-individual-last-name'] }}
-        {% endif %}
-         accountable for?</h1>
+      <h1 class="govuk-heading-l">What is {{ data['ap-org-name'] }}{{ data['ap-individual-first-name'] }}{{ data['ap-individual-last-name'] }} accountable for?</h1>
 
       <p>This is not a complete list. These are the broad areas of accountability we need to know about. For example, we do not need to know about every piece of equipment each person is responsible for.</p>
 

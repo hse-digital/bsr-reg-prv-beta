@@ -115,7 +115,7 @@ router.post('/completion-certificate-reference-number-answer', function (req, re
 
   if (completionYear == "Single independent section") {
 
-    res.redirect('/questions/block-address/find-address')
+    res.redirect('/questions/building-address/find-address')
   }
 
   else {
@@ -221,7 +221,7 @@ router.post('/pap-address-answer', function (req, res) {
   if (papType == "Organisation") {
     res.redirect('/questions/pap/what-is-your-role-at-pap-org')
   } else {
-    res.redirect('/questions/aps/add-ap')
+    res.redirect('/check-answers-pap-individual')
   }
 
 })
@@ -234,7 +234,7 @@ router.post('/pap-confirm-address-answer', function (req, res) {
   if (papType == "Organisation") {
     res.redirect('/questions/pap/pap-org-lead-contact-name')
   } else if (userPap == "Yes") {
-    res.redirect('/questions/aps/add-ap')
+    res.redirect('/check-answers-pap-individual')
   } else {
     res.redirect('/questions/pap/pap-individual-name')
   }

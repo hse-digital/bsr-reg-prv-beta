@@ -20,22 +20,16 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-l">Building details of {{ data['building-name'] }}</span>
-
-      <h1 class="govuk-heading-l">Completion certificate number for 
-        {% if data['more-than-one-block'] === "Multiple independent sections" %}
-        {{ data['block-name'] }}
-        {% endif %}
-        {% if data['more-than-one-block'] === "Single independent section" %}
-        {{ data['building-name'] }}
-        {% endif %}
-         (optional)</h1>
+      <span class="govuk-caption-l">{{ data['block-name'] }}</span>
 
       <form class="form" action="/completion-certificate-reference-number-answer" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
+            text: "Completion certificate number for [building-name] (optional)",
+            classes: "govuk-label--l",
+            isPageHeading: true
           },
           hint: {
             text: "This should be on the completion certificate for the building. Do not use the Unique Property Reference Number (UPRN) instead. If you do not have the completion certificate number, leave this blank."
