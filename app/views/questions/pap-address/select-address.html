@@ -13,9 +13,16 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-l">Address of {{ data['pap-org-name'] }}{{ data['pap-individual-first-name'] }} {{ data['pap-individual-last-name'] }}</span>
+      <span class="govuk-caption-l">Accountable persons for {{ data['building-name'] }}</span>
 
-      <h1 class="govuk-heading-l">Select the address</h1>
+      <h1 class="govuk-heading-l">Select the address of 
+        {% if data['pap-type'] === "Organisation" %}
+        {{ data['pap-org-name'] }}
+        {% endif %}
+        {% if data['pap-type'] === "Individual" %}
+        {{ data['pap-individual-first-name'] }} {{ data['pap-individual-last-name'] }}
+        {% endif %}
+      </h1>
 
       <p>30 addresses found for <strong>{{ data['search-address-postcode'] }}</strong> and <strong>{{ data['search-address-line-1'] }}</strong>.</p>
 

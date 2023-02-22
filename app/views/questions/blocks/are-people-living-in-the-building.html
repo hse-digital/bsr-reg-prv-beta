@@ -20,7 +20,17 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-l">{{ data['block-name'] }}</span>
+      <span class="govuk-caption-l">Building details of {{ data['building-name'] }}</span>
+
+      <h1 class="govuk-heading-l">
+        Are people living anywhere in 
+        {% if data['more-than-one-block'] === "Multiple independent sections" %}
+        {{ data['block-name'] }}
+        {% endif %}
+        {% if data['more-than-one-block'] === "Single independent section" %}
+        {{ data['building-name'] }}
+        {% endif %}
+      </h1>
 
       <form class="form" action="/questions/blocks/completion-year" method="post">
 
@@ -30,9 +40,6 @@
           value: data['are-people-living-in-the-building'],
           fieldset: {
             legend: {
-              text: "Are people living anywhere in [building-name]?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--l"
             }
           },
           items: [
@@ -41,10 +48,10 @@
               text: "Yes"
             },
             {
-              value: "No, but the section is ready for people to move in",
-              text: "No, but the section is ready for people to move in",
+              value: "No, but it is ready for people to move in",
+              text: "No, but it is ready for people to move in",
               hint: {
-                text: "This could be if the section has been refurbished or is new."
+                text: "This could be if it has been refurbished or is new."
               }
             },
             {

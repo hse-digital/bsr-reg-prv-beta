@@ -20,7 +20,16 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-l">{{ data['block-name'] }}</span>
+      <span class="govuk-caption-l">Building details of {{ data['building-name'] }}</span>
+
+      <h1 class="govuk-heading-l">When was 
+        {% if data['more-than-one-block'] === "Multiple independent sections" %}
+        {{ data['block-name'] }}
+        {% endif %}
+        {% if data['more-than-one-block'] === "Single independent section" %}
+        {{ data['building-name'] }}
+        {% endif %}
+        originally built?</h1>
 
       <form class="form" action="/questions/blocks/completion-certificate-issuer" method="post">
 
@@ -30,8 +39,6 @@
           value: data['completion-year'],
           fieldset: {
             legend: {
-              text: "When was the section completed?",
-              classes: "govuk-label--l"
             }
           },
           hint: {
