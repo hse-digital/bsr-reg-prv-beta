@@ -13,9 +13,14 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-l">External walls and features <!--(section 8 of 11)--></span>
-
-      <h1 class="govuk-heading-l">Materials on the outside walls</h1>
+      <h1 class="govuk-heading-l">What materials are visible on the outside of the walls of 
+        {% if data['more-than-one-block'] === "Multiple independent sections" %}
+        {{ data['block-name'] }}
+        {% endif %}
+        {% if data['more-than-one-block'] === "Single independent section" %}
+        {{ data['building-name'] }}
+        {% endif %}?
+      </h1>
 
       <form class="form" action="/questions/walls/external-wall-composite" method="post">
 
@@ -24,13 +29,11 @@
           name: "waste",
           fieldset: {
             legend: {
-              text: "What materials are visible on the outside walls of this section?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--s"
+
             }
           },
           hint: {
-            text: "Select all that apply."
+            text: "Select all that apply"
           },
           items: [
             {
@@ -82,20 +85,14 @@
             }
           ]
         }) }}
-        <button class="govuk-button" data-module="govuk-button">Continue</button>
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+        <p><a href="/kbi-task-list-return">Save and come back later</a></p>
 
       </form>
 
     </div>
 
-    <div class="govuk-grid-column-one-third">
-      <span class="govuk-caption-m">
-        <strong>{{ data['building-name'] }}</strong>
-        <br>{{ data['building-address-line-1'] }}
-        <br>{{ data['building-address-line-2'] }}
-        <br>{{ data['building-postcode'] }}
-      </span>
-    </div>
     
   </div>
 

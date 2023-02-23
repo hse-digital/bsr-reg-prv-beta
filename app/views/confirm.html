@@ -20,13 +20,6 @@
         We have sent a confirmation email to <b>{{ data['email'] }}</b>. If you cannot find the email, check your junk or spam folders.
       </p>
 
-      {% from "govuk/components/button/macro.njk" import govukButton %}
-      {{ govukButton({
-        text: "Launch emails",
-        href: "/confirm-email",
-        classes: "govuk-button--secondary"
-      }) }}
-
       <p>If you did not get the email, <a href="/contact">contact us</a>.</p>
 
       <h2 class="govuk-heading-m">What happens next</h2>

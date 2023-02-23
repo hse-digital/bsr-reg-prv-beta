@@ -12,10 +12,15 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      
-      <span class="govuk-caption-l">Energy supply and storage <!--(section 3 of 11)--></span>
 
-      <h1 class="govuk-heading-l">Types of energy supplies and energy storage in [section name]</h1>
+      <h1 class="govuk-heading-l">Energy supplies and energy storage in 
+        {% if data['more-than-one-block'] === "Multiple independent sections" %}
+        {{ data['block-name'] }}
+        {% endif %}
+        {% if data['more-than-one-block'] === "Single independent section" %}
+        {{ data['building-name'] }}
+        {% endif %}
+      </h1>
 
       <p>This is not a complete list. It includes only the types of energy we need to know about.</p>
 
@@ -26,10 +31,13 @@
           name: "waste",
           fieldset: {
             legend: {
+              text: "Types of energy supply and energy storage",
+              classes: "govuk-fieldset__legend--s",
+              isPageHeading: false
             }
           },
           hint: {
-            text: "Select all that apply."
+            text: "Select all that apply"
           },
           items: [
             {
@@ -74,19 +82,12 @@
           ]
         }) }}
         
-        <button class="govuk-button" data-module="govuk-button">Continue</button>
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
 
       </form>
 
-    </div>
+      <p><a href="/kbi-task-list-return">Save and come back later</a></p>
 
-    <div class="govuk-grid-column-one-third">
-      <span class="govuk-caption-m">
-        <strong>{{ data['building-name'] }}</strong>
-        <br>{{ data['building-address-line-1'] }}
-        <br>{{ data['building-address-line-2'] }}
-        <br>{{ data['building-postcode'] }}
-      </span>
     </div>
     
   </div>

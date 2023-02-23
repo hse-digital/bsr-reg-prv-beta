@@ -13,7 +13,12 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-l">What the building is used for <!--(section 9 of 11)--></span>
+      <h1 class="govuk-heading-l">Primary use for {% if data['more-than-one-block'] === "Multiple independent sections" %}
+        {{ data['block-name'] }}
+        {% endif %}
+        {% if data['more-than-one-block'] === "Single independent section" %}
+        {{ data['building-name'] }}
+        {% endif %}</h1>
 
       <form class="form" action="/questions/uses-above/secondary-uses" method="post">
 
@@ -22,13 +27,11 @@
           name: "primary-use",
           fieldset: {
             legend: {
-              text: "Primary use for [building name]",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--l"
+
             }
           },
           hint: {
-            text: "This is the area that takes up the most floor space above ground level."
+            text: "Select the area that takes up the most floor space above ground level"
           },
           items: [
             {
@@ -83,19 +86,12 @@
           ]
         }) }}
 
-        <button class="govuk-button" data-module="govuk-button">Continue</button>
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+        <p><a href="/kbi-task-list-return">Save and come back later</a></p>
 
       </form>
 
-    </div>
-    
-    <div class="govuk-grid-column-one-third">
-      <span class="govuk-caption-m">
-        <strong>{{ data['building-name'] }}</strong>
-        <br>{{ data['building-address-line-1'] }}
-        <br>{{ data['building-address-line-2'] }}
-        <br>{{ data['building-postcode'] }}
-      </span>
     </div>
 
   </div>

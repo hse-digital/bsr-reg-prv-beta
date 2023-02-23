@@ -13,8 +13,6 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-l">Connected buildings</span>
-
       <h1 class="govuk-heading-l">What connects {{ data['building-name'] }} to the other high-rise residential buildings?</h1>
 
       <form class="form" action="/questions/connected/connected-other-buildings-boolean" method="post">
@@ -58,17 +56,19 @@
               text: "Levels below ground"
             },
             {
-              divider: "or"
+              value: "Party wall with no door",
+              text: "Party wall with no door"
             },
             {
-              value: "None of these",
-              text: "None of these",
-              behaviour: "exclusive"
+              value: "Other",
+              text: "Other"
             }
           ]
         }) }}
 
-        <button class="govuk-button" data-module="govuk-button">Continue</button>
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+        <p><a href="/kbi-task-list-return">Save and come back later</a></p>
 
       </form>
 
