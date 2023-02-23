@@ -13,40 +13,32 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-l">Changes since completion <!--(section 10 of 11)--></span>
-
-      <h1 class="govuk-heading-l">Year completion certificate issued for change of use</h1>
+      <h1 class="govuk-heading-l">Change of use completion certificate year for 
+        {% if data['more-than-one-block'] === "Multiple independent sections" %}
+        {{ data['block-name'] }}
+        {% endif %}
+        {% if data['more-than-one-block'] === "Single independent section" %}
+        {{ data['building-name'] }}
+        {% endif %}</h1>
 
       <form class="form" action="/questions/mat-changes/material-changes" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
-            text: "Completion certificate year",
-            classes: "govuk-label--s",
-            isPageHeading: false
-          },
-          hint: {
-            text: "If a refit happended over an extended period of time then enter the year of completion."
+
           },
           classes: "govuk-input--width-4",
           id: "year-of-use-change",
           name: "year-of-use-change"
         }) }}
 
-        <button class="govuk-button" data-module="govuk-button">Continue</button>
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+        <p><a href="/kbi-task-list-return">Save and come back later</a></p>
 
       </form>
 
-    </div>
-
-    <div class="govuk-grid-column-one-third">
-      <span class="govuk-caption-m">
-        <strong>{{ data['building-name'] }}</strong>
-        <br>{{ data['building-address-line-1'] }}
-        <br>{{ data['building-address-line-2'] }}
-        <br>{{ data['building-postcode'] }}
-      </span>
     </div>
     
   </div>

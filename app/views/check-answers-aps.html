@@ -19,9 +19,135 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
-      <span class="govuk-caption-l">Accountable persons for {{ data['building-name'] }}</span>
+      <span class="govuk-caption-l">Accountable persons</span>
 
-      <h1 class="govuk-heading-l">Check your answers</h1>
+      <h1 class="govuk-heading-l">Check your answers for {{ data['building-name'] }}</h1>
+
+      <h2 class="govuk-heading-m">Principal accountable person</h2>
+
+      {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Type
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['pap-type'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/pap/pap-type">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Organisation type
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['pap-org-type'] }}
+            <br>{{ data['pap-org-type-other'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/pap/pap-org-type">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Organisation name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['pap-org-name'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/pap/pap-org-name">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Organisation address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            7 Example Street
+            <br>Exampleton
+            <br>EX1 2AB
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/pap-address/confirm-address">
+              Change
+              <span class="govuk-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Who are you?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Acting for the named contact
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/pap/what-is-your-role-at-pap-org">
+              Change
+              <span class="govuk-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Your address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Same as the organisation
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/pap/same-address-as-pap-org">
+              Change
+              <span class="govuk-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Named contact's name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['pap-org-lead-contact-first-name'] }} {{ data['pap-org-lead-contact-last-name'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/pap/pap-org-lead-contact-name">
+              Change
+              <span class="govuk-visually-hidden"> contact information</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Named contact's details
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['pap-org-lead-contact-role'] }}
+            <br>{{ data['pap-org-lead-contact-email'] }}
+            <br>{{ data['pap-org-lead-contact-phone'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/questions/pap/pap-org-lead-contact-details">
+              Change
+              <span class="govuk-visually-hidden"> contact information</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">Other accountable persons</h2>
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">

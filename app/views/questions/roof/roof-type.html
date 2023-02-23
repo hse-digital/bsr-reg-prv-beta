@@ -13,7 +13,13 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-l">Roof <!--(section 6 of 11)--></span>
+      <h1 class="govuk-heading-l">Type of roof on 
+        {% if data['more-than-one-block'] === "Multiple independent sections" %}
+        {{ data['block-name'] }}
+        {% endif %}
+        {% if data['more-than-one-block'] === "Single independent section" %}
+        {{ data['building-name'] }}
+        {% endif %}</h1>
 
       <form class="form" action="/questions/roof/roof-insulation" method="post">
 
@@ -22,9 +28,6 @@
           name: "where-do-you-live",
           fieldset: {
             legend: {
-              text: "Type of roof surface",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--l"
             }
           },
           items: [
@@ -43,19 +46,12 @@
           ]
         }) }}
 
-        <button class="govuk-button" data-module="govuk-button">Continue</button>
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
 
       </form>
 
-    </div>
+      <p><a href="/kbi-task-list-return">Save and come back later</a></p>
 
-    <div class="govuk-grid-column-one-third">
-      <span class="govuk-caption-m">
-        <strong>{{ data['building-name'] }}</strong>
-        <br>{{ data['building-address-line-1'] }}
-        <br>{{ data['building-address-line-2'] }}
-        <br>{{ data['building-postcode'] }}
-      </span>
     </div>
     
   </div>

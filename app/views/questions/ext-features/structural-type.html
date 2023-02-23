@@ -13,9 +13,13 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-l">Structural type and materials <!--(section 4 of 11)--></span>
-
-      <h1 class="govuk-heading-l">What type of structure is {{ data['building-name'] }}?</h1>
+      <h1 class="govuk-heading-l">Structure type of 
+        {% if data['more-than-one-block'] === "Multiple independent sections" %}
+        {{ data['block-name'] }}
+        {% endif %}
+        {% if data['more-than-one-block'] === "Single independent section" %}
+        {{ data['building-name'] }}
+        {% endif %}</h1>
 
       <p>You should be able to get this information from the latest external wall survey or fire risk assessment.</p>
 
@@ -29,7 +33,7 @@
           name: "countries",
           fieldset: {
             legend: {
-              text: "Structure type",
+              text: "What is the type of structure?",
               isPageHeading: false,
               classes: "govuk-fieldset__legend--s"
             }
@@ -81,19 +85,13 @@
             }
           ]
         }) }}
-        <button class="govuk-button" data-module="govuk-button">Continue</button>
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+
+      <p><a href="/kbi-task-list-return">Save and come back later</a></p>
 
       </form>
 
-    </div>
-
-    <div class="govuk-grid-column-one-third">
-      <span class="govuk-caption-m">
-        <strong>{{ data['building-name'] }}</strong>
-        <br>{{ data['building-address-line-1'] }}
-        <br>{{ data['building-address-line-2'] }}
-        <br>{{ data['building-postcode'] }}
-      </span>
     </div>
     
   </div>

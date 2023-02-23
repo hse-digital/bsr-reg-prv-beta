@@ -13,11 +13,9 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-l">Connected buildings</span>
+      <h1 class="govuk-heading-l">Connections between {{ data['building-name'] }} and other high-rise residential buildings</h1>
 
-      <h1 class="govuk-heading-l">Connections to other high-rise residential buildings</h1>
-
-      <p>These buildings have 7 floors or more, or are 18 metres in height or more, and have at least 2 residential units.</p>
+      <p>High-rise residential buildings have 7 floors or more, or are 18 metres in height or more, and have at least 2 residential units.</p>
 
       <p>This helps us to determine if a fire could spread between buildings.</p>
 
@@ -25,14 +23,14 @@
 
       <form class="form" action="/connected-high-rise-buildings-boolean-answer" method="post">
 
+        <h2 class="govuk-heading-s">Is {{ data['building-name'] }} connected to any other high-rise residential buildings?</h2>
+
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
         {{ govukRadios({
           name: "connected-high-rise-buildings-boolean",
           fieldset: {
             legend: {
-              text: "Is [building name] connected to any other high-rise residential buildings?",
-              classes: "govuk-label--s",
-              isPageHeading: false
+
             }
           },
           items: [
@@ -47,7 +45,9 @@
           ]
         }) }}
 
-        <button class="govuk-button" data-module="govuk-button">Continue</button>
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+        <p><a href="/kbi-task-list-return">Save and come back later</a></p>
 
       </form>
 

@@ -20,11 +20,9 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-l">Accountable persons for {{ data['building-name'] }}</span>
-
       <h1 class="govuk-heading-l">Named contact at {{ data['ap-org-name'] }}</h1>
 
-      <p>This is who we will talk to about building safety issues for the parts of the building {{ data['ap-org-name'] }} are accountable for.</p>
+      <p>This is who we will talk to about building safety issues for the parts of {{ data['building-name'] }} {{ data['ap-org-name'] }} is accountable for.</p>
 
       <form class="form" action="/questions/aps/ap-org-named-contact-details" method="post">
 

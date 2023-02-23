@@ -13,11 +13,16 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-l">Changes since completion <!--(section 10 of 11)--></span>
-
-      <h1 class="govuk-heading-l">Material changes since original build</h1>
+      <h1 class="govuk-heading-l">Material changes since {% if data['more-than-one-block'] === "Multiple independent sections" %}
+        {{ data['block-name'] }}
+        {% endif %}
+        {% if data['more-than-one-block'] === "Single independent section" %}
+        {{ data['building-name'] }}
+        {% endif %} was originally built</h1>
 
       <p>Material change is defined by building regulations.</p>
+
+      <p>This is not a complete list. It includes only the material changes what we need to know about.</p>
 
       <form class="form" action="/questions/mat-changes/material-changes-year" method="post">
 
@@ -26,13 +31,13 @@
           name: "secondary-uses",
           fieldset: {
             legend: {
-              text: "Have there been any material changes since [section name] was originally built?",
+              text: "Material changes",
               isPageHeading: false,
               classes: "govuk-fieldset__legend--s"
             }
           },
           hint: {
-            text: "This is not a complete list. It includes only the material changes what we need to know about. Select all that apply (even if there has only been a partial change)."
+            text: "Select all that apply (even if there has only been a partial change)"
           },
           items: [
             {
@@ -84,8 +89,14 @@
               text: "Work connected to external walls including removal of cladding"
             },
             {
+              divider: "or"
+            },
+            {
               value: "storage-and-other-non-residential",
               text: "None of the above"
+            },
+            {
+              divider: "or"
             },
             {
               value: "storage-and-other-non-residential",
@@ -94,20 +105,12 @@
           ]
         }) }}
 
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
 
-        <button class="govuk-button" data-module="govuk-button">Continue</button>
+        <p><a href="/kbi-task-list-return">Save and come back later</a></p>
 
       </form>
 
-    </div>
-
-    <div class="govuk-grid-column-one-third">
-      <span class="govuk-caption-m">
-        <strong>{{ data['building-name'] }}</strong>
-        <br>{{ data['building-address-line-1'] }}
-        <br>{{ data['building-address-line-2'] }}
-        <br>{{ data['building-postcode'] }}
-      </span>
     </div>
     
   </div>

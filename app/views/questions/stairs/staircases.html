@@ -13,9 +13,14 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-l">Staircases <!--(section 7 of 11)--></span>
-
-      <h1 class="govuk-heading-l">Staircases in {{ data['building-name'] }}</h1>
+      <h1 class="govuk-heading-l">Staircases in 
+        {% if data['more-than-one-block'] === "Multiple independent sections" %}
+        {{ data['block-name'] }}
+        {% endif %}
+        {% if data['more-than-one-block'] === "Single independent section" %}
+        {{ data['building-name'] }}
+        {% endif %}
+      </h1>
 
       <form class="form" action="/questions/walls/external-wall-type" method="post">
 
@@ -27,7 +32,7 @@
             isPageHeading: false
           },
           hint: {
-            text: "Count all the staircases on the inside and outside of [section name/building name]."
+            text: "Count all the staircases on the inside and outside"
           },
           classes: "govuk-input--width-3",
           id: "year-of-use-change",
@@ -42,26 +47,19 @@
             isPageHeading: false
           },
           hint: {
-            text: "Count the number of staircases inside [section name/building name] that serve all floors from ground level to the top floor."
+            text: "Count the number of staircases inside, that serve all floors from ground level to the top floor"
           },
           classes: "govuk-input--width-3",
           id: "year-of-use-change",
           name: "year-of-use-change"
         }) }}
 
-        <button class="govuk-button" data-module="govuk-button">Continue</button>
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+        <p><a href="/kbi-task-list-return">Save and come back later</a></p>
 
       </form>
 
-    </div>
-
-    <div class="govuk-grid-column-one-third">
-      <span class="govuk-caption-m">
-        <strong>{{ data['building-name'] }}</strong>
-        <br>{{ data['building-address-line-1'] }}
-        <br>{{ data['building-address-line-2'] }}
-        <br>{{ data['building-postcode'] }}
-      </span>
     </div>
     
   </div>
