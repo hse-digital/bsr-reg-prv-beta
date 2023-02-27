@@ -38,38 +38,6 @@
 
       <p>We may ask you for written evidence that the principal accountable person has authorised you to act for them.</p>
 
-      <h2 class="govuk-heading-m">If you are a staff member of the Building Safety Regulator acting for someone over the phone</h2>
-
-      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
-          {% from "govuk/components/input/macro.njk" import govukInput %}
-          {% set phoneHtml %}
-          {{ govukInput({
-            id: "contact-by-phone",
-            name: "contact-by-phone",
-            type: "tel",
-            autocomplete: "tel",
-            label: {
-              text: "Your employee number"
-            }
-          }) }}
-          {% endset -%}
-          {{ govukCheckboxes({
-            name: "waste",
-            fieldset: {
-              legend: {
-              }
-            },
-            items: [
-              {
-                value: "carcasses",
-                text: "I have completed this application for someone over the phone",
-                conditional: {
-                  html: phoneHtml
-                }
-              }
-            ]
-          }) }}
-
       <form class="form" action="/pay" method="post">
 
         <button class="govuk-button" data-module="govuk-button">Declare and continue</button>
