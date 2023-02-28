@@ -4,16 +4,37 @@
   Task list template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
+{% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service in development - do not take anything you see here as guidance.'
+}) }}
+{% endblock %}
+
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">
+      <h1 class="govuk-heading-xl">
         Give structure and safety information for {{ data['building-name'] }}
       </h1>
 
       <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Application incomplete</h2>
-      <p class="govuk-body govuk-!-margin-bottom-7">You have completed 0 of 4 sections.</p>
+      
+      <p>You have completed 0 of 4 sections.</p>
+
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Returning to this application</h2>
+      
+      <p class="govuk-!-margin-bottom-2">
+        We will save the information you give to us on each page.
+      </p>
+
+      <p class="govuk-body govuk-!-margin-bottom-7">
+        Your application number and instructions on how to return later have been sent to <strong>{{ data['email'] }}</strong>.
+      </p>
 
       <ol class="app-task-list">
         <li>
@@ -59,9 +80,7 @@
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <p>
                   Submit
-                </p>
               </span>
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="fire-and-smoke-provisions-status">Cannot start yet</strong>
             </li>
