@@ -13,13 +13,14 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">Change of use completion certificate year for 
+      <h1 class="govuk-heading-l">What year did 
         {% if data['more-than-one-block'] === "Multiple independent sections" %}
         {{ data['block-name'] }}
         {% endif %}
         {% if data['more-than-one-block'] === "Single independent section" %}
         {{ data['building-name'] }}
-        {% endif %}</h1>
+        {% endif %}
+      change use?</h1>
 
       <form class="form" action="/questions/mat-changes/material-changes" method="post">
 
@@ -27,6 +28,9 @@
         {{ govukInput({
           label: {
 
+          },
+          hint: {
+            text: "This is the year on the completion certificate that was issued when this change of use happened"
           },
           classes: "govuk-input--width-4",
           id: "year-of-use-change",
