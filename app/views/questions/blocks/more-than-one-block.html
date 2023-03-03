@@ -20,7 +20,9 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">Is {{ data['building-name'] }} made up of more than one section?</h1>
+      <h1 class="govuk-heading-l">Count the number of sections in {{ data['building-name'] }}</h1>
+
+      <p>A section is a collection of units in the building that share a main entrance, or can only be accessed by crossing a party wall, walkway, shared lobby or basement.</p>
 
       <p>Count each independent structure, like a tower block.</p>
 
@@ -30,8 +32,10 @@
 
       <p>Do not count each residential unit as its own section.</p>
 
+      <p>Do not count collections of non residential units.</p>
+
       <div class="govuk-inset-text">
-        <p>For example, a simple tower block, in which all of the flats can be accessed from the same main entrances is not made up of multiple sections.</p>
+        <p>For example, a simple tower, in which all of the flats can be accessed from the same main entrances is not made up of multiple sections.</p>
         <p>Two tower blocks that share a basement containing one or more residential units would be made up of two sections.</p>
       </div>
 
