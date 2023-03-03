@@ -22,7 +22,10 @@
 
       <h1 class="govuk-heading-l">Add another accountable person for {{ data['building-name'] }}</h1>
 
-      <p>An accountable person is an organisation or individual who is accountable for the safety of part of {{ data['building-name'] }}.</p>
+      <p>An accountable person is an organisation or individual who is accountable for the safety of part of {{ data['building-name'] }}. We'll ask which parts they're accountable for later.</p>
+
+      <p>If an accountable person is an organisation, individuals within that organisation are not accountable persons, but we will ask you for the name and contact details of someone in the organisation we can contact.
+      </p>
 
       <p class="govuk-body">You have told us that <strong>
         {% if data['pap-type'] === "Organisation" %}

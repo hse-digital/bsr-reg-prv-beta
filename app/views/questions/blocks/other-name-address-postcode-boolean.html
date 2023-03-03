@@ -22,13 +22,7 @@
         {% endif %}
          have another address?</h1>
 
-      <p>{% if data['more-than-one-block'] === "Multiple independent sections" %}
-        Sections
-        {% endif %}
-        {% if data['more-than-one-block'] === "Single independent section" %}
-        Buildings
-        {% endif %}
-         may have more than one address and postcode.</p>
+      <p>It may have more than one address and postcode.</p>
 
       <form class="form" action="/other-name-address-postcode-boolean-answer" method="post">
 

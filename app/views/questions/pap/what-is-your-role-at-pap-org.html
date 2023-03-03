@@ -29,7 +29,7 @@
                 Are you the named contact at {{ data['pap-org-name'] }}?
               </h1>
             </legend>
-            <p>The named contact is the person we will talk to about building safety issues relating to {{ data['building-name'] }} on behalf of {{ data['pap-org-name'] }}.</p>
+            <p>The named contact is the single point of contact at {{ data['pap-org-name'] }} that you want us to use when we need to talk about building safety issues. They will not be the person we serve notices on.</p>
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="pap-org-role" name="pap-org-role" type="radio" value="I am the named contact">
@@ -40,7 +40,13 @@
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="pap-org-role-2" name="pap-org-role" type="radio" value="I am registering this building for the named contact">
                 <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
-                  I am registering {{ data['building-name'] }} for the named contact
+                  I am an employee of {{ data['pap-org-name'] }}
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="pap-org-role-2" name="pap-org-role" type="radio" value="I am registering this building for the named contact">
+                <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+                  I am not part of {{ data['pap-org-name'] }} and have been appointed to register {{ data['building-name'] }} for them
                 </label>
               </div>
             </div>

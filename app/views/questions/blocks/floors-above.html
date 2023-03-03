@@ -20,7 +20,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">Number of floors above ground level in 
+      <h1 class="govuk-heading-l">Number of floors at or above ground level in 
         {% if data['more-than-one-block'] === "Multiple independent sections" %}
         {{ data['block-name'] }}
         {% endif %}
@@ -36,10 +36,8 @@
       <ul class="govuk-list govuk-list--bullet">
         <li>any floors at or above ground level</li>
         <li>any floors that people could use</li>
+        <li>any mezzanine floors that are at least 50% of the area of any of the other floors</li>
       </ul>
-
-      <p>Any mezzanine floor must be at least 50% of the area of any of the other floors. If a mezzanine floor is less than 50% of the area of any of the other floors, do not count it as a floor.
-      </p>
 
       <p>Do not count:</p>
 
@@ -47,6 +45,7 @@
         <li>floors below ground level</li>
         <li>the roof</li>
         <li>other floors that people cannot use</li>
+        <li>any mezzanine floors that are less than 50% of the area of any of the other floors</li>
       </ul>
 
       <details class="govuk-details" data-module="govuk-details">

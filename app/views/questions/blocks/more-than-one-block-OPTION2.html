@@ -1,0 +1,107 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service in development - do not take anything you see here as guidance.'
+}) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">{{ data['building-name'] }}</h1>
+
+      <h2 class="govuk-heading-s">Does {{ data['building-name'] }} have more than one tower block?</h2>
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+      {{ govukRadios({
+        name: "more-than-one-block",
+        id: "more-than-one-block",
+        value: data['more-than-one-block'],
+        fieldset: {
+          legend: {
+          }
+        },
+        items: [
+        {
+          value: "Multiple independent sections",
+          text: "Yes"
+        },
+        {
+          value: "Single independent section",
+          text: "No"
+        }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-s">Does {{ data['building-name'] }} have more than one collection of residential units that can be accessed from the same main entrance or main entrances?</h2>
+
+      <p>For example, residential floors in the building that can only be accessed by their own lift or staircase.</p>
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+      {{ govukRadios({
+        name: "more-than-one-block",
+        id: "more-than-one-block",
+        value: data['more-than-one-block'],
+        fieldset: {
+          legend: {
+          }
+        },
+        items: [
+        {
+          value: "Multiple independent sections",
+          text: "Yes"
+        },
+        {
+          value: "Single independent section",
+          text: "No"
+        }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-s">Does {{ data['building-name'] }} have more than one collection of residential units that can only be accessed by crossing a party wall, walkway, shared lobby or basement.</h2>
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+      {{ govukRadios({
+        name: "more-than-one-block",
+        id: "more-than-one-block",
+        value: data['more-than-one-block'],
+        fieldset: {
+          legend: {
+          }
+        },
+        items: [
+        {
+          value: "Multiple independent sections",
+          text: "Yes"
+        },
+        {
+          value: "Single independent section",
+          text: "No"
+        }
+        ]
+      }) }}
+
+      <form class="form" action="/more-than-one-block-answer" method="post">
+
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+      <p><a href="#">Save and come back later</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -20,20 +20,13 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">Is {{ data['building-name'] }} made up of more than one section?</h1>
+      <h1 class="govuk-heading-l">Does {{ data['building-name'] }} contain:</h1>
 
-      <p>Count each independent structure, like a tower block.</p>
+      <p>More than one independent structure, like a tower block.</p>
 
-      <p>Count each collection of residential units that can be accessed from the same main entrance or main entrances. For example, floors in the building that can only be accessed by their own lift or staircase.</p>
+      <p>More than one collection of residential units that can be accessed from the same main entrance or main entrances. For example, floors in the building that can only be accessed by their own lift or staircase.</p>
 
-      <p>Count each collection of residential units that can only be accessed by crossing a party wall, walkway, shared lobby or basement.</p>
-
-      <p>Do not count each residential unit as its own section.</p>
-
-      <div class="govuk-inset-text">
-        <p>For example, a simple tower block, in which all of the flats can be accessed from the same main entrances is not made up of multiple sections.</p>
-        <p>Two tower blocks that share a basement containing one or more residential units would be made up of two sections.</p>
-      </div>
+      <p>More than one collection of residential units that can only be accessed by crossing a party wall, walkway, shared lobby or basement.</p>
 
       <form class="form" action="/more-than-one-block-answer" method="post">
 
@@ -44,7 +37,7 @@
           value: data['more-than-one-block'],
           fieldset: {
             legend: {
-              text: "Is there more than one section?",
+              text: "Does it contain any of the above?",
               classes: "govuk-fieldset__legend--s"
             }
           },
