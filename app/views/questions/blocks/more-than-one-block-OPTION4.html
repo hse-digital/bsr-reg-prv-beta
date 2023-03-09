@@ -1,0 +1,91 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service in development - do not take anything you see here as guidance.'
+}) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Is {{ data['building-name'] }} a simple high-rise building?</h1>
+
+      <p>A simple high-rise building might be a single standalone block of flats.</p>
+
+      <p>High-rise structures connected together</p>
+
+      <p>Buildings made up of multiple high-rise structures containing residential units are not simple high-rise buildings.</p>
+
+      <p>If your building contains multiple connected structures, but:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>the walkway, lobby or basement connecting them does not contain a residential unit</li>
+        <li>or, the wall connecting them does not contain any normal use doors</li>
+      </ul>
+
+      <p>Then you need to regiser each structure as its own building.</p>
+
+      <p>If there are two or more structures connected together by either:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>a walkway, lobby or basement containing a residential unit</li>
+        <li>a wall with a normal use door</li>
+      </ul>
+
+      <p>Then it is not a simple building.</p>
+
+      <p>If your building contains multiple structures with residential units, then it is not a simple building.</p>
+
+      <p>Mixed use buildings can be simple buildings.</p>
+
+      <div class="govuk-inset-text">
+        <p>For example, The Gherkin is a simple high-rise building because it is a single structure not connected to any other structures.</p>
+      </div>
+
+      <form class="form" action="/more-than-one-block-answer" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {{ govukRadios({
+          name: "more-than-one-block",
+          id: "more-than-one-block",
+          value: data['more-than-one-block'],
+          fieldset: {
+            legend: {
+              text: "Is it a simple building?",
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          items: [
+          {
+            value: "Multiple independent sections",
+            text: "Yes"
+          },
+          {
+            value: "Single independent section",
+            text: "No"
+          }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+      <p><a href="#">Save and come back later</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}

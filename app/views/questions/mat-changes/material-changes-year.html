@@ -13,14 +13,16 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">When the changes were made to {% if data['more-than-one-block'] === "Multiple independent sections" %}
+      <h1 class="govuk-heading-l">What year was the [Installation, replacement or removal of heating or hot water system in multiple or all residential units] [to/of] 
+        {% if data['more-than-one-block'] === "Multiple independent sections" %}
         {{ data['block-name'] }}
         {% endif %}
         {% if data['more-than-one-block'] === "Single independent section" %}
         {{ data['building-name'] }}
-        {% endif %}</h1>
+        {% endif %}
+         completed? (optional)</h1>
 
-        <p>If you know the year these changes were made, tell us here.</p>
+        <p>If you know the year the change was made, tell us here.</p>
 
         <p>If you do not know the year, leave it blank.</p>
 
@@ -29,33 +31,8 @@
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
-            text: "Year [asbestos removed from multiple floors]"
-          },
-          hint: {
-            text: ""
-          },
-          classes: "govuk-input--width-4",
-          id: "year-of-use-change",
-          name: "year-of-use-change"
-        }) }}
-
-        {% from "govuk/components/input/macro.njk" import govukInput %}
-        {{ govukInput({
-          label: {
-            text: "Year [of] [installation, replacement or removal of heating or hot water system in multiple or all residential units] (optional)"
-          },
-          hint: {
-            text: ""
-          },
-          classes: "govuk-input--width-4",
-          id: "year-of-use-change",
-          name: "year-of-use-change"
-        }) }}
-
-        {% from "govuk/components/input/macro.njk" import govukInput %}
-        {{ govukInput({
-          label: {
-            text: "Year [of] [work connected to external walls including removal of cladding] (optional)"
+            text: "Year the change was completed",
+            classes: "govuk-label--s"
           },
           hint: {
             text: ""

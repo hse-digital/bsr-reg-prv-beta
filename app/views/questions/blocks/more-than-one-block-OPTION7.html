@@ -20,12 +20,13 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">Is {{ data['building-name'] }} a single high-rise residential structure?</h1>
+      <h1 class="govuk-heading-l">Does {{ data['building-name'] }} contain multiple high-rise residential structures?</h1>
 
       <p>A high-rise residential building can contain 1 or more high-rise residential structures.</p>
 
       <div class="govuk-inset-text">
         <p>For example, The Gherkin in London is a single high-rise residential structure.</p>
+        <p>Deansgate Square in Manchester is made up of four high-rise residential structures.</p>
       </div>
 
       <form class="form" action="/more-than-one-block-answer" method="post">
@@ -44,11 +45,11 @@
           items: [
           {
             value: "Single independent section",
-            text: "Yes"
+            text: "Single high-rise residential structure"
           },
           {
             value: "Multiple independent sections",
-            text: "No"
+            text: "More than one high-rise residential structure"
           }
           ]
         }) }}

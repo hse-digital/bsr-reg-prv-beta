@@ -20,18 +20,18 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">Tell us the name of one of the independent sections in {{ data['building-name'] }}</h1>
+      <h1 class="govuk-heading-l">Tell us the name of one of the high-rise residential structures in {{ data['building-name'] }}</h1>
 
-      <p>An independent section is a collection of units in the building that share a main entrance, or can only be accessed by crossing a party wall, walkway, shared lobby or basement.</p>
+      <p>This will help you to identify which structure we are asking you about later on.</p>
 
-      <p>This will help you to identify which section we are asking you about later on.</p>
+      <p>[So far you have told us about <strong>[first structure's name]</strong>, <strong>[second structure's name]</strong> and <strong>[third structure's name]</strong>.]</p>
 
       <form class="form" action="/questions/blocks/floors-above" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
-            text: "Section name",
+            text: "First structure's name",
             classes: "govuk-label--s",
             isPageHeading: false
           },

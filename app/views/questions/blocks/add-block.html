@@ -20,9 +20,9 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">The independent sections in {{ data['building-name'] }}</h1>
+      <h1 class="govuk-heading-l">High-rise residential structures of {{ data['building-name'] }}</h1>
 
-      <p>So far you have told us about <strong>{{ data['block-name'] }}</strong> and <strong>[section B]</strong>.</p>
+      <p>So far you have told us about <strong>{{ data['block-name'] }}[structure A]</strong> and <strong>[structure B]</strong>.</p>
 
       <form class="form" action="/add-block-boolean-answer" method="post">
 
@@ -32,7 +32,7 @@
           id: "add-block-boolean",
           fieldset: {
             legend: {
-              text: "Add another independent section?",
+              text: "Add another high-rise residential structure?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--s"
             }
@@ -50,6 +50,8 @@
         }) }}
 
         <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+        <p><a href="/register-task-list">Save and come back later</a></p>
 
       </form>
 
