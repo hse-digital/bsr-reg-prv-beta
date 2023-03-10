@@ -24,7 +24,7 @@
 
       <p>This is not a complete list. It includes only the material changes what we need to know about.</p>
 
-      <form class="form" action="/questions/mat-changes/material-changes-year" method="post">
+      <form class="form" action="/questions/mat-changes/material-changes-year-options" method="post">
 
         {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
         {{ govukCheckboxes({
@@ -83,6 +83,9 @@
             {
               value: "storage-and-other-non-residential",
               text: "Installation, replacement or removal of gas supply to building"
+            },
+            {
+              text: "Reinforcement works to 1960s large panel system structure"
             },
             {
               value: "Work connected to external walls including removal of cladding",

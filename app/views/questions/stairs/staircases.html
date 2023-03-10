@@ -32,7 +32,7 @@
             isPageHeading: false
           },
           hint: {
-            text: "Count all the staircases on the inside and outside"
+            text: "Count all the staircases on the inside and outside, including those that serve the basement"
           },
           classes: "govuk-input--width-3",
           id: "year-of-use-change",
@@ -42,7 +42,7 @@
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
-            text: "Number of staircases serving all floors from ground level",
+            text: "Number of internal staircases serving all floors from ground level",
             classes: "govuk-label--s",
             isPageHeading: false
           },

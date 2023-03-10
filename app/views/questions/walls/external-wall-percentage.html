@@ -33,6 +33,13 @@
           text: "For example, 70% might be covered in concrete while the remaining 30% might be covered in glass."
         }) }}
 
+        {% from "govuk/components/details/macro.njk" import govukDetails %}
+
+        {{ govukDetails({
+          summaryText: "Help with estimating percentages",
+          text: "Calculate the percentage..."
+        }) }}
+
         {{ govukInput({
           label: {
             text: "Concrete"

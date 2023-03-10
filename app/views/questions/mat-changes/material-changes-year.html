@@ -13,29 +13,25 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">What year was the [Installation, replacement or removal of heating or hot water system in multiple or all residential units] [to/of] 
+      <h1 class="govuk-heading-l">[Installation, replacement or removal of heating or hot water system in multiple or all residential units] [to/of/from]
         {% if data['more-than-one-block'] === "Multiple independent sections" %}
         {{ data['block-name'] }}
         {% endif %}
         {% if data['more-than-one-block'] === "Single independent section" %}
         {{ data['building-name'] }}
         {% endif %}
-         completed? (optional)</h1>
-
-        <p>If you know the year the change was made, tell us here.</p>
-
-        <p>If you do not know the year, leave it blank.</p>
+      </h1>
 
       <form class="form" action="/check-answers-kbi" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
-            text: "Year the change was completed",
+            text: "What year was this change completed? (optional)",
             classes: "govuk-label--s"
           },
           hint: {
-            text: ""
+            text: "If you know the year the change was made, tell us here. If you do not know, leave this blank."
           },
           classes: "govuk-input--width-4",
           id: "year-of-use-change",

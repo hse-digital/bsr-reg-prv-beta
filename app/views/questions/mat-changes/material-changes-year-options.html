@@ -20,21 +20,10 @@
         {{ data['building-name'] }}
         {% endif %}?</h1>
 
-      <form class="form" action="/check-answers-kbi" method="post">
+      <form class="form" action="/questions/mat-changes/material-changes-year" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
         {% from "govuk/components/input/macro.njk" import govukInput %}
-
-        {% set yearHtml %}
-        {{ govukInput({
-          id: "contact-by-text",
-          name: "contact-by-text",
-          classes: "govuk-input--width-4",
-          label: {
-            text: "What year was this change completed? (optional)"
-          }
-        }) }}
-        {% endset -%}
 
         {{ govukRadios({
           name: "contact",
@@ -51,24 +40,15 @@
           items: [
             {
               value: "email",
-              text: "Asbestos removal",
-              conditional: {
-                html: yearHtml
-              }
+              text: "Asbestos removal"
             },
             {
               value: "phone",
-              text: "Installation, replacement or removal of cold water systems in multiple or all residential units",
-              conditional: {
-                html: yearHtml
-              }
+              text: "Installation, replacement or removal of cold water systems in multiple or all residential units"
             },
             {
               value: "text",
-              text: "Work connected to external walls including removal of cladding",
-              conditional: {
-                html: yearHtml
-              }
+              text: "Work connected to external walls including removal of cladding"
             },
             {
               divider: "or"

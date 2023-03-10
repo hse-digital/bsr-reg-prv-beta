@@ -40,7 +40,20 @@
           </span>
         </summary>
         <div class="govuk-details__text">
-          <p>Ground level is the level of land immediately next to the section. If the section is on uneven land, count from the lowest part of the land immediately next to the section.</p>
+          <p>Ground level is the level of land immediately next to 
+            {% if data['more-than-one-block'] === "Multiple independent sections" %}
+            {{ data['block-name'] }}
+            {% endif %}
+            {% if data['more-than-one-block'] === "Single independent section" %}
+            {{ data['building-name'] }}
+            {% endif %}. 
+            If that land is uneven, count from the lowest part of the land immediately next to 
+            {% if data['more-than-one-block'] === "Multiple independent sections" %}
+            {{ data['block-name'] }}
+            {% endif %}
+            {% if data['more-than-one-block'] === "Single independent section" %}
+            {{ data['building-name'] }}
+            {% endif %}.</p>
         </div>
       </details>
 
