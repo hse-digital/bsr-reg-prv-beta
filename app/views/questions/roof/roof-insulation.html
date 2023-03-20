@@ -15,13 +15,13 @@
 
       <form class="form" action="/questions/roof/roof-material" method="post">
 
-        <h1 class="govuk-heading-l">Is there any insulation on any part of the roof on 
-          {% if data['more-than-one-block'] === "Multiple independent sections" %}
+        <h1 class="govuk-heading-l">Does the roof structure of 
+        {% if data['more-than-one-block'] === "Multiple independent sections" %}
         {{ data['block-name'] }}
         {% endif %}
         {% if data['more-than-one-block'] === "Single independent section" %}
         {{ data['building-name'] }}
-        {% endif %}?
+        {% endif %} have a layer of insulation?
         </h1>
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
@@ -35,7 +35,10 @@
           items: [
             {
               value: "england",
-              text: "Yes"
+              text: "Yes, on top of the roof structure"
+            },
+            {
+              text: "Yes, below the roof structure"
             },
             {
               value: "scotland",
