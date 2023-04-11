@@ -35,10 +35,23 @@
 
         {% from "govuk/components/details/macro.njk" import govukDetails %}
 
-        {{ govukDetails({
-          summaryText: "Help with estimating percentages",
-          text: "Calculate the percentage..."
-        }) }}
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Help with estimating percentages
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p>Start by calculating the surface area of {% if data['more-than-one-block'] === "Multiple independent sections" %}
+            {{ data['block-name'] }}
+            {% endif %}
+            {% if data['more-than-one-block'] === "Single independent section" %}
+            {{ data['building-name'] }}
+            {% endif %}
+            . Then calculate the surface area of the windows and any glass on balcony doors. This helps you to calculate the percentage covered by glass.</p>
+            <p>Then you can estimate the remaining percentages of the other materials.</p>
+          </div>
+        </details>
 
         {{ govukInput({
           label: {

@@ -13,7 +13,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">Features on 
+      <h1 class="govuk-heading-l">Energy supplies to 
         {% if data['more-than-one-block'] === "Multiple independent sections" %}
         {{ data['block-name'] }}
         {% endif %}
@@ -22,82 +22,55 @@
         {% endif %}
       </h1>
 
-      <form class="form" action="/questions/walls/external-wall-attached-material" method="post">
+      <p>This is not a complete list. It includes only the types of energy supplies we need to know about.</p>
+
+      <form class="form" action="/questions/ext-features/structural-type" method="post">
 
         {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
         {{ govukCheckboxes({
           name: "waste",
           fieldset: {
             legend: {
-
+              text: "Types of energy supply",
+              classes: "govuk-fieldset__legend--s",
+              isPageHeading: false
             }
           },
           hint: {
-            text: "Select all that apply. Machinery could be for heating, ventilation or energy generation."
+            text: "Select all that apply"
           },
           items: [
             {
-              text: "Advertising hoarding attached to a wall"
-            },
-            {
               value: "carcasses",
-              text: "Balconies"
+              text: "District or communal heating"
             },
             {
               value: "mines",
-              text: "Communal recreation area on the roof"
+              text: "Mains electricity supply"
             },
             {
               value: "mines",
-              text: "Communal walkway between structures"
+              text: "Mains hydrogen supply"
             },
             {
               value: "mines",
-              text: "Escape route onto and across the roof"
+              text: "Mains gas supply"
             },
             {
               value: "mines",
-              text: "External staircases"
-            },
-            {
-              text: "Machinery in an outbuilding"
-            },
-            {
-              text: "Machinery in a room on the roof"
-            },
-            {
-              text: "Machinery on the roof"
-            },
-            {
-              value: "mines",
-              text: "Phone masts"
-            },
-            {
-              value: "mines",
-              text: "Roof lights"
-            },
-            {
-              value: "mines",
-              text: "Solar shading"
+              text: "Oil"
             },
             {
               text: "Other"
-            },
-            {
-              divider: "or"
-            },
-            {
-              value: "none",
-              text: "None of these",
-              behaviour: "exclusive"
             }
           ]
         }) }}
+        
         <button class="govuk-button" data-module="govuk-button">Save and continue</button>
 
-        <p><a href="/kbi-task-list-return">Save and come back later</a></p>
-
       </form>
+
+      <p><a href="/kbi-task-list-return">Save and come back later</a></p>
 
     </div>
     

@@ -15,7 +15,7 @@
 
       <form class="form" action="/questions/stairs/staircases" method="post">
 
-        <h1 class="govuk-heading-l">What material covers the largest surface area on  
+        <h1 class="govuk-heading-l">What material covers the largest surface area on 
           {% if data['more-than-one-block'] === "Multiple independent sections" %}
         {{ data['block-name'] }}
         {% endif %}
@@ -37,23 +37,7 @@
               text: "Composite panels"
             },
             {
-              text: "Felt - bitumen"
-            },
-            {
-              text: "Felt - other"
-            },
-            {
               text: "Fibre cement asbestos"
-            },
-            {
-              value: "england",
-              text: "Green roof",
-              hint: {
-                text: "Also known as a living roof or sedum roof"
-              }
-            },
-            {
-              text: "Hot or cold roof systems"
             },
             {
               text: "Metal sheet",
@@ -71,10 +55,22 @@
               text: "Polycarbonate sheet"
             },
             {
-              text: "Reinforced autoclaved aerated concrete (RAAC)"
+              text: "Other sheet material"
             },
             {
-              text: "Rubber"
+              text: "Rolled or liquid bitumen felt"
+            },
+            {
+              text: "Rolled or liquid felt - other"
+            },
+            {
+              text: "Rolled or liquid rubber"
+            },
+            {
+              text: "Rolled or liquid hot or cold roof systems"
+            },
+            {
+              text: "Reinforced autoclaved aerated concrete (RAAC)"
             },
             {
               text: "Shingles"
@@ -84,6 +80,13 @@
             },
             {
               text: "Tiles"
+            },
+            {
+              value: "england",
+              text: "Green roof",
+              hint: {
+                text: "Also known as a living roof or sedum roof"
+              }
             },
             {
               divider: "or"

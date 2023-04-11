@@ -13,25 +13,24 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">Material changes since {% if data['more-than-one-block'] === "Multiple independent sections" %}
+      <h1 class="govuk-heading-l">Building works since 
+        {% if data['more-than-one-block'] === "Multiple independent sections" %}
         {{ data['block-name'] }}
         {% endif %}
         {% if data['more-than-one-block'] === "Single independent section" %}
         {{ data['building-name'] }}
         {% endif %} was originally built</h1>
 
-      <p>Material change is defined by building regulations.</p>
+      <p>This is not a complete list. It includes only the building works we need to know about. You will have needed a building control application to carry out any of these building works.</p>
 
-      <p>This is not a complete list. It includes only the material changes what we need to know about.</p>
-
-      <form class="form" action="/questions/mat-changes/material-changes-year-options" method="post">
+      <form class="form" action="/questions/mat-changes/material-changes-extra-floors" method="post">
 
         {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
         {{ govukCheckboxes({
           name: "secondary-uses",
           fieldset: {
             legend: {
-              text: "Material changes",
+              text: "Building works",
               isPageHeading: false,
               classes: "govuk-fieldset__legend--s"
             }
@@ -42,8 +41,11 @@
           items: [
             {
               value: "assembly-and-recreation",
-              text: "Asbestos removed from multiple floors"
-            }, 
+              text: "Asbestos removal and remediation on multiple floors"
+            },
+            {
+              text: "Balconies added"
+            },
             {
               value: "office",
               text: "Change in number of floors"
@@ -74,29 +76,37 @@
             },
             {
               value: "storage-and-other-non-residential",
-              text: "Installation, replacement or removal of cold water systems in multiple or all residential units"
+              text: "Installation, replacement or removal of cold water systems in multiple residential units"
             },
             {
               value: "storage-and-other-non-residential",
-              text: "Installation, replacement or removal of heating or hot water system in multiple or all residential units"
+              text: "Installation, replacement or removal of heating or hot water system in multiple residential units"
             },
             {
               value: "storage-and-other-non-residential",
               text: "Installation, replacement or removal of gas supply to building"
             },
             {
-              text: "Reinforcement works to 1960s large panel system structure"
+              text: "Reinforcement works to large panel system structure"
             },
             {
-              value: "Work connected to external walls including removal of cladding",
-              text: "Work connected to external walls including removal of cladding"
+              text: "Work connected to external walls",
+              hint: {
+                text: "Includes replacement of cavity barriers, insulation or cladding (like ACM)."
+              }
+            },
+            {
+              text: "Other structural enhancement or modification",
+              hint: {
+                text: "Only include building works that needed a building control application."
+              }
             },
             {
               divider: "or"
             },
             {
               value: "storage-and-other-non-residential",
-              text: "None of the above"
+              text: "None of these"
             },
             {
               divider: "or"

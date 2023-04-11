@@ -13,7 +13,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">Fire and smoke control provisions in the residential common parts of
+      <h1 class="govuk-heading-l">Fire and smoke control equipment in the residential common parts of
         {% if data['more-than-one-block'] === "Multiple independent sections" %}
         {{ data['block-name'] }}
         {% endif %}
@@ -22,7 +22,7 @@
         {% endif %}
       </h1>
 
-      <p>This is not a complete list. It includes only the provisions and equipment we need to know about.</p>
+      <p>This is not a complete list. It includes only the equipment we need to know about.</p>
 
       <form class="form" action="/questions/fire/fire-provisions-location" method="post">
 
@@ -31,7 +31,7 @@
           name: "waste",
           fieldset: {
             legend: {
-              text: "What provisions are in the parts shared by all residents?",
+              text: "What equipment is in the parts shared by all residents?",
               classes: "govuk-fieldset__legend--s",
               isPageHeading: false
             }
@@ -50,7 +50,13 @@
             },
             {
               value: "mines",
-              text: "Duct dampers"
+              text: "Fire dampers"
+            },
+            {
+              text: "Fire extinguishers"
+            },
+            {
+              text: "Fire lift - not known"
             },
             {
               value: "farm",
