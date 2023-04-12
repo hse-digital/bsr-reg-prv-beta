@@ -24,7 +24,7 @@
 
       <p>This is not a complete list. It includes only the equipment we need to know about.</p>
 
-      <form class="form" action="/questions/fire/fire-provisions-location" method="post">
+      <form class="form" action="/questions/fire/lifts" method="post">
 
         {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
         {{ govukCheckboxes({
@@ -56,23 +56,12 @@
               text: "Fire extinguishers"
             },
             {
-              text: "Fire lift - not known"
-            },
-            {
               value: "farm",
               text: "Fire shutters"
             },
             {
               value: "mines",
               text: "Heat detectors"
-            },
-            {
-              value: "farm",
-              text: "Lifts for evacuating residents"
-            },
-            {
-              value: "farm",
-              text: "Lifts for firefighting"
             },
             {
               value: "mines",

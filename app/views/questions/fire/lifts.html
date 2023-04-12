@@ -1,0 +1,90 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Types of lift in 
+        {% if data['more-than-one-block'] === "Multiple independent sections" %}
+        {{ data['block-name'] }}
+        {% endif %}
+        {% if data['more-than-one-block'] === "Single independent section" %}
+        {{ data['building-name'] }}
+        {% endif %}
+      </h1>
+
+      <p>This is not a complete list. It includes only the lifts we need to know about.</p>
+
+      <form class="form" action="/questions/fire/fire-provisions-location" method="post">
+
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+        {{ govukCheckboxes({
+          name: "waste",
+          fieldset: {
+            legend: {
+            }
+          },
+          hint: {
+            text: "Select all that apply"
+          },
+          items: [
+            {
+              text: "Evacuation lift",
+              hint: {
+                text: "Has structural, electrical and fire protection. Used to evacuate people with a disability or extra needs."
+              }
+            },
+            {
+              text: "Firefighters lift",
+              hint: {
+                text: "Has protection, controls and signals for firefighters to control it. Installed after the 2003 British Standard for these lifts was first published."
+              }
+            },
+            {
+              text: "Fire-fighting lift",
+              hint: {
+                text: "Similar to firefighters lifts but less stringent. Installed after the 1986 British Standard for these lifts was first published."
+              }
+            },
+            {
+              text: "Modernised lift for fire service use",
+              hint: {
+                text: "Normally used for passengers but with basic extra protection, controls and signals for firefighters to use."
+              }
+            },
+            {
+              text: "Firemen's lift",
+              hint: {
+                text: "Installed before fire-fighting lift standards were available. Has no complex lift controls or protection measures for firefighters to use."
+              }
+            },
+            {
+              divider: "or"
+            },
+            {
+              text: "None of these",
+              behaviour: "exclusive"
+            }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+      <p><a href="/kbi-task-list-return">Save and come back later</a></p>
+
+    </div>
+
+  </div>
+
+{% endblock %}
