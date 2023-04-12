@@ -8,9 +8,9 @@
 
 <div class="govuk-!-padding-bottom-5"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Microsoft_Office_Outlook_%282018–present%29.svg/826px-Microsoft_Office_Outlook_%282018–present%29.svg.png" width="40px"></div>
 
-<p><strong>From:</strong> enquiries@hse.gov.uk
+<p><strong>From:</strong> Building Safety Regulator &lt;enquiries@hse.gov.uk&gt;
   <br><strong>To:</strong> {{ data['email'] }}
-  <br><strong>Subject:</strong> Provide structure and safety information for {{ data['building-name'] }}
+  <br><strong>Subject:</strong> Structure and safety information for {{ data['building-name'] }}
 </p>
 
 {% from "govuk/components/header/macro.njk" import govukHeader %}
@@ -20,20 +20,22 @@
 
 <div class="govuk-!-padding-bottom-5"></div>
 
-<h1 class="govuk-heading-l">Provide structure and safety information for {{ data['building-name'] }}</h1>
+<p>Dear Name,</p>
 
-<div class="govuk-inset-text">
-  Your application number is <strong>BSR019388477</strong>.
-</div>
+<p>You recently applied to register {{ data['building-name'] }} with the Building Safety Regulator (BSR). Your application reference is <strong>BSR019388477</strong>.</p>
 
-<p>Provide this information at <a href="/returning-code">www.hse.gov.uk/registera-high-rise-building/continue</a>.</p>
+<p>When you applied, we told you that we would contact you again when it was time for you to give us the information about {{ data['building-name'] }}'s structure and safety.</p>
 
-<h2 class="govuk-heading-l">Why you got this email</h2>
+<p>Please return to your application to give us the information: <a href="/returning-code">www.hse.gov.uk/register-a-high-rise-building/continue</a></p>
 
-<p>You applied to register a high-rise residential building with the Building Safety Regulator.</p> 
+<p>You must give us the structure and safety information by <strong>30 October 2023</strong>.</p>
 
-<p>From the Health and Safety Executive</p>
+<p>From the Health and Safety Executive
+  <br>The Building Safety Regulator in England
+</p>
 
-<p>You can <a href="/start">register another high-rise building</a> at any time.</p>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+<p>Do not reply to this email. It's an automatic message from an unmonitored account.</p>
 
 {% endblock %}
