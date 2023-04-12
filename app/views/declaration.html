@@ -15,7 +15,7 @@
 
       <h1 class="govuk-heading-l">Declaration</h1>
 
-      <p>By submitting this information, you are confirming that:
+      <p>By submitting this information about {{ data['building-name'] }}, you are confirming that:
       </p>
 
       <uL class="govuk-list govuk-list--bullet">
@@ -33,6 +33,8 @@
       </uL>
 
       <p>We may ask you for written evidence that the principal accountable person has authorised you to submit this information for them.</p>
+
+      <p>After you have submitted this information, you cannot use this service to amend your answers.</p>
 
       <form class="form" action="/confirm" method="post">
 

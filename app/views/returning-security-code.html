@@ -28,7 +28,7 @@
 
       <p>If you still cannot find it, or it has timed out <a href="/generate-new-security-code">generate a new security code</a>.</p>
 
-      <form class="form" action="/kbi-task-list-return" method="post">
+      <form class="form" action="/returning-security-code-answer" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({
@@ -43,13 +43,6 @@
           id: "security-code",
           name: "security-code",
           classes: "govuk-input--width-10"
-        }) }}
-
-        {% from "govuk/components/button/macro.njk" import govukButton %}
-        {{ govukButton({
-          text: "Launch emails",
-          href: "/security-code-email",
-          classes: "govuk-button--secondary"
         }) }}
 
         <button class="govuk-button" data-module="govuk-button">Save and continue</button>

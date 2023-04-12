@@ -15,6 +15,8 @@
 
       <h1 class="govuk-heading-l">What connects the structures of {{ data['building-name'] }}?</h1>
 
+      <p>{{ data['building-name'] }} is made up of Swansea Tower and Chester House.</p>
+
       <form class="form" action="/questions/connected/connected-high-rise-buildings-boolean" method="post">
 
         {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
@@ -37,14 +39,6 @@
               text: "Car park below ground"
             },
             {
-              value: "Doorway for emergency use only",
-              text: "Doorway for emergency use only"
-            },
-            {
-              value: "Doorway for everyday use",
-              text: "Doorway for everyday use"
-            },
-            {
               value: "Ground floor",
               text: "Ground floor",
               hint: {
@@ -60,8 +54,16 @@
               text: "Levels below ground without a residential unit"
             },
             {
+              value: "Doorway for emergency use only",
+              text: "Shared wall with emergency door"
+            },
+            {
+              value: "Doorway for everyday use",
+              text: "Shared wall with everyday use door"
+            },
+            {
               value: "Party wall with no door",
-              text: "Party wall with no door"
+              text: "Shared wall with no door"
             },
             {
               value: "Other",

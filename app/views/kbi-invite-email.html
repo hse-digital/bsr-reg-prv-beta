@@ -10,7 +10,7 @@
 
 <p><strong>From:</strong> enquiries@hse.gov.uk
   <br><strong>To:</strong> {{ data['email'] }}
-  <br><strong>Subject:</strong> Register a high-rise building security code
+  <br><strong>Subject:</strong> Provide structure and safety information for {{ data['building-name'] }}
 </p>
 
 {% from "govuk/components/header/macro.njk" import govukHeader %}
@@ -20,20 +20,20 @@
 
 <div class="govuk-!-padding-bottom-5"></div>
 
-<h1 class="govuk-heading-l">Security code</h1>
+<h1 class="govuk-heading-l">Provide structure and safety information for {{ data['building-name'] }}</h1>
 
-<p>Your security code is <strong>648092</strong></p>
+<div class="govuk-inset-text">
+  Your application number is <strong>BSR019388477</strong>.
+</div>
 
-<p>To verify your email address, enter this security code into your application.
+<p>Provide this information at <a href="/returning-code">www.hse.gov.uk/registera-high-rise-building/continue</a>.</p>
 
-<p>This code will expire at 11:00 GMT.</p>
+<h2 class="govuk-heading-l">Why you got this email</h2>
 
-<h2 class="govuk-heading-m">Why you received this email</h2>
-
-<p>You started or returned to an application to register a high-rise building with the Building Safety Regulator.</p>
-
-<p>You can register another high-rise building at any time at <a href="/start">www.hse.gov.uk/register-a-high-rise-building</a>.</p>
+<p>You applied to register a high-rise residential building with the Building Safety Regulator.</p> 
 
 <p>From the Health and Safety Executive</p>
+
+<p>You can <a href="/start">register another high-rise building</a> at any time.</p>
 
 {% endblock %}

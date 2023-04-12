@@ -357,6 +357,30 @@ router.post('/registration-confirm-answer', function (req, res) {
 
 })
 
+router.post('/returning-security-code-answer', function (req, res) {
+
+  var multipleBlocks = req.session.data['more-than-one-block']
+  if (multipleBlocks == "Multiple independent sections") {
+    res.redirect('/kbi-task-list-complex')
+  } else {
+    res.redirect('/kbi-task-list')
+  }
+
+})
+
+router.post('/check-answers-kbi-answer', function (req, res) {
+
+  var multipleBlocks = req.session.data['more-than-one-block']
+  if (multipleBlocks == "Multiple independent sections") {
+    res.redirect('/questions/connected/connected-blocks')
+  } else {
+    res.redirect('/questions/connected/connected-high-rise-buildings-boolean')
+  }
+
+})
+
+
+
 router.post('/connected-high-rise-buildings-boolean-answer', function (req, res) {
 
   var connectedBuildings = req.session.data['connected-high-rise-buildings-boolean']
@@ -378,3 +402,4 @@ router.post('/connected-other-buildings-boolean-answer', function (req, res) {
   }
 
 })
+

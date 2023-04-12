@@ -13,18 +13,19 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">Structure type for extra floors</h1>
-
-      <p>If extra floors were added to 
+      <h1 class="govuk-heading-l">Structure type of floors added to 
         {% if data['more-than-one-block'] === "Multiple independent sections" %}
         {{ data['block-name'] }}
         {% endif %}
         {% if data['more-than-one-block'] === "Single independent section" %}
         {{ data['building-name'] }}
-        {% endif %}, what is the structure type for those floors?</p>
+        {% endif %}
+      </h1>
 
       <p>This is not a complete list. It includes only the structure types we need to know about.
       </p>
+
+      <p>Select all that apply.</p>
 
       <form class="form" action="/questions/mat-changes/material-changes-year-options" method="post">
 
@@ -33,79 +34,66 @@
           name: "countries",
           fieldset: {
             legend: {
-              text: "What is the type of structure?",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--s"
             }
-          },
-          hint: {
-            text: "Select all that apply"
           },
           items: [
-            {
-              text: "Aluminium structure"
-            },
-            {
-              text: "Composite steel and concrete"
-            },
-            {
-              value: "portugal",
-              text: "Concrete large panel system - 1960s"
-            },
-            {
-              value: "portugal",
-              text: "Concrete large panel system - post 1970"
-            },
-            {
-              value: "portugal",
-              text: "Concrete - modular"
-            },
-            {
-              value: "portugal",
-              text: "Concrete - other"
-            },
-            {
-              value: "portugal",
-              text: "Masonry"
-            },
-            {
-              value: "spain",
-              text: "Timber - modular"
-            },
-            {
-              value: "spain",
-              text: "Timber"
-            },
-            {
-              value: "spain",
-              text: "Metal - modular",
-              hint: {
-                text: "Including steel or iron"
-              }
-            },
-            {
-              value: "spain",
-              text: "Steel frame"
-            },
-            {
-              divider: "or"
-            },
-            {
-              value: "none",
-              text: "None of these",
-              behaviour: "exclusive"
-            },
-            {
-              divider: "or"
-            },
-            {
-              text: "No extra floors were added",
-              behaviour: "exclusive"
-            }
-          ]
-        }) }}
-        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+          {
+            text: "Composite steel and concrete"
+          },
+          {
+            value: "portugal",
+            text: "Concrete large panel system - 1960s"
+          },
+          {
+            value: "portugal",
+            text: "Concrete large panel system - 1970 onwards"
+          },
+          {
+            value: "portugal",
+            text: "Modular - concrete"
+          },
+          {
+            value: "portugal",
+            text: "Concrete - other"
+          },
+          {
+            text: "Lightweight metal structure, like aluminium"
+          },
+          {
+            value: "portugal",
+            text: "Masonry"
+          },
+          {
+            text: "Modular - steel"
+          },
+          {
+            value: "spain",
+            text: "Steel frame"
+          },
+          {
+            value: "spain",
+            text: "Modular - other metal"
+          },
+          {
+            value: "spain",
+            text: "Modular - timber"
+          },
+          {
+            value: "spain",
+            text: "Timber"
+          },
+          {
+            divider: "or"
+          },
+          {
+            value: "none",
+            text: "None of these",
+            behaviour: "exclusive"
+          }
+        ]
+      }) }}
 
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
 
       <p><a href="/kbi-task-list-return">Save and come back later</a></p>
 

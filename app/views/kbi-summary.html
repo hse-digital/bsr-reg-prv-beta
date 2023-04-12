@@ -12,12 +12,33 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
-      <h1 class="govuk-heading-l">Check your building information answers for {% if data['more-than-one-block'] === "Multiple independent sections" %}
+      <h1 class="govuk-heading-l">Print or save structure and safety information for {% if data['more-than-one-block'] === "Multiple independent sections" %}
         {{ data['block-name'] }}
         {% endif %}
         {% if data['more-than-one-block'] === "Single independent section" %}
         {{ data['building-name'] }}
         {% endif %}</h1>
+
+      <h2 class="govuk-heading-m">Application details</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Application number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            BSR01234567890
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Building name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['building-name'] }}
+          </dd>
+        </div>
+      </dl>
 
       <h2 class="govuk-heading-m">Fire and smoke controls</h2>
 
@@ -29,12 +50,6 @@
           <dd class="govuk-summary-list__value">
             Phased
           </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="/questions/fire/evacuation-policy">
-              Change
-              <span class="govuk-visually-hidden"> name</span>
-            </a>
-          </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -42,12 +57,6 @@
           </dt>
           <dd class="govuk-summary-list__value">
             Smoke detector heads
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change
-              <span class="govuk-visually-hidden"> date of birth</span>
-            </a>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -57,12 +66,6 @@
           <dd class="govuk-summary-list__value">
             Smoke detector heads
           </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change
-              <span class="govuk-visually-hidden"> date of birth</span>
-            </a>
-          </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -70,12 +73,6 @@
           </dt>
           <dd class="govuk-summary-list__value">
             Basement
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change
-              <span class="govuk-visually-hidden"> contact information</span>
-            </a>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -88,12 +85,6 @@
             <br>42 doors that fire resistance is not known
             <br>56 doors in total
           </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change
-              <span class="govuk-visually-hidden"> contact information</span>
-            </a>
-          </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -103,12 +94,6 @@
             5 doors with 60-minute fire resistance
             <br>9 doors with 120-minute fire resistance
             <br>16 doors in total
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change
-              <span class="govuk-visually-hidden"> contact information</span>
-            </a>
           </dd>
         </div>
       </dl>
@@ -125,12 +110,6 @@
             <br>Electricity
             <br>Hydrogen battery
           </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="/questions/ext-features/structural-type">
-              Change
-              <span class="govuk-visually-hidden"> name</span>
-            </a>
-          </dd>
         </div>
       </dl>
 
@@ -144,12 +123,6 @@
           <dd class="govuk-summary-list__value">
             Modular
           </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="/questions/ext-features/structural-type">
-              Change
-              <span class="govuk-visually-hidden"> name</span>
-            </a>
-          </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -158,12 +131,6 @@
           <dd class="govuk-summary-list__value">
             Composite
             <br>Metal
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="/questions/ext-features/structural-type-modular">
-              Change
-              <span class="govuk-visually-hidden"> date of birth</span>
-            </a>
           </dd>
         </div>
       </dl>
@@ -178,12 +145,6 @@
           <dd class="govuk-summary-list__value">
             Flat roof
           </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change
-              <span class="govuk-visually-hidden"> name</span>
-            </a>
-          </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -191,12 +152,6 @@
           </dt>
           <dd class="govuk-summary-list__value">
             Yes
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change
-              <span class="govuk-visually-hidden"> date of birth</span>
-            </a>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -225,12 +180,6 @@
           <dd class="govuk-summary-list__value">
             22
           </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change
-              <span class="govuk-visually-hidden"> previous application number</span>
-            </a>
-          </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -238,12 +187,6 @@
           </dt>
           <dd class="govuk-summary-list__value">
             14
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change
-              <span class="govuk-visually-hidden"> licence type</span>
-            </a>
           </dd>
         </div>
       </dl>
@@ -260,12 +203,6 @@
             <br>Glass
             <br>Masonry
           </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change
-              <span class="govuk-visually-hidden"> name</span>
-            </a>
-          </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -273,12 +210,6 @@
           </dt>
           <dd class="govuk-summary-list__value">
             Metal composite panels
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change
-              <span class="govuk-visually-hidden"> date of birth</span>
-            </a>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -289,12 +220,6 @@
             Metal composite panels: 70%
             <br>Glass: 20%
             <br>Masonry: 10%
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change
-              <span class="govuk-visually-hidden"> contact information</span>
-            </a>
           </dd>
         </div>
       </dl>
@@ -309,12 +234,6 @@
           <dd class="govuk-summary-list__value">
             Balconies
           </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change
-              <span class="govuk-visually-hidden"> previous application number</span>
-            </a>
-          </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -323,12 +242,6 @@
           <dd class="govuk-summary-list__value">
             Timber
             <br>Metal
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change
-              <span class="govuk-visually-hidden"> licence type</span>
-            </a>
           </dd>
         </div>
       </dl>
@@ -343,12 +256,6 @@
           <dd class="govuk-summary-list__value">
             Residential Dwelling
           </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="/questions/uses-above/primary-use.html">
-              Change
-              <span class="govuk-visually-hidden"> name</span>
-            </a>
-          </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -357,12 +264,6 @@
           <dd class="govuk-summary-list__value">
             <p>Residential (Other)</p>
             <p>Shop and Commercial</p>
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="/questions/uses-above/secondary-uses.html">
-              Change
-              <span class="govuk-visually-hidden"> date of birth</span>
-            </a>
           </dd>
         </div>
       </dl>
@@ -377,12 +278,6 @@
           <dd class="govuk-summary-list__value">
             1
           </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="/questions/use-below/floors-below-ground-level.html">
-              Change
-              <span class="govuk-visually-hidden"> name</span>
-            </a>
-          </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -390,12 +285,6 @@
           </dt>
           <dd class="govuk-summary-list__value">
             Residential Dwelling
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="/questions/use-below/floors-below-primary-use">
-              Change
-              <span class="govuk-visually-hidden"> name</span>
-            </a>
           </dd>
         </div>
       </dl>
@@ -410,12 +299,6 @@
           <dd class="govuk-summary-list__value">
             Yes
           </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="/questions/use-previous/previous-primary-use-boolean.html">
-              Change
-              <span class="govuk-visually-hidden"> contact information</span>
-            </a>
-          </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -424,12 +307,6 @@
           <dd class="govuk-summary-list__value">
             1984
           </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="/questions/use-previous/previous-primary-use-year.html">
-              Change
-              <span class="govuk-visually-hidden"> contact details</span>
-            </a>
-          </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -437,12 +314,6 @@
           </dt>
           <dd class="govuk-summary-list__value">
             Office
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="/questions/use-previous/previous-use.html">
-              Change
-              <span class="govuk-visually-hidden"> contact details</span>
-            </a>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -454,12 +325,6 @@
             <br>Changes to windows
             <br>Installation, replacement or removal of gas supply to building
           </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="/questions/mat-changes/material-changes">
-              Change
-              <span class="govuk-visually-hidden"> name</span>
-            </a>
-          </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -468,26 +333,12 @@
           <dd class="govuk-summary-list__value">
             1992
           </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="/questions/mat-changes/material-changes-year">
-              Change
-              <span class="govuk-visually-hidden"> date of birth</span>
-            </a>
-          </dd>
         </div>
       </dl>
 
-      <form action="/check-answers-kbi-answer" method="post" novalidate>
+      <p><a href="#">Print this page</a></p>
 
-        <input type="hidden" name="answers-checked" value="true">
-
-        <button type="submit" class="govuk-button" data-module="govuk-button">
-          Save and continue
-        </button>
-
-        <p><a href="/kbi-task-list-return">Save and come back later</a></p>
-
-      </form>
+      <p><a href="#">Save as a PDF</a></p>
 
     </div>
   </div>
