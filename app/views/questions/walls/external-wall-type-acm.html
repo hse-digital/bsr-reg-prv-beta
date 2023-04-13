@@ -13,49 +13,40 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">Most recent work completed on {% if data['more-than-one-block'] === "Multiple independent sections" %}
+      <h1 class="govuk-heading-l">Aluminium composite material (ACM) on 
+        {% if data['more-than-one-block'] === "Multiple independent sections" %}
         {{ data['block-name'] }}
         {% endif %}
         {% if data['more-than-one-block'] === "Single independent section" %}
         {{ data['building-name'] }}
-        {% endif %}</h1>
+        {% endif %}
+      </h1>
 
-      <form class="form" action="/questions/mat-changes/material-changes-year" method="post">
+      <form class="form" action="/questions/walls/external-wall-type-hpl" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
-        {% from "govuk/components/input/macro.njk" import govukInput %}
 
         {{ govukRadios({
-          name: "contact",
+          name: "where-do-you-live",
           fieldset: {
             legend: {
-              text: "",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--s"
             }
-          },
-          hint: {
-            text: ""
           },
           items: [
             {
-              value: "email",
-              text: "Asbestos removal"
+              text: "Meets the fire classification A2-s1, d0 or better",
+              hint: {
+                text: "Set out in the British Standard BS EN 13501-1, this classifies building materials based on their reaction to fire."
+              }
             },
             {
-              value: "phone",
-              text: "Installation, replacement or removal of cold water systems in multiple or all residential units"
+              text: "Has passed a large-scale fire test to BS8414",
+              hint: {
+                text: "This is the British Standard for tests that assess the fire safety of cladding applied to the outside of buildings."
+              }
             },
             {
-              value: "text",
-              text: "Work connected to external walls including removal of cladding"
-            },
-            {
-              divider: "or"
-            },
-            {
-              value: "",
-              text: "Not known"
+              text: "Neither of these"
             }
           ]
         }) }}
@@ -67,6 +58,7 @@
       </form>
 
     </div>
+
     
   </div>
 
