@@ -13,13 +13,13 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">Where are the [smoke detectors] in the common parts of 
+      <h1 class="govuk-heading-l">Where are the [smoke detectors] in the parts of 
         {% if data['more-than-one-block'] === "Multiple independent sections" %}
         {{ data['block-name'] }}
         {% endif %}
         {% if data['more-than-one-block'] === "Single independent section" %}
         {{ data['building-name'] }}
-        {% endif %}?</h1>
+        {% endif %} that residents share?</h1>
 
       <form class="form" action="/questions/fire-doors/residential-front-doors" method="post">
 
