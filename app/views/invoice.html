@@ -1,0 +1,164 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service in development - do not take anything you see here as guidance.'
+}) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Enter invoice details</h1>
+
+      <h2 class="govuk-heading-m">Payment summary</h2>
+
+      <p>Payment for application [ref no]</p>
+
+      <p>Total amount:</p>
+
+      <p class="govuk-heading-xl">£251.00</p>
+
+      <form class="form" action="/registration-confirm" method="post">
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
+
+        {% call govukFieldset({
+          legend: {
+          }
+        }) %}
+
+        <h2 class="govuk-heading-m">Contact details</h2>
+
+          {{ govukInput({
+            label: {
+              text: 'Name on the invoice',
+              classes: "govuk-label--s"
+            },
+            id: "address-line-1",
+            name: "address-line-1"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: 'Email address',
+              classes: "govuk-label--s"
+            },
+            id: "address-line-2",
+            name: "address-line-2",
+            hint: {
+              text: "We'll only use this to send you an invoice"
+            }
+          }) }}
+
+          <h2 class="govuk-heading-m">Billing address</h2>
+
+          {{ govukInput({
+            label: {
+              text: "Address line 1",
+              classes: "govuk-label--s"
+            },
+            id: "billing-address-line-1",
+            name: "billing-address-line-1",
+            value: data['billing-address-line-1']
+          }) }}
+  
+          {{ govukInput({
+            label: {
+              text: "Address line 2 (optional)",
+              classes: "govuk-label--s"
+            },
+            id: "billing-address-line-2",
+            name: "billing-address-line-2",
+            value: data['billing-address-line-2']
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Town or city",
+              classes: "govuk-label--s"
+            },
+            id: "billing-address-line-2",
+            name: "billing-address-line-2",
+            value: data['billing-address-line-2']
+          }) }}
+  
+          {{ govukInput({
+            label: {
+              text: "Postcode",
+              classes: "govuk-label--s"
+            },
+            classes: "govuk-input--width-10",
+            id: "billing-postcode",
+            name: "billing-postcode",
+            value: data['billing-postcode']
+          }) }}
+          
+        {% endcall %}
+
+        <h2 class="govuk-heading-m">Purchase order number</h2>
+
+        <p>If you need to get a purchase order number, you can save and come back later.</p>
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {% set emailHtml %}
+        {{ govukInput({
+          id: "contact-by-email",
+          name: "contact-by-email",
+          label: {
+            text: "Purchase order number"
+          }
+        }) }}
+        {% endset -%}
+
+        {{ govukRadios({
+          name: "contact",
+          fieldset: {
+            legend: {
+              text: "Do we need to quote a purchase order number in the invoice?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          hint: {
+            text: "Select one option."
+          },
+          items: [
+            {
+              value: "email",
+              text: "Yes",
+              conditional: {
+                html: emailHtml
+              }
+            },
+            {
+              value: "phone",
+              text: "No"
+            }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+      <p><a href="#">Save and come back later</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}
